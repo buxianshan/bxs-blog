@@ -46,7 +46,14 @@ module.exports = {
         nextLinks: false,
         // 默认值是 true 。设置为 false 来禁用所有页面的 上一篇 链接
         prevLinks: false,
-        smoothScroll: true
+        smoothScroll: true,
+        // 在github上编辑此页
+        repo: 'https://github.com/buxianshan/bxs-blog',
+        repoLabel: '查看源码',
+        docsDir: 'docs',
+        docsBranch: 'master',
+        editLinks: true,
+        editLinkText: '在 GitHub 上编辑此页'
     },
     plugins: [
         '@vuepress/back-to-top',
