@@ -1,0 +1,11 @@
+# node modules
+node_modules
+
+# Editors
+.idea
+
+# VuePress temp directory
+.temp
+
+# Docs dist directory
+/dist

@@ -1,0 +1,20 @@
+{
+  "name": "bxs-blog",
+  "version": "0.1.0",
+  "description": "blog",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs --temp .temp",
+    "docs:build": "vuepress build docs"
+  },
+  "author": "buxianshan",
+  "license": "ISC",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.9.7",
+    "@vuepress/plugin-medium-zoom": "^1.9.7",
+    "vuepress": "^1.9.7",
+    "vuepress-plugin-code-copy": "^1.0.6",
+    "vuepress-plugin-reading-progress": "^1.0.10",
+    "vuepress-plugin-table-of-contents": "^1.1.7"
+  }
+}
