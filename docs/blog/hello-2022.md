@@ -9,4 +9,4 @@ sidebar: false
 
 2022 继续努力呀！
 
-![2022](https://buxianshan.oss-cn-beijing.aliyuncs.com/Typora_images/2022.jpg)
+![2022](https://img-blog.csdnimg.cn/0ec335a563484819be8fed7d3f84eb9b.png)

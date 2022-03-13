@@ -3,7 +3,7 @@ module.exports = {
         ['link', {rel: 'icon', href: 'https://buxianshan.xyz/favicon.ico'}]
     ],
     title: 'bxs.ink',
-    description: 'todo',
+    description: '一些个人理解、笔记和分享',
     markdown: {
         lineNumbers: true
     },
