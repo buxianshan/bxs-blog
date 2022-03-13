@@ -56,7 +56,7 @@ module.exports = {
         smoothScroll: true,
         // 在github上编辑此页
         repo: 'https://github.com/buxianshan/bxs-blog',
-        repoLabel: 'GitHub',
+        repoLabel: '查看源码',
         docsDir: 'docs',
         docsBranch: 'master',
         editLinks: true,
