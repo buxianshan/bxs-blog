@@ -23,5 +23,5 @@ tagline: 一些个人理解、笔记和分享
 </div>
 
 ::: slot footer
-[Copyright © 2022 buxianshan](https://buxianshan.xyz)<br/>[ 皖 ICP 备 20002169 号](https://beian.miit.gov.cn/)
+[Copyright © 2022 buxianshan](https://bxs.ink)<br/>[ 皖 ICP 备 20002169 号](https://beian.miit.gov.cn/)
 :::

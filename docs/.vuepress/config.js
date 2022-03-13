@@ -1,6 +1,6 @@
 module.exports = {
     head: [
-        ['link', {rel: 'icon', href: 'https://buxianshan.xyz/favicon.ico'}]
+        ['link', {rel: 'icon', href: 'https://buxianshan.oss-cn-beijing.aliyuncs.com/favicon.ico?versionId=CAEQMhiBgID7jPeK_BciIGUwMGYzZWJmMzM3NTQ4NDI5N2FhZDk3NDRiZjYzNjFl'}]
     ],
     title: 'bxs.ink',
     description: '一些个人理解、笔记和分享',
