@@ -1,6 +1,6 @@
-[TOC]
+<TOC />
 
-> hello! 这里是python基础部分的分享
+# Python是什么？
 
 ## 1、python是一种解释型语言
 

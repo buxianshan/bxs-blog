@@ -20,21 +20,28 @@ module.exports = {
         sidebar: {
             // 不同的页面组来显示不同的侧边栏,确保 fallback 侧边栏被最后定义。VuePress 会按顺序遍历侧边栏配置来寻找匹配的配置。
             '/python/': [
-                ['/python/', 'Top'],
-                {
-                    title: 'python基础',
-                    // 可选的, 标题的跳转链接
-                    // path: 'python',
-                    collapsable: true,
-                    sidebarDepth: 2,
-                    children: [
-                        ['简介', 'python简介']
-                    ]
-                },
+                ['', 'Top'],
+                ['Introduction', '简介'],
+                // {
+                //     title: 'python是什么？',
+                //     // 可选的, 标题的跳转链接
+                //     // path: 'python',
+                //     collapsable: true,
+                //     sidebarDepth: 2,
+                //     children: [
+                //         ['Introduction', '']
+                //     ]
+                // },
             ],
             '/linux/': [
                 // todo
             ],
+            // blog页面单独配置是否显示侧边栏
+            // '/blog/': [
+            //     // todo
+            //     ['', '目录'],
+            //     ['csdn-img', '使用csdn作为免费图床'],
+            // ],
             // fallback
             '/': ['']
         },
@@ -49,7 +56,7 @@ module.exports = {
         smoothScroll: true,
         // 在github上编辑此页
         repo: 'https://github.com/buxianshan/bxs-blog',
-        repoLabel: '查看源码',
+        repoLabel: 'GitHub',
         docsDir: 'docs',
         docsBranch: 'master',
         editLinks: true,
