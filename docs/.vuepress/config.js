@@ -16,27 +16,22 @@ module.exports = {
         // logo: '/favicon.ico',
         nav: [
             {text: 'Home', link: '/'},
-            {text: 'Python', link: '/python/'},
+            {
+                text: 'Python',
+                ariaLabel: 'Python Menu',
+                items: [
+                    {text: '简介', link: '/python/Introduction'},
+                    {text: '命名风格建议', link: '/python/NameStyle'},
+                    {text: 'The Zen of Python', link: '/python/Zen'},
+                ]
+            },
             {text: 'Linux', link: '/linux/'},
             {text: 'Blog', link: '/blog/'},
             {text: '关于', link: '/about/'}
         ],
         sidebar: {
             // 不同的页面组来显示不同的侧边栏,确保 fallback 侧边栏被最后定义。VuePress 会按顺序遍历侧边栏配置来寻找匹配的配置。
-            '/python/': [
-                ['', 'Top'],
-                ['Introduction', '简介'],
-                // {
-                //     title: 'python是什么？',
-                //     // 可选的, 标题的跳转链接
-                //     // path: 'python',
-                //     collapsable: true,
-                //     sidebarDepth: 2,
-                //     children: [
-                //         ['Introduction', '']
-                //     ]
-                // },
-            ],
+            '/python/': 'auto',
             '/linux/': [
                 // todo
             ],
