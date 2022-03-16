@@ -21,6 +21,7 @@ module.exports = {
                 ariaLabel: 'Python Menu',
                 items: [
                     {text: '简介', link: '/python/introduction'},
+                    {text: '常用代码片段', link: '/python/snippets'},
                     {text: '命名风格建议', link: '/python/name-style'},
                     {text: 'The Zen of Python', link: '/python/zen'},
                 ]
@@ -32,7 +33,6 @@ module.exports = {
         sidebar: {
             // 不同的页面组来显示不同的侧边栏,确保 fallback 侧边栏被最后定义。VuePress 会按顺序遍历侧边栏配置来寻找匹配的配置。
             '/python/': 'auto',
-
             '/linux/': [
                 ['commands-log', '常用命令记录'],
             ],
