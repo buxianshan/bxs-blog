@@ -27,6 +27,7 @@ module.exports = {
                 ]
             },
             {text: 'Linux', link: '/linux/commands-log'},
+            {text: 'Docker', link: '/docker/'},
             {text: 'Blog', link: '/blog/'},
             {text: '关于', link: '/about/'}
         ],
@@ -35,6 +36,9 @@ module.exports = {
             '/python/': 'auto',
             '/linux/': [
                 ['commands-log', '常用命令记录'],
+            ],
+            '/docker/': [
+                ['', 'Docker笔记'],
             ],
             // blog页面单独配置是否显示侧边栏
             // '/blog/': [
