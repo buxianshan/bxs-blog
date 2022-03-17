@@ -36,6 +36,7 @@ module.exports = {
             '/python/': 'auto',
             '/linux/': [
                 ['commands-log', '常用命令记录'],
+                ['shell', '关于shell'],
             ],
             '/docker/': [
                 ['', 'Docker笔记'],
