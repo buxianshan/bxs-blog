@@ -22,6 +22,7 @@ module.exports = {
                 items: [
                     {text: '简介', link: '/python/introduction'},
                     {text: '常用代码片段', link: '/python/snippets'},
+                    {text: '打包项目到PyPI', link: '/python/build-package'},
                     {text: 'pyc文件', link: '/python/pyc'},
                     {text: '命名风格建议', link: '/python/name-style'},
                     {text: 'The Zen of Python', link: '/python/zen'},
