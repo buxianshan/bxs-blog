@@ -202,6 +202,15 @@ docker restart 容器id
 docker kill 容器id      # 强制停止运行容器
 ```
 
+### docker stats
+
+显示容器使用的系统资源
+
+```sh
+# 默认情况下，stats 命令会每隔1秒刷新一次输出的内容直到你按下 ctrl + c
+docker stats
+```
+
 ## 常用命令
 
 ### 后台启动容器
