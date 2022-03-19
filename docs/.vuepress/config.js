@@ -31,6 +31,13 @@ module.exports = {
             {text: 'Linux', link: '/linux/commands-log'},
             {text: 'Docker', link: '/docker/'},
             {text: 'Blog', link: '/blog/'},
+            {
+                text: '工具',
+                ariaLabel: 'Tools Menu',
+                items: [
+                    {text: 'Git', link: '/tools/git'},
+                ]
+            },
             {text: '关于', link: '/about/'}
         ],
         sidebar: {
