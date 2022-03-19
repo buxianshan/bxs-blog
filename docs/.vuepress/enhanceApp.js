@@ -3,7 +3,7 @@ export default ({router}) => {
     router.beforeEach((to, from, next) => {
         // console.log(`切换路由 from ${from.fullPath} to ${to.fullPath}`)
         // 触发百度的pv统计
-        if (typeof _hmt != 'undefined') {
+        if (typeof _hmt != 'undefined' && window.location.hostname !== 'localhost') {
             if (to.path) {
                 _hmt.push(['_trackPageview', to.fullPath]);
             }

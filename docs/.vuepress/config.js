@@ -4,7 +4,15 @@ module.exports = {
             rel: 'icon',
             href: 'https://buxianshan.oss-cn-beijing.aliyuncs.com/favicon.ico?versionId=CAEQMhiBgID7jPeK_BciIGUwMGYzZWJmMzM3NTQ4NDI5N2FhZDk3NDRiZjYzNjFl'
         }],
-        ['script', {}, `var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?40291c62c61f1ce49b021bc0f36df71e";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();`]
+        ['script', {}, `var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?40291c62c61f1ce49b021bc0f36df71e";
+            if (window.location.hostname !== "localhost") {
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            }
+        })();`]
     ],
     title: 'bxs.ink',
     description: '一些个人理解、笔记和分享',
