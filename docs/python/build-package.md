@@ -12,8 +12,6 @@ demo源文件：[python-packaging-demo](https://github.com/buxianshan/python-pac
 
 TestPyPI页面：[bxs-TestPyPI](https://test.pypi.org/project/bxs/)
 
-备注：
-
 ## PyPI是什么
 
 PyPI 是 Python Package Index 的首字母简写，表示的是 Python 的 Packag 索引，也是 Python 的官方索引。
