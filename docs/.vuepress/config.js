@@ -36,6 +36,13 @@ module.exports = {
                     {text: 'The Zen of Python', link: '/python/zen'},
                 ]
             },
+            {
+                text: 'Java',
+                ariaLabel: 'Java Menu',
+                items: [
+                    {text: 'JVM', link: '/java/jvm'},
+                ]
+            },
             {text: 'Linux', link: '/linux/commands-log'},
             {text: 'Docker', link: '/docker/'},
             {text: 'Blog', link: '/blog/'},
@@ -54,6 +61,9 @@ module.exports = {
             '/linux/': [
                 ['commands-log', '常用命令记录'],
                 ['shell', '关于shell'],
+            ],
+            '/java/': [
+                ['jvm', 'JVM笔记'],
             ],
             '/docker/': [
                 ['', 'Docker笔记'],
