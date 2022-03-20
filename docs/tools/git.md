@@ -26,6 +26,8 @@ sidebar: auto
 - test: 增加测试
 - merge: 代码合并
 - revert: 回滚到某次提交
+- build: 用于更新构建配置、开发工具等
+- chore: 杂项，其它与功能无关的更改
 
 `subject`就是commit的简短描述，建议不超过50个字符。
 
