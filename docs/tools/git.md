@@ -38,3 +38,40 @@ fix: 用户查询缺少username属性
 docs: 补充***的文档
 feature: 新增***功能
 ```
+
+## 克隆 GitHub 上的项目报错
+
+大概率是网络问题，即使本地开启了科学上网的代理，没有配置好的话也会报错。
+
+遇到过以下报错：
+
+- OpenSSL SSL_connect: Connection was reset in connection to github.com:443
+- Proxy CONNECT aborted
+
+**解决方法：**
+
+查看本地科学上网代理的端口，例如：
+
+```sh
+HTTP 127.0.0.1:10809
+SOCKS5 127.0.0.1:10808
+```
+
+给git设置全局代理：
+
+```sh
+git config --global http.proxy 127.0.0.1:10809
+git config --global https.proxy 127.0.0.1:10808
+```
+
+此时应该已经可以正常使用`git clone`了。
+
+**还原git代理设置：**
+
+如果需想要还原设置，只需要使用下面的命令：
+
+```sh
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
