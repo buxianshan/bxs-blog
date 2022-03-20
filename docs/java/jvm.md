@@ -434,3 +434,127 @@ JVisualVM 最强大的地方在于插件。最常用的插件是 VisualGC 和 MB
 JMC 和 JVisualVM 功能类似，因为 JMC 的前身是 JRMC，JRMC 是 BEA 公司的 JRockit JDK 自带的分析工具，被 Oracle 收购以后，整合成了 JMC 工具。Oracle 试图用 JMC 来取代 JVisualVM，在商业环境使用 JFR 需要付费获取授权。
 
 在命令行输入`jmc`即可启动。
+
+## Java 平台调试体系
+
+Java 平台调试体系（Java Platform Debugger Architecture，JPDA），由三个相对独立的层次共同组成。这三个层次由低到高分别是 Java 虚拟机工具接口（JVMTI）、Java 调试连接协议（JDWP）以及 Java 调试接口（JDI）。详细介绍请参考或搜索：[JPDA 体系概览](https://www.ibm.com/developerworks/cn/java/j-lo-jpda1/index.html)。
+
+### 服务端 JVM 配置
+
+本篇主要讲解如何在 JVM 中启用 JDWP，以供远程调试。假设主启动类是 com.xxx.Test。
+
+```sh
+java -Xdebug -Xrunjdwp:transport=dt_socket,address=8788,server=y,suspend=n com.xxx.Test
+```
+
+`-Xdebug` 这个选项什么用都没有，官方说是为了历史兼容性，避免报错才没有删除。
+
+参数配置里的 `suspend=y` 会让 Java 进程启动时先挂起，等到有调试器连接上以后继续执行程序。
+
+而如果改成 `suspend=n` 的话，则此 Java 进程会直接执行，但是我们可以随时通过调试器连上进程。
+
+就是说，比如说我们启动一个 Web 服务器进程，当这个值是 y 的时候，服务器的 JVM 初始化以后不会启动 Web 服务器，会一直等到我们用 IDEA 或 Eclipse、JDB 等工具连上这个 Java 进程后，再继续启动 Web 服务器。而如果是 n 的话，则会不管有没有调试器连接，都会正常运行。
+
+> 如果细心观察的话，会发现 IDEA 中 Debug 模式启动的程序，自动设置了类似的启动选项。
+
+### JDB
+
+启用了 JDWP 之后，可以使用各种客户端来进行调试/远程调试。比如 JDB 调试本地 JVM：
+
+```sh
+jdb -attach 'debug'
+jdb -attach 8888
+```
+
+当 JDB 初始化并连接到 Test 之后，就可以进行 Java 代码级（Java-level）的调试。
+
+但是 JDB 调试非常麻烦，我们一般还是在开发工具 IDE（IDEA、Eclipse）里调试代码。
+
+::: details JDB常用的命令
+
+1. 设置断点：
+
+```
+stop at 类名:行号 
+```
+
+2. 清除断点：
+
+```
+clear at 类名:行号 
+```
+
+3. 显示局部变量：
+
+```
+localx
+```
+
+4. 显示变量 a 的值：
+
+```
+print a
+```
+
+5. 显示当前线程堆栈：
+
+```
+wherei
+```
+
+6. 代码执行到下一行：
+
+```
+next
+```
+
+7. 代码继续执行，直到遇到下一个断点：
+
+```
+cont
+```
+
+:::
+
+### IDEA 中使用远程调试
+
+在Run/Debug Configurations里添加Remote，设置host的debug端口号，点击Apply。
+
+![image-20220320143445868](https://buxianshan.oss-cn-beijing.aliyuncs.com/Typora_images/image-20220320143445868.png)
+
+点击 Debug 的那个按钮即可启动远程调试，连上之后就和调试本地程序一样了。当然，记得加断点或者条件断点。
+
+::: warning 特别注意
+
+远程调试时，需要保证服务端 JVM 中运行的代码和本地完全一致，否则可能会有莫名其妙的问题。
+
+:::
+
+细心的同学可能已经发现，IDEA 给出了远程 JVM 的启动参数，建议使用 agentlib 的方式：
+
+```sh
+-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=30216
+```
+
+JVM 为什么可以让不同的开发工具和调试器都连接上进行调试呢？因为它提供了一套公开的调试信息的交互协议，各家厂商就可以根据这个协议去实现自己的调试图形工具，进而方便 Java 开发人员的使用。
+
+### JDWP 协议规范
+
+JDWP 全称是 Java Debug Wire Protocol，中文翻译为“Java 调试连接协议”，是用于规范调试器（Debugger）与目标 JVM 之间通信的协议。
+
+JDWP 支持两种调试场景：
+
+- 同一台计算机上的其他进程
+- 远程计算机上
+
+与许多协议规范的不同之处在于，JDWP 只规定了具体的格式和布局，而不管你用什么协议来传输数据。
+
+## JMX 与相关工具
+
+Java 平台提供了全面的 JVM 监控和管理措施。
+
+Java SE 5.0 版本引入了 JMX 技术（Java Management Extensions，Java 管理扩展），是用于监控和管理 JVM 资源（包括应用程序、设备、服务和 JVM）的一组标准 API。
+
+最常见的 JMX 客户端是 JConsole 和 JVisualVM（可以安装各种插件，十分强大）。两个工具都是标准 JDK 的一部分，而且很容易使用. 如果使用的是 JDK 7u40 及更高版本，还可以使用另一个工具：Java Mission Control（JMC，大致翻译为 Java 控制中心）。
+
+## 未完待续……
