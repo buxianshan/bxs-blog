@@ -100,3 +100,61 @@ for file in file_list:
         files.append(file)
 ```
 
+## logging模块的使用
+
+[logging模块](https://docs.python.org/zh-cn/3/library/logging.html)是Python官方的日志记录工具。
+
+格式化可用的属性：[LogRecord 属性](https://docs.python.org/zh-cn/3/library/logging.html#logrecord-attributes)
+
+记录一下我常用的格式，已封装成一个模块：fine_logger.py
+
+```python
+from logging import *
+
+
+class FineLogger(Logger):
+
+    def __init__(self, name, level=NOTSET):
+        Logger.__init__(self, name=name, level=level)
+
+    def set_log_file(self, log_path="debug.log"):
+        """
+        如果要同时把日志记录到文件中，需要通过此方法设置路径
+        :param log_path: 日志文件路径
+        """
+        # 使用FileHandler把日志输出到文件
+        file_handler = FileHandler(log_path, encoding='utf-8')
+        file_handler.setFormatter(formatter)
+        self.addHandler(file_handler)
+
+
+fine_logger = FineLogger("root")
+# log级别
+fine_logger.setLevel(INFO)
+# 设置格式
+formatter = Formatter('%(asctime)s thread-%(threadName)s %(module)s [%(levelname)s] %(message)s',
+                      datefmt='%Y-%m-%d %H:%M:%S')
+# 使用StreamHandler把日志输出到控制台
+stream_handler = StreamHandler()
+stream_handler.setFormatter(formatter)
+fine_logger.addHandler(stream_handler)
+
+```
+
+使用时只需要导入fine_logger模块：app.py
+
+```python
+from fine_logger import fine_logger
+
+
+# 如果要同时把日志记录到文件中，需要先设置日志路径，默认是./debug.log
+fine_logger.set_log_file()
+fine_logger.info("Hello")
+```
+
+输出格式如下：
+
+```
+2022-03-22 22:40:56 thread-MainThread app [INFO] Hello
+```
+
