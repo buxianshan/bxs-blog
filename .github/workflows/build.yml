@@ -32,7 +32,7 @@ jobs:
     - name: SFTP Deploy
       # You may pin to the exact commit or the version.
       # uses: wlixcc/SFTP-Deploy-Action@c6e4d76ad92d7460e93fc66178b52638298adfaa
-      uses: wlixcc/SFTP-Deploy-Action@v1.2.2
+      uses: buxianshan/fine-sftp-deployer@v0.1.0
       with:
         # username
         username: ${{secrets.SERVER_USERNAME}}
@@ -46,4 +46,5 @@ jobs:
         local_path: ./dist/*
         # files will copy to under remote_path
         remote_path: ${{secrets.SERVER_WORKSPACE}}
-        args: '-o ConnectTimeout=5'
+        # delete all files in remote_path
+        clear_remote_path: true
