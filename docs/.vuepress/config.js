@@ -19,7 +19,7 @@ module.exports = {
     markdown: {
         lineNumbers: true
     },
-    dest: "./dest",
+    dest: "./dist",
     themeConfig: {
         // logo: '/favicon.ico',
         nav: [
