@@ -28,6 +28,10 @@ jobs:
         cache: 'npm'
     # debug
     - run: git status
+    - run: git log
+    - run: git log -1 --pretty=format:"%ad" -- README.md
+    - run: timedatectl
+    - run: sudo timedatectl set-timezone Asia/Shanghai
     - run: npm install
     - run: npm run docs:build
     
