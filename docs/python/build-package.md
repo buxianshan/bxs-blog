@@ -45,13 +45,13 @@ packaging_tutorial/
 
 确保使用build工具最新版：
 
-```sh
+```bash
 python -m pip install --upgrade build
 ```
 
 在`pyproject.toml`所在的目录下执行：
 
-```sh]
+```bash
 python -m build
 ```
 
@@ -64,7 +64,7 @@ python -m build
 
 顺便提一下，这个whl文件已经可以本地直接安装了：
 
-```sh
+```bash
 pip install package-name-0.0.1-py3-none-any.whl
 ```
 
@@ -76,13 +76,13 @@ pip install package-name-0.0.1-py3-none-any.whl
 
 首先安装[twine](https://packaging.python.org/en/latest/key_projects/#twine)，也是官方文档建议的工具：
 
-```sh
+```bash
 python -m pip install --upgrade twine
 ```
 
 使用twine把包上传到TestPyPI：
 
-```sh
+```bash
 python -m twine upload --repository testpypi dist/*
 ```
 
@@ -110,7 +110,7 @@ https://test.pypi.org/project/bxs/0.0.2/
 
 安装我的这个demo：
 
-```sh
+```bash
 pip install -i https://test.pypi.org/simple/ bxs
 
 # pip list看一下
@@ -122,7 +122,7 @@ bxs                0.0.2
 
 正常使用：
 
-```sh
+```bash
 [root@localhost ~]# python3
 Python 3.7.2 (default, Jan 11 2022, 11:20:27) 
 [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)] on linux
@@ -139,7 +139,7 @@ Welcome to my blog: https://bxs.ink/
 
 会报错：
 
-```sh
+```bash
 Error during upload. Retry with the --verbose option for more details.
 HTTPError: 400 Bad Request from https://test.pypi.org/legacy/
 File already exists. See https://test.pypi.org/help/#file-name-reuse for more information.

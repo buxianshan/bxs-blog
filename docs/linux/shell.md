@@ -6,7 +6,7 @@ centos通常用的是/bin/bash，而有些shell看起来很炫，例如zsh，怎
 
 执行：`echo $0`
 
-```shell
+```bash
 # 终端1：centos7默认的shell
 [root@localhost ~]# echo $0
 -bash
@@ -19,7 +19,7 @@ $ echo $0
 
 ## 查看当前系统有哪些shell
 
-```sh
+```bash
 # 终端1
 [root@localhost ~]# cat /etc/shells 
 /bin/sh
@@ -42,7 +42,7 @@ $ cat /etc/shells
 
 ## 查看用户(默认)使用的shell
 
-```sh
+```bash
 # 终端1
 [root@localhost ~]# echo $SHELL
 /bin/bash
@@ -57,7 +57,7 @@ $ echo $SHELL
 
 终端1：
 
-```sh
+```bash
 [root@localhost ~]# env
 XDG_SESSION_ID=348803
 HOSTNAME=localhost.localdomain
@@ -95,7 +95,7 @@ _=/usr/bin/env
 
 终端2：
 
-```sh
+```bash
 # root @ FusionWrt in ~ [13:35:18] 
 $ env        
 USER=root
@@ -121,7 +121,7 @@ _=/usr/bin/env
 
 **Oh My Zsh** 是一款社区驱动的命令行工具，正如它的主页上说的，**Oh My Zsh** 是一种生活方式。它基于 **zsh** 命令行，提供了主题配置，插件机制，已经内置的便捷操作。给我们一种全新的方式使用命令行。
 
-```sh
+```bash
 # 安装
 yum install -y zsh
 

@@ -10,7 +10,7 @@
 
 ## 安装Docker
 
-```sh
+```bash
 # 1、卸载旧版本
 sudo yum remove docker \
                   docker-client \
@@ -47,7 +47,7 @@ docker images
 
 ## 卸载Docker
 
-```sh
+```bash
 # 1、卸载docker依赖
 sudo yum remove docker-ce docker-ce-cli containerd.io
 # 2、删除目录
@@ -58,7 +58,7 @@ sudo rm -rf /var/lib/docker
 
 [阿里云的解释](https://help.aliyun.com/document_detail/60750.html)：使用Docker时需要首先下载一个官方镜像，例如`mysql`、`wordpress`。然而由于网络原因，下载一个Docker官方镜像可能会需要很长的时间，甚至下载失败。为此，阿里云容器镜像服务ACR提供了官方的镜像站点，从而加速官方镜像的下载。
 
-```sh
+```bash
 sudo mkdir -p /etc/docker
 # 下方的地址是我在阿里云免费申请的，当然你也可以自己申请一个
 sudo tee /etc/docker/daemon.json <<-'EOF'
@@ -74,7 +74,7 @@ sudo systemctl restart docker
 
 帮助文档：https://docs.docker.com/reference/
 
-```sh
+```bash
 docker version
 # 显示docker系统信息，镜像、容器数量、运行状态等
 docker info
@@ -85,7 +85,7 @@ docker [command] --help
 
 ### docke images
 
-```sh
+```bash
 # 显示本地所有镜像信息
 docker images
     -a, --all    # 列出所有镜像
@@ -94,7 +94,7 @@ docker images
 
 ### docker search
 
-```sh
+```bash
 # 搜索镜像（等于从docker hub上搜索）
 docker search mysql
 	--filter=STARS=3000 # 过滤出收藏超过3000的镜像
@@ -102,7 +102,7 @@ docker search mysql
 
 ### docker pull
 
-```sh
+```bash
 # 拉取镜像
 # docker pull mysql[:tag]
 
@@ -134,7 +134,7 @@ docker pull mysql:5.7
 
 ### docker rmi
 
-```sh
+```bash
 # 删除镜像
 docker rmi -f image_id1 image_id2 # 可以多个id
 
@@ -146,14 +146,14 @@ docker rmi -f $(docker images -aq)
 
 有了镜像才能创建容器，如果本地没有镜像，docker会先尝试在Docker Hub上下载镜像。
 
-```sh
+```bash
 # 下载一个centos的镜像
 docker pull centos
 ```
 
 ### docker run
 
-```sh
+```bash
 # 创建容器并运行
 docker run [可选参数] image
 # 常用参数
@@ -177,7 +177,7 @@ Ctrl + P + Q
 
 ### docker ps
 
-```sh
+```bash
 # 查看运行中的容器
 docker ps
 	-a	            # 查看所有运行过的容器
@@ -187,7 +187,7 @@ docker ps
 
 ### docker rm
 
-```sh
+```bash
 docker rm 容器id                     # 删除容器(运行中的容器要-f才能删除)
 docker rm -f $(docker ps -aq)       # 删除所有容器
 docker ps -a -f -q|xargs docker rm  # 删除所有容器
@@ -195,7 +195,7 @@ docker ps -a -f -q|xargs docker rm  # 删除所有容器
 
 ### 启动/停止容器
 
-```sh
+```bash
 docker start 容器id
 docker stop 容器id
 docker restart 容器id
@@ -206,7 +206,7 @@ docker kill 容器id      # 强制停止运行容器
 
 显示容器使用的系统资源
 
-```sh
+```bash
 # 默认情况下，stats 命令会每隔1秒刷新一次输出的内容直到你按下 ctrl + c
 docker stats
 ```
@@ -215,7 +215,7 @@ docker stats
 
 ### 后台启动容器
 
-```sh
+```bash
 # docker run -d 镜像名
 docker run -d centos
 # 这样运行centos后发现这个容器停止了，因为容器内没有正在运行的进程就会自动停止
@@ -223,7 +223,7 @@ docker run -d centos
 
 ### 进入正在运行的容器
 
-```sh
+```bash
 # 方法1：进入容器开启一个新的终端(容器内需要有/bin/bash这个解释器，或者改成其它解释器)
 docker exec -it 容器id /bin/bash
 # 退出容器
@@ -236,25 +236,25 @@ docker attach 容器id
 
 ### 设置容器开机自启
 
-```sh
+```bash
 docker update --restart=always 容器名
 ```
 
 ### 查看某个容器的日志
 
-```sh
+```bash
 docker logs -tf --tail 10 容器名	# 实时刷新，显示最后10行
 ```
 
 ### 查看容器中的进程信息
 
-```sh
+```bash
 docker top 容器名
 ```
 
 ### 查看镜像/容器元数据
 
-```sh
+```bash
 docker inspect 镜像名或容器名
 ```
 
@@ -262,7 +262,7 @@ docker inspect 镜像名或容器名
 
 只要容器存在就可以进行文件复制，不需要容器正在运行中。
 
-```sh
+```bash
 # 容器内复制到容器外
 docker cp 容器id:容器内路径 宿主机路径
 
@@ -272,7 +272,7 @@ docker cp 宿主机路径 容器id:容器内路径
 
 ### 修改容器名
 
-```sh
+```bash
 docke rename old_name new_name
 ```
 
@@ -282,7 +282,7 @@ docke rename old_name new_name
 
 ### 指定路径挂载
 
-```sh
+```bash
 # 创建容器时使用参数-v挂载
 docker run -it -v 主机目录:容器目录 镜像
 # 可以在容器元数据看到挂载的具体信息
@@ -293,7 +293,7 @@ docker inspect 容器名
 
 简单地说具名挂载就是指定数据卷名，匿名挂载就是不指定数据卷名（自动生成一串名字）。建议用具名挂载。
 
-```sh
+```bash
 # 创建一个nginx容器，匿名挂载/etc/nginx目录。-P是随机映射端口
 docker run -d -P --name nginx001 -v /etc/nginx nginx
 
@@ -321,7 +321,7 @@ docker数据卷默认都在/var/lib/docker/volumes/下
 
 挂载时在容器内路径加:rw或:ro
 
-```sh
+```bash
 # 通过-v 容器内路径:ro或rw 设置读写权限。如果是ro，则在容器内就不能修改该路径下的文件（只能在容器外修改）
 docker run -d -P --name nginx002 -v nginx002_volume:/etc/nginx:ro nginx
 ```
@@ -389,14 +389,14 @@ CMD /bin/bash
 
 build：
 
-```sh
+```bash
 # .代表当前目录
 docker build -f dockerfile-centos -t mycentos:0.1 .
 ```
 
 ### docker history 
 
-```sh
+```bash
 # 可以用这个命令研究某个镜像是怎么做的
 docker history 镜像
 ```

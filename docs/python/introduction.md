@@ -30,7 +30,7 @@ pip就是一个包管理工具，python 3.4以后都已经自带该工具。
 
 例如：
 
-```sh
+```bash
 pip install requests
 ```
 
@@ -39,7 +39,7 @@ pip install requests
 
 例如临时使用清华的镜像地址：
 
-```sh
+```bash
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ requests
 ```
 
@@ -55,7 +55,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ requests
 
 这里比较推荐的是Anaconda，他有一个类似pip但更强大的包管理工具conda，比如conda可以很方便的创建python虚拟环境：
 
-```sh
+```bash
 conda create -n env_name python=3.6
 ```
 

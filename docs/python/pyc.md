@@ -26,7 +26,7 @@ print("hi")
 
 ### 方式1
 
-```sh
+```bash
 # 执行命令
 python -m demo.py
 # 输出的pyc文件在当前文件夹中的__pycache__里面：demo.cpython-38.pyc

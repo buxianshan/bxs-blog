@@ -6,7 +6,7 @@
 
 ## 查看当前系统版本
 
-```sh
+```bash
 [root@localhost ~]# cat /etc/os-release
 NAME="CentOS Linux"
 VERSION="7 (Core)"
@@ -27,7 +27,7 @@ REDHAT_SUPPORT_PRODUCT_VERSION="7"
 
 ## 解压文件
 
-```sh
+```bash
 # 解压zip文件
 unzip file_name.zip
 # 解压到指定文件夹并覆盖
@@ -36,7 +36,7 @@ unzip -o filen_name.zip -d output_path
 
 ## 防火墙
 
-```sh
+```bash
 # 启动
 systemctl start firewalld
 # 查看
@@ -51,7 +51,7 @@ systemctl disable firewalld
 
 ## 开放/关闭端口
 
-```sh
+```bash
 # 查看所有打开的端口
 firewall-cmd --zone=public --list-ports
 
@@ -65,7 +65,7 @@ firewall-cmd --zone=public --remove-port=3306/tcp --permanent
 
 ## 查看端口是否被监听
 
-```sh
+```bash
 # netstat
 netstat -anlp | grep 3306
 # 用lsof也可以

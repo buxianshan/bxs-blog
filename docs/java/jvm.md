@@ -223,7 +223,7 @@ JVM 作为一个通用的虚拟机，我们可以通过启动 Java 命令时指�
 
 直接通过命令行启动 Java 程序的格式为:
 
-```sh
+```bash
 java [options] classname [args]
 
 java [options] -jar filename [args]
@@ -304,7 +304,7 @@ JVM 启动参数为我们提供了一些用于控制 GC 日志输出的选项。
 
 示例:
 
-```shell
+```bash
 export JAVA_OPTS="-Xms28g -Xmx28g -Xss1m \
 -verbosegc -XX:+UseG1GC -XX:MaxGCPauseMillis=200 \
 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/usr/local/"
@@ -344,7 +344,7 @@ JDK 内置了各种命令行工具。
 
 JPS，用于展示 Java 进程信息（列表）。
 
-```sh
+```bash
 jps -v
 
 # output
@@ -369,7 +369,7 @@ jstat 用来监控 JVM 内置的各种统计信息，主要是内存和 GC 相�
 
 官方推荐使用 JDK 8 自带的 jcmd 工具来取代 jmap，但是 jmap 深入人心，jcmd 可能暂时取代不了。
 
-```sh
+```bash
 # 看堆内存统计信息
 jmap -heap 4524
 
@@ -383,7 +383,7 @@ jmap -dump:format=b,file=3826.hprof 3826
 
 诊断工具：jcmd 是 JDK 8 推出的一款本地诊断工具，只支持连接本机上同一个用户空间下的 JVM 进程。
 
-```sh
+```bash
 # Dump 堆内存
 jcmd 11155 help GC.heap_dump
 ```
@@ -402,7 +402,7 @@ jcmd 坑的地方在于，必须指定绝对路径，否则导出的 hprof 文�
 
 常用的选项是 `-l`，示例用法：
 
-```sh
+```bash
 jstack 4524
 jstack -l 4524
 ```
@@ -443,7 +443,7 @@ Java 平台调试体系（Java Platform Debugger Architecture，JPDA），由三
 
 本篇主要讲解如何在 JVM 中启用 JDWP，以供远程调试。假设主启动类是 com.xxx.Test。
 
-```sh
+```bash
 java -Xdebug -Xrunjdwp:transport=dt_socket,address=8788,server=y,suspend=n com.xxx.Test
 ```
 
@@ -461,7 +461,7 @@ java -Xdebug -Xrunjdwp:transport=dt_socket,address=8788,server=y,suspend=n com.x
 
 启用了 JDWP 之后，可以使用各种客户端来进行调试/远程调试。比如 JDB 调试本地 JVM：
 
-```sh
+```bash
 jdb -attach 'debug'
 jdb -attach 8888
 ```
@@ -532,7 +532,7 @@ cont
 
 细心的同学可能已经发现，IDEA 给出了远程 JVM 的启动参数，建议使用 agentlib 的方式：
 
-```sh
+```bash
 -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=30216
 ```
 

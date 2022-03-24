@@ -54,14 +54,14 @@ feature: 新增***功能
 
 查看本地科学上网代理的端口，例如：
 
-```sh
+```bash
 HTTP 127.0.0.1:10809
 SOCKS5 127.0.0.1:10808
 ```
 
 给git设置全局代理：
 
-```sh
+```bash
 git config --global http.proxy 127.0.0.1:10809
 git config --global https.proxy 127.0.0.1:10808
 ```
@@ -72,7 +72,7 @@ git config --global https.proxy 127.0.0.1:10808
 
 如果需想要还原设置，只需要使用下面的命令：
 
-```sh
+```bash
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```

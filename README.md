@@ -10,7 +10,7 @@
 
 首先需要安装Node.js，然后在当前目录下安装依赖：
 
-```sh
+```bash
 npm install
 ```
 
@@ -18,7 +18,7 @@ npm install
 
 在本地启动服务器
 
-```sh
+```bash
 npm docs:dev
 ```
 
@@ -26,7 +26,7 @@ VuePress 会在 http://localhost:8080 启动一个热重载的开发服务器。
 
 ### 构建静态文件
 
-```sh
+```bash
 npm docs:build
 ```
 
