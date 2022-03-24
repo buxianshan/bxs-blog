@@ -1,5 +1,7 @@
 ## 基于VuePress的个人知识库
 
+![workflow: build and deploy](https://github.com/buxianshan/bxs-blog/actions/workflows/build.yml/badge.svg)
+
 主页：[https://bxs.ink/](https://bxs.ink/)
 
 只需要编写markdown文件就可以生成简洁的网页。
