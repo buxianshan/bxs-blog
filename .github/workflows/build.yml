@@ -32,7 +32,7 @@ jobs:
     - run: git log -1 --pretty=format:"%ad" -- README.md
     - run: timedatectl
     - run: sudo timedatectl set-timezone Asia/Shanghai
-    - run: git ls-files | while read file; do echo $file; touch -t $(date -jf "%s" $(git log --date=local -1 --format="@%ct" "$file" | cut -b 2-) +%Y%m%d%H%M) "$file"; done
+    - run: git ls-files | while read file; do touch -d $(git log -1 --format="@%ct" "$file") "$file"; done
     - run: git log -1 --pretty=format:"%ad" -- README.md
     - run: npm install
     - run: npm run docs:build
