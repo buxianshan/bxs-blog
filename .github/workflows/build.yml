@@ -21,29 +21,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3.0.0
+    # if not fetch all history, all files will have the same timestamp!
       with:
         fetch-depth: 0
+    # change timezone Asia/Shanghai
+    - run: sudo timedatectl set-timezone Asia/Shanghai
+    
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    # debug
-    - run: git status
-    - run: git log
-    - run: git ls-files | while read file; do echo $file;git log -1 --pretty=format:"%ad" -- $file; done
-    - run: git ls-files | while read file; do echo $file;git log -1 --pretty=format:"%at" -- $file; done
-    - run: git ls-files | while read file; do echo $file;git log -1 --pretty=format:"%ar" -- $file; done
-    - run: git ls-files | while read file; do echo $file;git log -1 --pretty=format:"%ai" -- $file; done
-    - run: git ls-files | while read file; do echo $file;git log -1 --pretty=format:"%al" -- $file; done
-    - run: git ls-files | while read file; do echo $file;git log -1 --pretty=format:"%cd" -- $file; done
-    - run: git ls-files | while read file; do echo $file;git log -1 --pretty=format:"%cD" -- $file; done
-    - run: timedatectl
-    - run: sudo timedatectl set-timezone Asia/Shanghai
-    - run: git ls-files | while read file; do touch -d $(git log -1 --format="@%at" "$file") "$file"; done
-    - run: git ls-files | while read file; do echo $file;git log -1 --pretty=format:"%at" -- $file; done
     - run: npm install
     - run: npm run docs:build
+    
     - name: Deploy to Server
       uses: buxianshan/fine-sftp-deployer@v0.1.5
       with:
