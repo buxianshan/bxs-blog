@@ -158,3 +158,32 @@ fine_logger.info("Hello")
 2022-03-22 22:40:56 thread-MainThread app [INFO] Hello
 ```
 
+## 使用traceback打印异常信息
+
+捕获异常时如果直接打印`str(e)`得到的信息很少，而使用traceback可以打印出堆栈信息。
+
+官方文档：[traceback --- 打印或检索堆栈回溯](https://docs.python.org/zh-cn/3.7/library/traceback.html)
+
+demo.py
+
+```python
+import traceback
+
+
+try:
+    a = 1/0
+except Exception as e:
+    print(traceback.format_exc())
+```
+
+output：
+
+> 注意这里是打印出了异常的堆栈信息，程序并没有异常中断
+
+```
+Traceback (most recent call last):
+  File "**/demo.py", line 5, in <module>
+    a = 1/0
+ZeroDivisionError: division by zero
+```
+
