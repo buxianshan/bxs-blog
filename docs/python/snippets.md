@@ -187,3 +187,12 @@ Traceback (most recent call last):
 ZeroDivisionError: division by zero
 ```
 
+## 获取当前时间戳
+
+更多格式可以参考文档：[time.strftime(format[, t])](https://docs.python.org/zh-cn/3.7/library/time.html#time.strftime)
+
+```python
+print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+# 2022-03-25 15:48:51
+```
+
