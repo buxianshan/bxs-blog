@@ -102,12 +102,24 @@ module.exports = {
         // 注册了一个<TOC />组件显示md文件的目录
         'vuepress-plugin-table-of-contents',
         // 'reading-progress',
-        // 这个插件会在每个代码块后加一个空行，先不用了
-        // ['vuepress-plugin-code-copy', {
-        //     align: 'bottom',
-        //     color: '#0FA1F3',
-        //     successText: '已复制'
-        // }],
-        '@vuepress/medium-zoom'
+        [
+            'one-click-copy',
+            {
+                copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'],
+                copyMessage: 'Copied successfully!',
+                toolTipMessage: 'Copy to clipboard',
+                duration: 1000
+            }
+        ],
+        '@vuepress/medium-zoom',
+        [
+            '@vuepress/last-updated',
+            {
+                transformer: (timestamp, lang) => {
+                    const dayjs = require('dayjs')
+                    return dayjs(timestamp).format('YYYY-MM-DD HH:mm:ss')
+                },
+            },
+        ],
     ],
 }
