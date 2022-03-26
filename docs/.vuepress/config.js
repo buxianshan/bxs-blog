@@ -68,12 +68,6 @@ module.exports = {
             '/docker/': [
                 ['', 'Docker笔记'],
             ],
-            // blog页面单独配置是否显示侧边栏
-            // '/blog/': [
-            //     // todo
-            //     ['', '目录'],
-            //     ['csdn-img', '使用csdn作为免费图床'],
-            // ],
             // fallback
             '/': ['']
         },
