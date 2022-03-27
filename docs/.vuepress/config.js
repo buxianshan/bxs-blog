@@ -115,5 +115,7 @@ module.exports = {
                 },
             },
         ],
+        // 自定义的插件
+        require("./plugins"),
     ],
 }
