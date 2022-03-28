@@ -12,4 +12,21 @@ export default ({router}) => {
         // continue
         next();
     })
+
+    // temporary fix for https://github.com/vuejs/vuepress/issues/2428
+    if(typeof process === 'undefined' || process.env.VUE_ENV !== 'server') {
+        router.onReady(() => {
+            const { app } = router;
+            app.$once("hook:mounted", () => {
+                setTimeout(() => {
+                    const { hash } = document.location;
+                    if (hash.length > 1) {
+                        const id = decodeURIComponent(hash.substring(1));
+                        const element = document.getElementById(id);
+                        if (element) element.scrollIntoView();
+                    }
+                }, 100);
+            });
+        });
+    }
 };
