@@ -1,3 +1,7 @@
+---
+title: Python简介
+---
+
 <TOC />
 
 # Python是什么？
