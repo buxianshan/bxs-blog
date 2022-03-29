@@ -86,6 +86,8 @@ with open('demo.csv', 'w', encoding='utf-8-sig', newline='') as f:
 例如长这样：config.ini
 
 ```
+# 这是注释
+; 这是注释
 [Default]
 url = https://baidu.com
 name = 张三
@@ -149,6 +151,61 @@ for section in config.sections():
 # Key: name Value: 张三
 # Section: Debug
 # Key: isDebug Value: False
+```
+
+## 读写YAML文件
+
+什么是YAML文件：[YAML is a human-friendly data serialization language for all programming languages.](https://yaml.org/)
+
+例如有config.yaml：
+
+```yaml
+# 这是注释
+name: 张三
+sex: Male
+class: Priest
+title: Acolyte
+hp: [32, 71]
+sp: [1, 13]
+gold: 423
+inventory:
+- a Holy Book of Prayers (Words of Wisdom)
+- an Azure Potion of Cure Light Wounds
+- a Silver Wand of Wonder
+```
+
+Python读写yaml文件的方式：
+
+```python
+import yaml
+from pprint import pprint
+
+
+# 读取
+with open("config.yaml", "r", encoding="utf-8") as f:
+    data = yaml.safe_load(f)
+
+pprint(data)
+
+
+# 写入
+with open("test.yaml", "w", encoding="utf-8") as f:
+    yaml.safe_dump(data, f, allow_unicode=True)
+```
+
+输出：
+
+```
+{'class': 'Priest',
+ 'gold': 423,
+ 'hp': [32, 71],
+ 'inventory': ['a Holy Book of Prayers (Words of Wisdom)',
+               'an Azure Potion of Cure Light Wounds',
+               'a Silver Wand of Wonder'],
+ 'name': '张三',
+ 'sex': 'Male',
+ 'sp': [1, 13],
+ 'title': 'Acolyte'}
 ```
 
 ## 获取某个文件夹中的所有文件
