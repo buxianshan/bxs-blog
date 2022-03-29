@@ -1,4 +1,5 @@
 module.exports = {
+    name: 'bxs-custom',
     plugins: [
         // 一些自定义markdown容器
         [
