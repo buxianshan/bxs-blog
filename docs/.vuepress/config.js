@@ -96,6 +96,7 @@ module.exports = {
         // 注册了一个<TOC />组件显示md文件的目录
         'vuepress-plugin-table-of-contents',
         // 'reading-progress',
+        'smooth-scroll',
         [
             'one-click-copy',
             {

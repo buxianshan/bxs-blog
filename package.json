@@ -17,6 +17,7 @@
     "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-one-click-copy": "^1.0.6",
     "vuepress-plugin-reading-progress": "^1.0.10",
+    "vuepress-plugin-smooth-scroll": "^0.0.10",
     "vuepress-plugin-table-of-contents": "^1.1.7"
   }
 }
