@@ -47,6 +47,13 @@ module.exports = {
             {text: 'Docker', link: '/docker/'},
             {text: 'Blog', link: '/blog/'},
             {
+                text: '前端',
+                ariaLabel: 'Front-end Menu',
+                items: [
+                    {text: 'Node.js', link: '/front-end/nodejs'},
+                ]
+            },
+            {
                 text: '工具',
                 ariaLabel: 'Tools Menu',
                 items: [
