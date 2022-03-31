@@ -77,3 +77,19 @@ git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
 
+上面是设置全局代码，如果只想在当前仓库设置，使用下面的命令：
+
+```bash
+# 查看当前仓库的配置
+ git config --local -l
+
+# 给当前仓库设置代理
+git config --local http.proxy 127.0.0.1:10809
+git config --local https.proxy 127.0.0.1:10808
+
+# 取消代理设置
+git config --local --unset http.proxy
+git config --local --unset https.proxy
+```
+
+如果使用了git的GUI工具，例如Sourcetree，修改了代理还是遇到报错，可以尝试重启Sourcetree😂。
