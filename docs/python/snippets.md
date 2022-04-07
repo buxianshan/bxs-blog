@@ -39,8 +39,6 @@ with open(file_path, "w", encoding='utf8') as f:
     f.write(content)
 ```
 
-
-
 ## 读写csv文件
 
 demo.csv
