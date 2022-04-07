@@ -26,6 +26,21 @@ with open(json_file, "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False)
 ```
 
+## 逐行读写文本
+
+```python
+with open(file_path, "r", encoding="utf-8") as f:
+    lines = f.readlines()
+    for i in range(len(lines)):
+        do_something()
+
+with open(file_path, "w", encoding='utf8') as f:
+    content = "".join(lines)
+    f.write(content)
+```
+
+
+
 ## 读写csv文件
 
 demo.csv
