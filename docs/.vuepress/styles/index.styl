@@ -4,6 +4,7 @@
   padding .1rem 1.5rem
   border-radius 0.4rem
   background-color #f0f4f8
+
   .title
     font-weight bold
 
@@ -28,3 +29,51 @@
 // 修改页面最大宽度
 //.theme-default-content:not(.custom)
 //  max-width 60%
+
+// 收藏卡片链接的样式
+.card-list-container
+  .card-list
+    display flex
+
+    a
+      text-decoration none
+      color inherit
+
+    .card
+      width calc(100% / 3 - 1rem)
+      height 100px
+      //background-color #c7c4c4
+      border 1px solid #909090
+      border-radius 0.5rem
+      margin 0.5rem
+      transition all 0.3s
+      display flex
+
+      &:hover
+        box-shadow 0 0.5rem 2rem #ccc
+        transform translate(0, -3px)
+        text-decoration none !important
+
+      img
+        width 60px
+        height 60px
+        border-radius 50%
+        margin auto 0 auto 1rem
+
+      div
+        width 100%
+        padding 0.5rem
+
+        .title
+          //font-size 1.2rem
+          margin 0.2rem 0 0.1rem 0
+          text-align center
+
+        .info
+          font-size 0.8rem
+          color #757575
+          margin 0 0 0.2rem 0.2rem
+
+  .language-yaml
+    // 隐藏卡片列表里的yaml代码块
+    display none

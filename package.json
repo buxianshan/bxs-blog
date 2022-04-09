@@ -13,6 +13,7 @@
     "@vuepress/plugin-back-to-top": "^1.9.7",
     "@vuepress/plugin-medium-zoom": "^1.9.7",
     "dayjs": "^1.11.0",
+    "js-yaml": "^4.1.0",
     "vuepress": "^1.9.7",
     "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-one-click-copy": "^1.0.6",
