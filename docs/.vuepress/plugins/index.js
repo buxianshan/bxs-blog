@@ -59,6 +59,8 @@ function renderCardList(tokens, idx) {
             const cardData = yaml.load(yamlString)
             let stringCardList = ''
             for (let card of cardData) {
+                // todo 注意这里有问题，如果缓存中没找到就使用了异步操作发请求去解析了，导致第一次编译返回的iconUrl是undefined。
+                //  未解决，暂时方案：等第一次编译结束后就有缓存了，然后再编译一次就可以了。
                 let iconUrl = iconUtils.getUrlIcon(card.url)
                 let stringCard =
                     `<a href="${card.url}" class="card" target="_blank">
