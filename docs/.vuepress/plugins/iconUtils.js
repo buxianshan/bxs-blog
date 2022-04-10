@@ -23,6 +23,9 @@ exports.getUrlIcon = function (url) {
                     // pass
                 } else {
                     // 如果时相对路径则拼接成完整路径
+                    if (iconUrl.startsWith('/') !== true) {
+                        iconUrl = '/' + iconUrl
+                    }
                     iconUrl = getShortUrl(url) + iconUrl
                 }
                 console.log(`add a icon cache: ${url}`)
