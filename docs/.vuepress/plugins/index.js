@@ -1,4 +1,5 @@
 const yaml = require('js-yaml')
+const iconUtils = require('./iconUtils')
 
 module.exports = {
     name: 'bxs-custom',
@@ -60,9 +61,10 @@ function renderCardList(tokens, idx) {
             if (cardData.length <= 3) {
                 let stringCardList = ''
                 for (let card of cardData) {
+                    let iconUrl = iconUtils.getUrlIcon(card.url)
                     let stringCard =
                         `<a href="${card.url}" class="card" target="_blank">
-                            <img src="https://developer.mozilla.org/favicon-48x48.cbbd161b.png" alt="">
+                            <img src="${iconUrl}" alt="">
                             <div>
                                 <p class="title">${card.title}</p>
                                 <p class="info">${card.info}</p>
