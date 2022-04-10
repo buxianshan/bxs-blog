@@ -60,6 +60,7 @@ module.exports = {
                     {text: 'Git', link: '/tools/git'},
                 ]
             },
+            {text: '收藏', link: '/collections/'},
             {text: '关于', link: '/about/'}
         ],
         sidebar: {
