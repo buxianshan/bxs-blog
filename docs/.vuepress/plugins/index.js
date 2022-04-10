@@ -57,28 +57,23 @@ function renderCardList(tokens, idx) {
         // console.log(yamlString)
         if (yamlString) {
             const cardData = yaml.load(yamlString)
-            // console.log(cardData)
-            if (cardData.length <= 3) {
-                let stringCardList = ''
-                for (let card of cardData) {
-                    let iconUrl = iconUtils.getUrlIcon(card.url)
-                    let stringCard =
-                        `<a href="${card.url}" class="card" target="_blank">
-                            <img src="${iconUrl}" alt="">
-                            <div>
-                                <p class="title">${card.title}</p>
-                                <p class="info">${card.info}</p>
-                            </div>
-                        </a>`
-                    stringCardList += stringCard
-                }
-                return `<div class="card-list-container">
-                            <div class="card-list">
-                                ${stringCardList}
-                            </div>`
-            } else {
-                // todo 处理超过三个卡片的情况
+            let stringCardList = ''
+            for (let card of cardData) {
+                let iconUrl = iconUtils.getUrlIcon(card.url)
+                let stringCard =
+                    `<a href="${card.url}" class="card" target="_blank">
+                        <img src="${iconUrl}" alt="">
+                        <div>
+                            <p class="title">${card.title}</p>
+                            <p class="info">${card.info}</p>
+                        </div>
+                    </a>`
+                stringCardList += stringCard
             }
+            return `<div class="card-list-container">
+                        <div class="card-list">
+                            ${stringCardList}
+                        </div>`
         }
     } else {
         // closing tag
