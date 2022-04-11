@@ -81,3 +81,25 @@
   .language-yaml
     // 隐藏卡片列表里的yaml代码块
     display none
+
+@media screen and (max-width: 1090px)
+  // 屏幕宽度小于1090px不显示info
+  .card-list-container
+    .card-list
+      .card
+        .info
+          display none
+        div
+          // 子元素垂直居中
+          display -webkit-flex
+          align-items center
+
+@media screen and (max-width: 450px)
+  // 屏幕宽度小于450px不显示title
+  .card-list-container
+    .card-list
+      .card
+        div
+          display none
+        img
+          margin auto
