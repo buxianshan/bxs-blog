@@ -44,7 +44,14 @@ module.exports = {
                 ]
             },
             {text: 'Linux', link: '/linux/commands-log'},
-            {text: 'Docker', link: '/docker/'},
+            // {text: 'Docker', link: '/docker/'},
+            {
+                text: 'Docker',
+                items: [
+                    {text: 'Docker笔记', link: '/docker/notes'},
+                    {text: '问题记录', link: '/docker/experience'},
+                ]
+            },
             {text: 'Blog', link: '/blog/'},
             {
                 text: '前端',
@@ -74,7 +81,8 @@ module.exports = {
                 ['jvm', 'JVM笔记'],
             ],
             '/docker/': [
-                ['', 'Docker笔记'],
+                ['notes', 'Docker笔记'],
+                ['experience', '问题记录']
             ],
             // fallback
             '/': ['']
