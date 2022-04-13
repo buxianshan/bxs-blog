@@ -48,7 +48,7 @@ module.exports = {
             {
                 text: 'Docker',
                 items: [
-                    {text: 'Docker笔记', link: '/docker/notes'},
+                    {text: '基础笔记', link: '/docker/notes'},
                     {text: '问题记录', link: '/docker/experience'},
                 ]
             },
@@ -81,7 +81,7 @@ module.exports = {
                 ['jvm', 'JVM笔记'],
             ],
             '/docker/': [
-                ['notes', 'Docker笔记'],
+                ['notes', '基础笔记'],
                 ['experience', '问题记录']
             ],
             // fallback
