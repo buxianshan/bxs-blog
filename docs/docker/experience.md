@@ -15,5 +15,16 @@ apt-get update && apt-get install procps
 - uptime
 - w
 
+## 不知道容器内的root用户密码
+
+有的容器默认进入时是普通用户，当需要用超管权限执行命令时却又不知道超管密码。
+
+最终发现可以在进入容器时指定用户，不需要知道密码：
+
+```bash
+# 进入容器使用root用户
+docker exec -it --user root  container_name /bin/bash
+```
+
 
 
