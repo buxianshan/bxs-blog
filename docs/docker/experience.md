@@ -28,3 +28,10 @@ docker exec -it --user root  container_name /bin/bash
 
 
 
+## 设置容器开机自启
+
+有一些放在容器里的服务希望能开机自启，只需要设置参数`--restart=always`：
+
+```bash
+docker update --restart=always container_name
+```
