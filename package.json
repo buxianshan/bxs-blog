@@ -8,7 +8,7 @@
     "docs:build": "vuepress build docs"
   },
   "author": "buxianshan",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.9.7",
     "@vuepress/plugin-medium-zoom": "^1.9.7",
