@@ -31,3 +31,8 @@ npm docs:build
 ```
 
 会在当前路径下的dist文件夹中生成静态文件，可以把它部署到任何web服务器中。
+
+## 致谢
+
+感谢 [JetBrains](https://jb.gg/OpenSourceSupport) 提供的开源开发 License。
+
