@@ -83,3 +83,51 @@ lsof -i:3306
 
 - free -h
 - df -h
+
+## crontab定时任务管理
+
+`crond`是负责定时调度的系统服务，用`crontab`管理定时任务。
+
+```bash
+# 查看定时任务
+crontab -l
+
+# 查看执行记录
+tail -f /var/log/cron
+
+# 编辑定时任务(进入编辑界面，可以添加定时任务)
+crontab -e
+
+# 直接编辑/etc/crontab文件添加定时任务
+vim /etc/crontab
+```
+
+`/etc/crontab`文件内容样例：
+
+```bash
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+# 每两个小时以root身份执行 /opt/test.sh 脚本
+0 */2 * * * root /opt/test.sh
+```
+
+## 命令日志重定向到文件
+
+```bash
+# 命令日志重定向到文件(包括异常日志)
+command > file_name 2>&1
+```
+
