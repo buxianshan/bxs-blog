@@ -4,6 +4,8 @@ sidebar: false
 
 <h1 align='center'>Python pyc文件</h1>
 
+<TOC />
+
 ## 什么是pyc文件
 
 pyc文件是py文件编译后生成的字节码文件(byte code)。
