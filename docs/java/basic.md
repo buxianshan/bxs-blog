@@ -62,3 +62,103 @@ new Thread(new Runnable() {
 
 ## Java 内部类
 
+在 Java 中，可以将一个类定义在另一个类里面或者一个方法里面，这样的类称为内部类。一般来说包括四种。
+
+### 成员内部类
+
+成员内部类是最普通的内部类，它的定义为位于另一个类的内部，可以无条件访问外部类的所有成员属性和成员方法（包括private成员和静态成员）。
+
+```java
+class Circle {
+    private double radius = 0;
+    public static int count =1;
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+    
+    // 内部类
+    class Draw {
+        public void drawSahpe() {
+            // 访问外部类的private成员
+            System.out.println(radius);
+            // 访问外部类的静态成员
+            System.out.println(count);
+        }
+    }
+}
+```
+
+### 局部内部类
+
+局部内部类是定义在一个方法或者一个作用域里面的类，它和成员内部类的区别在于局部内部类的访问仅限于方法内或者该作用域内。
+
+```java
+class People {
+    public People() {
+         
+    }
+}
+ 
+class Man{
+    public Man(){
+         
+    }
+     
+    public People getWoman() {
+        // 局部内部类
+        class Woman extends People {
+            int age =0;
+        }
+        return new Woman();
+    }
+}
+```
+
+### 匿名内部类
+
+匿名内部类应该最常用的内部类。可以用于实现接口或抽象类的方法。
+
+```java
+abstract class Person {
+    public abstract void eat();
+}
+ 
+public class Demo {
+    public static void main(String[] args) {
+        Person p = new Person() {
+            @Override
+            public void eat() {
+                System.out.println("eat something");
+            }
+        };
+        p.eat();
+    }
+}
+```
+
+匿名内部类是唯一一种没有构造器的类。正因为其没有构造器，所以匿名内部类的使用范围非常有限，大部分匿名内部类用于接口回调。匿名内部类在编译的时候由系统自动起名为 Outter$1.class。一般来说，匿名内部类用于继承其他类或是实现接口，并不需要增加额外的方法，只是对继承方法的实现或是重写。
+
+### 静态内部类
+
+静态内部类也是定义在另一个类里面的类，只不过在类的前面多了一个关键字static。静态内只能使用外部类的static成员变量或者方法。
+
+```java
+public class Test {
+    public static void main(String[] args)  {
+        Outter.Inner inner = new Outter.Inner();
+    }
+}
+ 
+class Outter {
+    public Outter() {
+         
+    }
+     
+    static class Inner {
+        public Inner() {
+             
+        }
+    }
+}
+```
+
