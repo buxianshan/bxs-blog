@@ -40,6 +40,7 @@ module.exports = {
                 text: 'Java',
                 ariaLabel: 'Java Menu',
                 items: [
+                    {text: 'Java基础', link: '/java/basic'},
                     {text: 'JVM', link: '/java/jvm'},
                 ]
             },
@@ -77,9 +78,7 @@ module.exports = {
                 ['commands-log', '常用命令记录'],
                 ['shell', '关于shell'],
             ],
-            '/java/': [
-                ['jvm', 'JVM笔记'],
-            ],
+            '/java/': 'auto',
             '/docker/': [
                 ['notes', '基础笔记'],
                 ['experience', '问题记录']

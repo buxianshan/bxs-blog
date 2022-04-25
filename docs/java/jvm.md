@@ -1,3 +1,8 @@
+---
+title: JVM笔记
+sidebar: auto
+---
+
 <h1 align='center'>JVM笔记</h1>
 
 :::tip 注意
