@@ -55,6 +55,9 @@ jobs:
         # delete all files in remote_path(default is false)
         clear_remote_path: true
         
+    # 把base修改为bxs-blog，然后再build
+    - run: sed -i 's/base: "./"/base: "bxs-blog"/g' ./docs/.vuepress/config.js
+    - run: npm run docs:build
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
