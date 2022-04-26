@@ -54,3 +54,10 @@ jobs:
         remote_path: ${{secrets.SERVER_WORKSPACE}}
         # delete all files in remote_path(default is false)
         clear_remote_path: true
+        
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+        
