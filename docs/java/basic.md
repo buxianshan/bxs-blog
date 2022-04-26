@@ -60,6 +60,52 @@ new Thread(new Runnable() {
 });
 ```
 
+## Stream API
+
+**什么是`Stream`？**
+
+JDK的文档描述：A sequence of elements supporting sequential and parallel aggregate operations.  (支持顺序和并行聚合操作的元素序列。)
+
+`Stream`使用一种类似用 SQL 语句从数据库查询数据的直观方式来提供一种对 Java 集合运算和表达的高阶抽象。
+
+**什么是聚合操作？**
+
+> 聚合在信息科学中是指对有关的数据进行内容挑选、分析、归类，最后分析得到人们想要的结果，主要是指任何能够从数组产生标量值的数据转换过程。
+
+**流有哪些聚合操作？**
+
+类似SQL语句一样的操作， 比如filter, map, reduce, find, match, sorted等。
+
+- forEach: 迭代流中的每个数据
+- map: 映射每个元素到对应的结果
+- filter: 过滤出符合条件的元素
+- limit: 获取指定数量的流
+- sorted: 对流中的元素排序
+- collect: Collectors 类实现了很多归约操作，例如将流转换成集合和聚合元素。
+- distinct、count、max、min……
+
+**如何生成`Stream`？**
+
+`Collection`接口有两个方法生成`Stream`：
+
+- 为集合创建串行流：stream()
+- 为集合创建并行流：parallelStream()
+
+**样例：**
+
+```java
+List<Integer> numbers = Arrays.asList(4, 3, 9, 6, 7, 7, 7);
+
+// 过滤出大于5的数字，并且每个元素都计算平方
+List<Double> filteredNumbers = numbers.stream()
+    .filter(n -> n > 5)
+    .map(n -> Math.pow(n, 2))
+    .collect(Collectors.toList());
+
+System.out.println(filteredNumbers.toString());
+// output: [81.0, 36.0, 49.0, 49.0, 49.0]
+```
+
 ## Java 内部类
 
 在 Java 中，可以将一个类定义在另一个类里面或者一个方法里面，这样的类称为内部类。一般来说包括四种。
@@ -116,7 +162,7 @@ class Man{
 
 ### 匿名内部类
 
-匿名内部类应该最常用的内部类。可以用于实现接口或抽象类的方法。
+匿名内部类应该是最常用的内部类了。可以用于实现接口或抽象类的方法。
 
 ```java
 abstract class Person {
