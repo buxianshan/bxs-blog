@@ -20,6 +20,7 @@ module.exports = {
         lineNumbers: true
     },
     dest: "./dist",
+    base: "./",
     themeConfig: {
         // logo: '/favicon.ico',
         nav: [
