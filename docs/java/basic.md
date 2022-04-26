@@ -60,6 +60,35 @@ new Thread(new Runnable() {
 });
 ```
 
+## 方法引用
+
+方法引用是 Lambda 表达式的简写方式。当一个 Lambda 表达式只是调用已有的方法其它什么也不做时，使用方法引用的写法通常更清晰。
+
+> [ORACLE文档描述](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html)：You use [lambda expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html) to create anonymous methods. Sometimes, however, a lambda expression does nothing but call an existing method. In those cases, it's often clearer to refer to the existing method by name. Method references enable you to do this; they are compact, easy-to-read lambda expressions for methods that already have a name.
+
+方法引用的格式是双冒号`::`
+
+四种方法的写法：
+
+- 静态方法引用: `Person::compareByAge`
+- 对象的实例方法引用: `myApp::appendStrings`
+- 对特定类型任意对象的实例方法的引用: `String::toUpperCase`、`String::compareToIgnoreCase`
+- 构造函数方法引用: `HashSet::new`
+
+样例：
+
+```java
+List<String> names = Arrays.asList("tom", "peter", "Tim", "tony");
+
+// 把每个名字转换成大写
+List<String> upperNames = names.stream()
+    .map(String::toUpperCase)
+    .collect(Collectors.toList());
+
+System.out.println(upperNames.toString());
+// output: [TOM, PETER, TIM, TONY]
+```
+
 ## Stream API
 
 **什么是`Stream`？**
