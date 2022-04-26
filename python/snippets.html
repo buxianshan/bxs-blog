@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Python常用代码片段 | bxs.ink</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="https://buxianshan.oss-cn-beijing.aliyuncs.com/favicon.ico?versionId=CAEQMhiBgID7jPeK_BciIGUwMGYzZWJmMzM3NTQ4NDI5N2FhZDk3NDRiZjYzNjFl">
+    <script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?40291c62c61f1ce49b021bc0f36df71e";
+            if (window.location.hostname !== "localhost") {
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            }
+        })();</script>
+    <meta name="description" content="一些个人理解、笔记和分享">
+    
+    <link rel="preload" href="/assets/css/0.styles.7f97cff0.css" as="style"><link rel="preload" href="/assets/js/app.8911f850.js" as="script"><link rel="preload" href="/assets/js/2.e20f0717.js" as="script"><link rel="preload" href="/assets/js/35.dc7a897d.js" as="script"><link rel="prefetch" href="/assets/js/10.7d8fee8d.js"><link rel="prefetch" href="/assets/js/11.dbb1202a.js"><link rel="prefetch" href="/assets/js/12.ba0d3c0b.js"><link rel="prefetch" href="/assets/js/13.6e5891fb.js"><link rel="prefetch" href="/assets/js/14.8955ea8b.js"><link rel="prefetch" href="/assets/js/15.ed925bb2.js"><link rel="prefetch" href="/assets/js/16.2de8c065.js"><link rel="prefetch" href="/assets/js/17.6ab0507f.js"><link rel="prefetch" href="/assets/js/18.f81b8706.js"><link rel="prefetch" href="/assets/js/19.b7345b4d.js"><link rel="prefetch" href="/assets/js/20.3bee7d2e.js"><link rel="prefetch" href="/assets/js/21.5591cf10.js"><link rel="prefetch" href="/assets/js/22.3a516c9a.js"><link rel="prefetch" href="/assets/js/23.6246233e.js"><link rel="prefetch" href="/assets/js/24.d7e6eec4.js"><link rel="prefetch" href="/assets/js/25.a4f358fc.js"><link rel="prefetch" href="/assets/js/26.3342c58d.js"><link rel="prefetch" href="/assets/js/27.06ce8a76.js"><link rel="prefetch" href="/assets/js/28.f2a4a9df.js"><link rel="prefetch" href="/assets/js/29.27df5c71.js"><link rel="prefetch" href="/assets/js/3.639ba76f.js"><link rel="prefetch" href="/assets/js/30.1b71f14d.js"><link rel="prefetch" href="/assets/js/31.55bc1616.js"><link rel="prefetch" href="/assets/js/32.42e4d3d7.js"><link rel="prefetch" href="/assets/js/33.7461ec78.js"><link rel="prefetch" href="/assets/js/34.f59a26b8.js"><link rel="prefetch" href="/assets/js/36.bac959fd.js"><link rel="prefetch" href="/assets/js/37.37a50a5c.js"><link rel="prefetch" href="/assets/js/4.c59397de.js"><link rel="prefetch" href="/assets/js/5.1416dedd.js"><link rel="prefetch" href="/assets/js/6.da068902.js"><link rel="prefetch" href="/assets/js/7.451e510b.js"><link rel="prefetch" href="/assets/js/8.58f554d1.js"><link rel="prefetch" href="/assets/js/9.b70ebacf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7f97cff0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">bxs.ink</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python Menu" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python Menu" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/python/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/python/snippets.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  常用代码片段
+</a></li><li class="dropdown-item"><!----> <a href="/python/build-package.html" class="nav-link">
+  打包项目到PyPI
+</a></li><li class="dropdown-item"><!----> <a href="/python/pyc.html" class="nav-link">
+  pyc文件
+</a></li><li class="dropdown-item"><!----> <a href="/python/name-style.html" class="nav-link">
+  命名风格建议
+</a></li><li class="dropdown-item"><!----> <a href="/python/zen.html" class="nav-link">
+  The Zen of Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java Menu" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java Menu" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/basic.html" class="nav-link">
+  Java基础
+</a></li><li class="dropdown-item"><!----> <a href="/java/jvm.html" class="nav-link">
+  JVM
+</a></li></ul></div></div><div class="nav-item"><a href="/linux/commands-log.html" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docker" class="dropdown-title"><span class="title">Docker</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docker" class="mobile-dropdown-title"><span class="title">Docker</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docker/notes.html" class="nav-link">
+  基础笔记
+</a></li><li class="dropdown-item"><!----> <a href="/docker/experience.html" class="nav-link">
+  问题记录
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-end Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-end Menu" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front-end/nodejs.html" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools Menu" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tools Menu" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git.html" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/collections/" class="nav-link">
+  收藏
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div> <a href="https://github.com/buxianshan/bxs-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python Menu" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python Menu" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/python/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/python/snippets.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  常用代码片段
+</a></li><li class="dropdown-item"><!----> <a href="/python/build-package.html" class="nav-link">
+  打包项目到PyPI
+</a></li><li class="dropdown-item"><!----> <a href="/python/pyc.html" class="nav-link">
+  pyc文件
+</a></li><li class="dropdown-item"><!----> <a href="/python/name-style.html" class="nav-link">
+  命名风格建议
+</a></li><li class="dropdown-item"><!----> <a href="/python/zen.html" class="nav-link">
+  The Zen of Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java Menu" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java Menu" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/basic.html" class="nav-link">
+  Java基础
+</a></li><li class="dropdown-item"><!----> <a href="/java/jvm.html" class="nav-link">
+  JVM
+</a></li></ul></div></div><div class="nav-item"><a href="/linux/commands-log.html" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docker" class="dropdown-title"><span class="title">Docker</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docker" class="mobile-dropdown-title"><span class="title">Docker</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docker/notes.html" class="nav-link">
+  基础笔记
+</a></li><li class="dropdown-item"><!----> <a href="/docker/experience.html" class="nav-link">
+  问题记录
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-end Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-end Menu" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front-end/nodejs.html" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools Menu" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tools Menu" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git.html" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/collections/" class="nav-link">
+  收藏
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div> <a href="https://github.com/buxianshan/bxs-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Python常用代码片段</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/python/snippets.html#读写json文件" class="sidebar-link">读写json文件</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/python/snippets.html#逐行读写文本" class="sidebar-link">逐行读写文本</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/python/snippets.html#读写csv文件" class="sidebar-link">读写csv文件</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/python/snippets.html#配置文件解析器-configparser" class="sidebar-link">配置文件解析器：configparser</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/python/snippets.html#读写yaml文件" class="sidebar-link">读写YAML文件</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/python/snippets.html#获取某个文件夹中的所有文件" class="sidebar-link">获取某个文件夹中的所有文件</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/python/snippets.html#logging模块的使用" class="sidebar-link">logging模块的使用</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/python/snippets.html#使用traceback打印异常信息" class="sidebar-link">使用traceback打印异常信息</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/python/snippets.html#获取当前时间戳" class="sidebar-link">获取当前时间戳</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 align="center">Python常用代码片段</h1> <h2 id="读写json文件"><a href="#读写json文件" class="header-anchor">#</a> 读写json文件</h2> <p>特别注意编码：</p> <ul><li><p>读写文件时建议使用utf8编码，不然中文会乱码</p></li> <li><p>json.dump序列化时默认使用ASCII码，想要在json文件中显示中文，需要指定ensure_ascii=False</p></li></ul> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> json
+
+
+<span class="token comment"># 读取json文件</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>json_file<span class="token punctuation">,</span> <span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    data <span class="token operator">=</span> json<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+
+<span class="token comment"># 写入json文件</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>json_file<span class="token punctuation">,</span> <span class="token string">&quot;w&quot;</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    json<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>data<span class="token punctuation">,</span> f<span class="token punctuation">,</span> ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="逐行读写文本"><a href="#逐行读写文本" class="header-anchor">#</a> 逐行读写文本</h2> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>file_path<span class="token punctuation">,</span> <span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    lines <span class="token operator">=</span> f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>lines<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        do_something<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>file_path<span class="token punctuation">,</span> <span class="token string">&quot;w&quot;</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    content <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>lines<span class="token punctuation">)</span>
+    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="读写csv文件"><a href="#读写csv文件" class="header-anchor">#</a> 读写csv文件</h2> <p>demo.csv</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>id,name
+1,张三
+2,Tom
+3,Peter
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>读取csv文件内容：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> csv
+
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'demo.csv'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    csv_reader <span class="token operator">=</span> csv<span class="token punctuation">.</span>reader<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> row <span class="token keyword">in</span> csv_reader<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+<span class="token triple-quoted-string string">'''
+['id', 'name']
+['1', '张三']
+['2', 'Tom']
+['3', 'Peter']
+'''</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>生成csv文件：</p> <ul><li>注意编码encoding='utf-8-sig'</li> <li>如果不写newline=''，生成的csv文件中可能会出现很多空行</li></ul> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> csv
+
+
+data <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'张三'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'Tom'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'3'</span><span class="token punctuation">,</span> <span class="token string">'Peter'</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span>
+<span class="token comment"># 注意这里编码是utf-8-sig</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'demo.csv'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8-sig'</span><span class="token punctuation">,</span> newline<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    csv_writer <span class="token operator">=</span> csv<span class="token punctuation">.</span>writer<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> row <span class="token keyword">in</span> data<span class="token punctuation">:</span>
+        csv_writer<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span>row<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="配置文件解析器-configparser"><a href="#配置文件解析器-configparser" class="header-anchor">#</a> 配置文件解析器：configparser</h2> <p>官方文档：<a href="https://docs.python.org/zh-cn/3/library/configparser.html#module-configparser" target="_blank" rel="noopener noreferrer">configparser --- 配置文件解析器<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>它可以解析类似 Microsoft Windows INI 这样的文件。</p> <p>例如长这样：config.ini</p> <div class="language- line-numbers-mode"><pre class="language-text"><code># 这是注释
+; 这是注释
+[Default]
+url = https://baidu.com
+name = 张三
+
+[Debug]
+isDebug = False
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>使用方法（这是一个有坑的例子，后面才是常用的方法）：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> configparser
+
+
+config <span class="token operator">=</span> configparser<span class="token punctuation">.</span>ConfigParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+config<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token string">'config.ini'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> section <span class="token keyword">in</span> config<span class="token punctuation">.</span>sections<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;Section: </span><span class="token interpolation"><span class="token punctuation">{</span>section<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> key <span class="token keyword">in</span> config<span class="token punctuation">[</span>section<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;Key: </span><span class="token interpolation"><span class="token punctuation">{</span>key<span class="token punctuation">}</span></span><span class="token string"> Value: </span><span class="token interpolation"><span class="token punctuation">{</span>config<span class="token punctuation">[</span>section<span class="token punctuation">]</span><span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># Output</span>
+<span class="token comment"># Section: Default</span>
+<span class="token comment"># Key: url Value: https://baidu.com</span>
+<span class="token comment"># Key: name Value: 寮犱笁</span>
+<span class="token comment"># Section: Debug</span>
+<span class="token comment"># Key: isdebug Value: False</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>根据上面的例子并且参考官方的解释，有以下几点需要注意：</p> <ul><li><p>所有key、value都是以字符串的形式存储，如果需要其它数据类型需要自行转换。</p></li> <li><p>注意读取的时候编码设为<code>utf-8</code>，不然中文会乱码。</p></li> <li><p>默认情况下所有的Key都会被强制转换成小写，想要保持大写参考这里：<a href="https://docs.python.org/zh-cn/3/library/configparser.html#customizing-parser-behaviour" target="_blank" rel="noopener noreferrer">ConfigParser.optionxform(<em>option</em>)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><img src="https://buxianshan.oss-cn-beijing.aliyuncs.com/Typora_images/image-20220329192428381.png" alt="image-20220329192428381"></p></li></ul> <p>下面是解决了以上问题的例子：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> configparser
+
+
+config <span class="token operator">=</span> configparser<span class="token punctuation">.</span>RawConfigParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 解决Key默认转小写的问题，直接返回原字符串</span>
+config<span class="token punctuation">.</span>optionxform <span class="token operator">=</span> <span class="token keyword">lambda</span> option<span class="token punctuation">:</span> option
+<span class="token comment"># 解决中文乱码问题，加上utf-8编码</span>
+config<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token string">'config.ini'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> section <span class="token keyword">in</span> config<span class="token punctuation">.</span>sections<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;Section: </span><span class="token interpolation"><span class="token punctuation">{</span>section<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> key <span class="token keyword">in</span> config<span class="token punctuation">[</span>section<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;Key: </span><span class="token interpolation"><span class="token punctuation">{</span>key<span class="token punctuation">}</span></span><span class="token string"> Value: </span><span class="token interpolation"><span class="token punctuation">{</span>config<span class="token punctuation">[</span>section<span class="token punctuation">]</span><span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># Output</span>
+<span class="token comment"># Section: Default</span>
+<span class="token comment"># Key: url Value: https://baidu.com</span>
+<span class="token comment"># Key: name Value: 张三</span>
+<span class="token comment"># Section: Debug</span>
+<span class="token comment"># Key: isDebug Value: False</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h2 id="读写yaml文件"><a href="#读写yaml文件" class="header-anchor">#</a> 读写YAML文件</h2> <p>什么是YAML文件：<a href="https://yaml.org/" target="_blank" rel="noopener noreferrer">YAML is a human-friendly data serialization language for all programming languages.<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>例如有config.yaml：</p> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token comment"># 这是注释</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> 张三
+<span class="token key atrule">sex</span><span class="token punctuation">:</span> Male
+<span class="token key atrule">class</span><span class="token punctuation">:</span> Priest
+<span class="token key atrule">title</span><span class="token punctuation">:</span> Acolyte
+<span class="token key atrule">hp</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">71</span><span class="token punctuation">]</span>
+<span class="token key atrule">sp</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">]</span>
+<span class="token key atrule">gold</span><span class="token punctuation">:</span> <span class="token number">423</span>
+<span class="token key atrule">inventory</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> a Holy Book of Prayers (Words of Wisdom)
+<span class="token punctuation">-</span> an Azure Potion of Cure Light Wounds
+<span class="token punctuation">-</span> a Silver Wand of Wonder
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>Python读写yaml文件的方式：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> yaml
+<span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+
+
+<span class="token comment"># 读取</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;config.yaml&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;r&quot;</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    data <span class="token operator">=</span> yaml<span class="token punctuation">.</span>safe_load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+
+pprint<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+
+
+<span class="token comment"># 写入</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">&quot;test.yaml&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;w&quot;</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    yaml<span class="token punctuation">.</span>safe_dump<span class="token punctuation">(</span>data<span class="token punctuation">,</span> f<span class="token punctuation">,</span> allow_unicode<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>输出：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>{'class': 'Priest',
+ 'gold': 423,
+ 'hp': [32, 71],
+ 'inventory': ['a Holy Book of Prayers (Words of Wisdom)',
+               'an Azure Potion of Cure Light Wounds',
+               'a Silver Wand of Wonder'],
+ 'name': '张三',
+ 'sex': 'Male',
+ 'sp': [1, 13],
+ 'title': 'Acolyte'}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="获取某个文件夹中的所有文件"><a href="#获取某个文件夹中的所有文件" class="header-anchor">#</a> 获取某个文件夹中的所有文件</h2> <ul><li>os.listdir获取指定目录下第一层的所有文件名列表，包括文件夹和文件</li> <li>生成指定文件的路径用os.path.join，可以避免操作系统路径分隔符不同的问题</li></ul> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> os
+
+
+folder_path <span class="token operator">=</span> <span class="token string">&quot;./&quot;</span>
+<span class="token comment"># 获取某个文件夹中所有文件列表</span>
+file_list <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>folder_path<span class="token punctuation">)</span>
+<span class="token comment"># 区分文件和文件夹</span>
+folders <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+files <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token builtin">file</span> <span class="token keyword">in</span> file_list<span class="token punctuation">:</span>
+    file_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>folder_path<span class="token punctuation">,</span> <span class="token builtin">file</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        folders<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        files<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="logging模块的使用"><a href="#logging模块的使用" class="header-anchor">#</a> logging模块的使用</h2> <p><a href="https://docs.python.org/zh-cn/3/library/logging.html" target="_blank" rel="noopener noreferrer">logging模块<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>是Python官方的日志记录工具。</p> <p>格式化可用的属性：<a href="https://docs.python.org/zh-cn/3/library/logging.html#logrecord-attributes" target="_blank" rel="noopener noreferrer">LogRecord 属性<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>记录一下我常用的格式，已封装成一个模块：fine_logger.py</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">from</span> logging <span class="token keyword">import</span> <span class="token operator">*</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">FineLogger</span><span class="token punctuation">(</span>Logger<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> level<span class="token operator">=</span>NOTSET<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        Logger<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token operator">=</span>name<span class="token punctuation">,</span> level<span class="token operator">=</span>level<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">set_log_file</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> log_path<span class="token operator">=</span><span class="token string">&quot;debug.log&quot;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        如果要同时把日志记录到文件中，需要通过此方法设置路径
+        :param log_path: 日志文件路径
+        &quot;&quot;&quot;</span>
+        <span class="token comment"># 使用FileHandler把日志输出到文件</span>
+        file_handler <span class="token operator">=</span> FileHandler<span class="token punctuation">(</span>log_path<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+        file_handler<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>formatter<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>file_handler<span class="token punctuation">)</span>
+
+
+fine_logger <span class="token operator">=</span> FineLogger<span class="token punctuation">(</span><span class="token string">&quot;root&quot;</span><span class="token punctuation">)</span>
+<span class="token comment"># log级别</span>
+fine_logger<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>INFO<span class="token punctuation">)</span>
+<span class="token comment"># 设置格式</span>
+formatter <span class="token operator">=</span> Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s thread-%(threadName)s %(module)s [%(levelname)s] %(message)s'</span><span class="token punctuation">,</span>
+                      datefmt<span class="token operator">=</span><span class="token string">'%Y-%m-%d %H:%M:%S'</span><span class="token punctuation">)</span>
+<span class="token comment"># 使用StreamHandler把日志输出到控制台</span>
+stream_handler <span class="token operator">=</span> StreamHandler<span class="token punctuation">(</span><span class="token punctuation">)</span>
+stream_handler<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>formatter<span class="token punctuation">)</span>
+fine_logger<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>stream_handler<span class="token punctuation">)</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p>使用时只需要导入fine_logger模块：app.py</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">from</span> fine_logger <span class="token keyword">import</span> fine_logger
+
+
+<span class="token comment"># 如果要同时把日志记录到文件中，需要先设置日志路径，默认是./debug.log</span>
+fine_logger<span class="token punctuation">.</span>set_log_file<span class="token punctuation">(</span><span class="token punctuation">)</span>
+fine_logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">&quot;Hello&quot;</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>输出格式如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>2022-03-22 22:40:56 thread-MainThread app [INFO] Hello
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="使用traceback打印异常信息"><a href="#使用traceback打印异常信息" class="header-anchor">#</a> 使用traceback打印异常信息</h2> <p>捕获异常时如果直接打印<code>str(e)</code>得到的信息很少，而使用traceback可以打印出堆栈信息。</p> <p>官方文档：<a href="https://docs.python.org/zh-cn/3.7/library/traceback.html" target="_blank" rel="noopener noreferrer">traceback --- 打印或检索堆栈回溯<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>demo.py</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> traceback
+
+
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    a <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">0</span>
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>traceback<span class="token punctuation">.</span>format_exc<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>output：</p> <blockquote><p>注意这里是打印出了异常的堆栈信息，程序并没有异常中断</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>Traceback (most recent call last):
+  File &quot;**/demo.py&quot;, line 5, in &lt;module&gt;
+    a = 1/0
+ZeroDivisionError: division by zero
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="获取当前时间戳"><a href="#获取当前时间戳" class="header-anchor">#</a> 获取当前时间戳</h2> <p>更多格式可以参考文档：<a href="https://docs.python.org/zh-cn/3.7/library/time.html#time.strftime" target="_blank" rel="noopener noreferrer">time.strftime(format[, t])<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">print</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">&quot;%Y-%m-%d %H:%M:%S&quot;</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 2022-03-25 15:48:51</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/buxianshan/bxs-blog/edit/master/docs/python/snippets.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2022-04-07 17:09:23</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.8911f850.js" defer></script><script src="/assets/js/2.e20f0717.js" defer></script><script src="/assets/js/35.dc7a897d.js" defer></script>
+  </body>
+</html>
