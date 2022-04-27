@@ -54,7 +54,6 @@ module.exports = {
                     {text: '问题记录', link: '/docker/experience'},
                 ]
             },
-            {text: 'Blog', link: '/blog/'},
             {
                 text: '前端',
                 ariaLabel: 'Front-end Menu',
@@ -62,6 +61,7 @@ module.exports = {
                     {text: 'Node.js', link: '/front-end/nodejs'},
                 ]
             },
+            {text: 'Blog', link: '/blog/'},
             {
                 text: '工具',
                 ariaLabel: 'Tools Menu',
