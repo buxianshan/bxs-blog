@@ -1,6 +1,6 @@
 ---
 title: Java基础
-sidebar: auto
+sidebarDepth: 0
 ---
 
 <h1 align='center'>Java基础</h1>
@@ -233,6 +233,155 @@ class Outter {
         public Inner() {
              
         }
+    }
+}
+```
+
+## 泛型
+
+泛型提供了编译时类型安全检测机制，该机制可以在编译时检测到非法的类型。泛型的本质是参数化类型，也就是说所操作的数据类型被指定为一个参数。泛型，即“参数化类型”。
+
+类型参数用尖括号包围`< >`，java中这种尖括号就是指泛型。注意类型参数只能代表引用型类型，不能是原始类型（像 **int、double、char** 等）。
+
+**java 中泛型常用的标识符：**其实使用任何标识符都可以，只是下面这些是比较常用的方便理解的写法。
+
+- **E** - Element（在集合中使用，表示是元素）
+- **T** - Type（Java 类）
+- **K** - Key（键）
+- **V** - Value（值）
+- **N** - Number（数值类型）
+- **？** - 表示不确定的类型
+
+### 泛型类
+
+泛型类型用于类的定义中，被称为泛型类。通过泛型可以完成对一组类的操作对外开放相同的接口。最典型的就是各种容器类，如：List、Set、Map。
+
+```java
+public class Generic<T>{ 
+    private T key;
+
+    public Generic(T key) {
+        this.key = key;
+    }
+
+    public T getKey(){
+        return key;
+    }
+}
+```
+
+使用泛型类
+
+```java
+// Integer类型
+Generic<Integer> genericInteger = new Generic<Integer>(123456);
+System.out.println(genericInteger.getKey());
+
+// String类型
+Generic<String> genericString = new Generic<String>("vlaue");
+System.out.println(genericString.getKey());
+```
+
+### 泛型接口
+
+泛型接口与泛型类的定义及使用基本相同。
+
+```java
+// 定义一个泛型接口
+public interface Generator<T> {
+    public T next();
+}
+```
+
+实现泛型接口，可以不传入类型实参：
+
+```java
+class FruitGenerator<T> implements Generator<T>{
+    @Override
+    public T next() {
+        return null;
+    }
+}
+```
+
+实现泛型接口，也可以传入类型实参：
+
+```java
+public class FruitGenerator implements Generator<String> {
+
+    private String[] fruits = new String[]{"Apple", "Banana", "Pear"};
+
+    @Override
+    public String next() {
+        Random rand = new Random();
+        return fruits[rand.nextInt(3)];
+    }
+}
+```
+
+### 泛型方法
+
+泛型类是在实例化类的时候指明泛型的具体类型。而泛型方法是在调用方法的时候指明泛型的具体类型 。
+
+泛型方法比较复杂，这只是一个简单的例子：
+
+```java
+public class GenericsDemo {
+    // 泛型方法 printArray
+    public static <E> void printArray(E[] inputArray) {
+        // 输出数组元素
+        for (E element : inputArray) {
+            System.out.printf("%s ", element);
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        // 创建不同类型数组： Integer, Double 和 Character
+        Integer[] intArray = {1, 2, 3, 4, 5};
+        Double[] doubleArray = {1.1, 2.2, 3.3, 4.4};
+        Character[] charArray = {'H', 'E', 'L', 'L', 'O'};
+
+        System.out.println("整型数组元素为:");
+        // 传递一个整型数组
+        printArray(intArray);
+
+        System.out.println("\n双精度型数组元素为:");
+        // 传递一个双精度型数组
+        printArray(doubleArray);
+
+        System.out.println("\n字符型数组元素为:");
+        // 传递一个字符型数组
+        printArray(charArray);
+    }
+}
+```
+
+### 泛型通配符
+
+使用`?`代替具体的类型参数。例如 `List<?>` 在逻辑上是 `List<String>`、`List<Integer>` 等所有 `List<具体类型实参>` 的父类。
+
+```java
+public class GenericTest {
+
+    public static void main(String[] args) {
+        List<String> name = new ArrayList<>();
+        List<Integer> age = new ArrayList<>();
+        List<Number> number = new ArrayList<>();
+
+        name.add("icon");
+        age.add(18);
+        number.add(314);
+
+        // 下面这行编译报错: 不兼容的类型: java.util.List<java.lang.String>无法转换为java.util.List<? extends java.lang.Number>
+        //getFirstNumber(name);
+        getFirstNumber(age);
+        getFirstNumber(number);
+
+    }
+
+    public static void getFirstNumber(List<? extends Number> data) {
+        System.out.println("data :" + data.get(0));
     }
 }
 ```
