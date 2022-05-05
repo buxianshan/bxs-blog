@@ -61,7 +61,6 @@ module.exports = {
                     {text: 'Node.js', link: '/front-end/nodejs'},
                 ]
             },
-            {text: 'Blog', link: '/blog/'},
             {
                 text: '工具',
                 ariaLabel: 'Tools Menu',
@@ -69,6 +68,7 @@ module.exports = {
                     {text: 'Git', link: '/tools/git'},
                 ]
             },
+            {text: 'Blog', link: '/blog/'},
             {text: '收藏', link: '/collections/'},
             {text: '关于', link: '/about/'}
         ],
