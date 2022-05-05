@@ -1,9 +1,38 @@
 ---
-title: Python 类
+title: Python 面向对象
 ---
 
+<h1 align='center'>Python 面向对象</h1>
 
-## 没有真正意义的私有变量
+::: warning 注意
+
+Python中有大量语法糖，特性和C++、Java也不同，个人认为不需要全都了解，用到什么学什么就好了。
+
+:::
+
+## 数据模型
+
+参考Python官方文档：[数据模型](https://docs.python.org/zh-cn/3.9/reference/datamodel.html)
+
+*对象* 是 Python 中对数据的抽象。 Python 程序中的所有数据都是由对象或对象间关系来表示的。 （从某种意义上说，按照冯·诺依曼的“存储程序计算机”模型，代码本身也是由对象来表示的。）
+
+每个对象都有各自的编号、类型和值。一个对象被创建后，它的 *编号* 就绝不会改变；你可以将其理解为该对象在内存中的地址。 '[`is`](https://docs.python.org/zh-cn/3.9/reference/expressions.html#is)' 运算符可以比较两个对象的编号是否相同；[`id()`](https://docs.python.org/zh-cn/3.9/library/functions.html#id) 函数能返回一个代表其编号的整型数。
+
+## 特殊方法名称
+
+### `object.__init__(self[, ...])`
+
+
+
+
+
+### `object.__new__(cls[, ...])`
+
+
+
+
+
+## 私有变量
 
 经常听说在 Python 类中以一个下划线开头的变量是保护类型（protected ）的变量，以双下划线开头的变量是私有类型（private）的变量。
 
