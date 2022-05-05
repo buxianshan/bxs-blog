@@ -6,6 +6,10 @@ title: 设计模式
 本文参考[《白话设计模式 28 讲》](https://gitbook.cn/gitchat/column/5b26040ac81ac568fcf64ea3)，感谢作者！
 :::
 
+## 本文简介
+
+这是我在学习设计模式的过程中做的一些记录，每一种设计模式尽量使用 Java 和 Python 分别实现样例。
+
 ## 什么是设计模式
 
 **设计模式**最初是被 GoF 于 1995 年提出的，GoF（Gang of Four，四人帮）即 Erich Gamma、Richard Helm、Ralph Johnson和John Vlissides。他们四人于 1995 年出版了一本书《Design Patterns：Elements of Reusable Object-Oriented Software》（翻译成中文是《设计模式 可复用面向对象软件的基础》），第一次将设计模式提升到理论高度，并将之规范化，该书提出了 23 种经典的设计模式。
@@ -17,6 +21,3 @@ title: 设计模式
 - 解决方案：设计的组成部分，它们之间的相互关系及各自的职责和协作方式；
 - 效果：使用模式能达到的效果，即对使用条件的权衡取舍。
 
-## 本文简介
-
-这是我在学习设计模式的过程中做的一些记录，每一种设计模式尽量使用 Java 和 Python 分别实现样例。
