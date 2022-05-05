@@ -46,6 +46,13 @@ module.exports = {
                     {text: 'JVM', link: '/java/jvm'},
                 ]
             },
+            {
+                text: '设计模式',
+                ariaLabel: 'Design Patterns Menu',
+                items: [
+                    {text: '简介', link: '/design-patterns/introduction'},
+                ]
+            },
             {text: 'Linux', link: '/linux/commands-log'},
             // {text: 'Docker', link: '/docker/'},
             {
@@ -81,6 +88,7 @@ module.exports = {
                 ['shell', '关于shell'],
             ],
             '/java/': 'auto',
+            '/design-patterns/': 'auto',
             '/docker/': [
                 ['notes', '基础笔记'],
                 ['experience', '问题记录']
