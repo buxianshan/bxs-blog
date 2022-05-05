@@ -48,17 +48,17 @@ module.exports = {
             {text: 'Linux', link: '/linux/commands-log'},
             // {text: 'Docker', link: '/docker/'},
             {
-                text: 'Docker',
-                items: [
-                    {text: '基础笔记', link: '/docker/notes'},
-                    {text: '问题记录', link: '/docker/experience'},
-                ]
-            },
-            {
                 text: '前端',
                 ariaLabel: 'Front-end Menu',
                 items: [
                     {text: 'Node.js', link: '/front-end/nodejs'},
+                ]
+            },
+            {
+                text: 'Docker',
+                items: [
+                    {text: '基础笔记', link: '/docker/notes'},
+                    {text: '问题记录', link: '/docker/experience'},
                 ]
             },
             {
