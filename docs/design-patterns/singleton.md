@@ -107,3 +107,48 @@ public enum EnumSingle {
 ![image-20220506100432365](https://buxianshan.oss-cn-beijing.aliyuncs.com/Typora_images/image-20220506100432365.png)
 
 可以看到如果是枚举类型直接抛出异常了，JDK反射机制内部完全禁止了用反射创建枚举实例的可能性。
+
+## Python 单例模式
+
+参考：[Python中的单例模式的几种实现方式的及优化](https://www.cnblogs.com/huchong/p/8244279.html)
+
+### 重写`__new()__`方法
+
+在Python中当我们实例化一个对象时，是先执行了类的`__new__`方法（我们没写时，默认调用`object.__new__`）实例化对象。然后再执行类的`__init__`方法，对这个对象进行初始化。所以我们可以基于这个，实现单例模式，并且支持多线程：
+
+```python
+import threading
+
+
+class Singleton(object):
+    _instance_lock = threading.Lock()
+
+    def __init__(self):
+        pass
+
+    def __new__(cls, *args, **kwargs):
+        if not hasattr(Singleton, "_instance"):
+            with Singleton._instance_lock:
+                if not hasattr(Singleton, "_instance"):
+                    Singleton._instance = object.__new__(cls)
+        return Singleton._instance
+
+
+if __name__ == '__main__':
+    # test
+    obj1 = Singleton()
+    obj2 = Singleton()
+    print(id(obj1), id(obj2))
+
+    # test multithreading
+    def task(args):
+        obj = Singleton()
+        print(id(obj))
+
+
+    for i in range(10):
+        t = threading.Thread(target=task, args=[i, ])
+        t.start()
+```
+
+注意和 Java 中的单例不同，Java 构造器私有禁止在外部new对象，而python无法做到构造器私有，创建单例仍然使用普通的声明对象格式`singleton = Singleton()`，只是在实例化时返回的是同一个对象。
