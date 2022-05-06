@@ -152,3 +152,29 @@ if __name__ == '__main__':
 ```
 
 注意和 Java 中的单例不同，Java 构造器私有禁止在外部new对象，而python无法做到构造器私有，创建单例仍然使用普通的声明对象格式`singleton = Singleton()`，只是在实例化时返回的是同一个对象。
+
+### 使用模块实现天然单例
+
+由于模块的import机制，在程序运行期间，同一个模块只会加载一次，所以从模块中导入的对象只有一个，无论import多少次，得到的都是同一个对象。Python的模块不仅是单例模式，还是线程安全的单例模式，即使多线程并发导入同一个模块，也不会重复装载模块。
+
+mysingleton.py
+
+```python
+class Singleton(object):
+    def foo(self):
+        pass
+
+
+singleton = Singleton()
+```
+
+使用：
+
+```python
+from mysingleton import singleton
+
+
+if __name__ == '__main__':
+    print(id(singleton))
+```
+
