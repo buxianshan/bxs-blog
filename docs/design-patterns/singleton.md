@@ -178,10 +178,10 @@ if __name__ == '__main__':
     print(id(singleton))
 ```
 
-## 使用装饰器
+### 使用装饰器
 
 ……
 
-## 基于metaclass方式实现
+### 基于metaclass方式实现
 
 ……
