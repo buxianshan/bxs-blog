@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>单例模式 | bxs.ink</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="https://buxianshan.oss-cn-beijing.aliyuncs.com/favicon.ico?versionId=CAEQMhiBgID7jPeK_BciIGUwMGYzZWJmMzM3NTQ4NDI5N2FhZDk3NDRiZjYzNjFl">
+    <script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?40291c62c61f1ce49b021bc0f36df71e";
+            if (window.location.hostname !== "localhost") {
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            }
+        })();</script>
+    <meta name="description" content="一些个人理解、笔记和分享">
+    
+    <link rel="preload" href="/bxs-blog/assets/css/0.styles.a2c13d1a.css" as="style"><link rel="preload" href="/bxs-blog/assets/js/app.3b8f5e41.js" as="script"><link rel="preload" href="/bxs-blog/assets/js/2.e20f0717.js" as="script"><link rel="preload" href="/bxs-blog/assets/js/22.8c21f5d6.js" as="script"><link rel="prefetch" href="/bxs-blog/assets/js/10.7d8fee8d.js"><link rel="prefetch" href="/bxs-blog/assets/js/11.a655d377.js"><link rel="prefetch" href="/bxs-blog/assets/js/12.4836946d.js"><link rel="prefetch" href="/bxs-blog/assets/js/13.315882db.js"><link rel="prefetch" href="/bxs-blog/assets/js/14.a631edd1.js"><link rel="prefetch" href="/bxs-blog/assets/js/15.3ccc3074.js"><link rel="prefetch" href="/bxs-blog/assets/js/16.3a0e5dcf.js"><link rel="prefetch" href="/bxs-blog/assets/js/17.6ab0507f.js"><link rel="prefetch" href="/bxs-blog/assets/js/18.f81b8706.js"><link rel="prefetch" href="/bxs-blog/assets/js/19.b7345b4d.js"><link rel="prefetch" href="/bxs-blog/assets/js/20.3bee7d2e.js"><link rel="prefetch" href="/bxs-blog/assets/js/21.f5759851.js"><link rel="prefetch" href="/bxs-blog/assets/js/23.9d7561bd.js"><link rel="prefetch" href="/bxs-blog/assets/js/24.551daf52.js"><link rel="prefetch" href="/bxs-blog/assets/js/25.6a1d4ef7.js"><link rel="prefetch" href="/bxs-blog/assets/js/26.5fe9af90.js"><link rel="prefetch" href="/bxs-blog/assets/js/27.a9db25bc.js"><link rel="prefetch" href="/bxs-blog/assets/js/28.bb44a3bf.js"><link rel="prefetch" href="/bxs-blog/assets/js/29.ec545ea9.js"><link rel="prefetch" href="/bxs-blog/assets/js/3.d2c81edd.js"><link rel="prefetch" href="/bxs-blog/assets/js/30.568ee44f.js"><link rel="prefetch" href="/bxs-blog/assets/js/31.cea20cbe.js"><link rel="prefetch" href="/bxs-blog/assets/js/32.821ed503.js"><link rel="prefetch" href="/bxs-blog/assets/js/33.148d8752.js"><link rel="prefetch" href="/bxs-blog/assets/js/34.9da7ff47.js"><link rel="prefetch" href="/bxs-blog/assets/js/35.88041582.js"><link rel="prefetch" href="/bxs-blog/assets/js/36.5ddee9ba.js"><link rel="prefetch" href="/bxs-blog/assets/js/37.699e9bc7.js"><link rel="prefetch" href="/bxs-blog/assets/js/38.effa390b.js"><link rel="prefetch" href="/bxs-blog/assets/js/39.c47d188f.js"><link rel="prefetch" href="/bxs-blog/assets/js/4.c59397de.js"><link rel="prefetch" href="/bxs-blog/assets/js/40.1411d596.js"><link rel="prefetch" href="/bxs-blog/assets/js/5.1416dedd.js"><link rel="prefetch" href="/bxs-blog/assets/js/6.da068902.js"><link rel="prefetch" href="/bxs-blog/assets/js/7.451e510b.js"><link rel="prefetch" href="/bxs-blog/assets/js/8.58f554d1.js"><link rel="prefetch" href="/bxs-blog/assets/js/9.b70ebacf.js">
+    <link rel="stylesheet" href="/bxs-blog/assets/css/0.styles.a2c13d1a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/bxs-blog/" class="home-link router-link-active"><!----> <span class="site-name">bxs.ink</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/bxs-blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python Menu" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python Menu" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/python/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/snippets.html" class="nav-link">
+  常用代码片段
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/class.html" class="nav-link">
+  Python 面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/build-package.html" class="nav-link">
+  打包项目到PyPI
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/pyc.html" class="nav-link">
+  pyc文件
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/name-style.html" class="nav-link">
+  命名风格建议
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/zen.html" class="nav-link">
+  The Zen of Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java Menu" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java Menu" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/java/basic.html" class="nav-link">
+  Java基础
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/java/jvm.html" class="nav-link">
+  JVM
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Design Patterns Menu" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Design Patterns Menu" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/singleton.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  单例模式
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/linux/commands-log.html" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-end Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-end Menu" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/nodejs.html" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docker" class="dropdown-title"><span class="title">Docker</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docker" class="mobile-dropdown-title"><span class="title">Docker</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/notes.html" class="nav-link">
+  基础笔记
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/experience.html" class="nav-link">
+  问题记录
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools Menu" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tools Menu" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/tools/git.html" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="/bxs-blog/collections/" class="nav-link">
+  收藏
+</a></div><div class="nav-item"><a href="/bxs-blog/about/" class="nav-link">
+  关于
+</a></div> <a href="https://github.com/buxianshan/bxs-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/bxs-blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python Menu" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python Menu" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/python/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/snippets.html" class="nav-link">
+  常用代码片段
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/class.html" class="nav-link">
+  Python 面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/build-package.html" class="nav-link">
+  打包项目到PyPI
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/pyc.html" class="nav-link">
+  pyc文件
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/name-style.html" class="nav-link">
+  命名风格建议
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/zen.html" class="nav-link">
+  The Zen of Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java Menu" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java Menu" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/java/basic.html" class="nav-link">
+  Java基础
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/java/jvm.html" class="nav-link">
+  JVM
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Design Patterns Menu" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Design Patterns Menu" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/singleton.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  单例模式
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/linux/commands-log.html" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-end Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-end Menu" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/nodejs.html" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docker" class="dropdown-title"><span class="title">Docker</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docker" class="mobile-dropdown-title"><span class="title">Docker</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/notes.html" class="nav-link">
+  基础笔记
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/experience.html" class="nav-link">
+  问题记录
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools Menu" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tools Menu" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/tools/git.html" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="/bxs-blog/collections/" class="nav-link">
+  收藏
+</a></div><div class="nav-item"><a href="/bxs-blog/about/" class="nav-link">
+  关于
+</a></div> <a href="https://github.com/buxianshan/bxs-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>单例模式</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/bxs-blog/design-patterns/singleton.html#java-单例模式" class="sidebar-link">Java 单例模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/bxs-blog/design-patterns/singleton.html#饿汉式" class="sidebar-link">饿汉式</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/design-patterns/singleton.html#懒汉式" class="sidebar-link">懒汉式</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/design-patterns/singleton.html#静态内部类实现单例" class="sidebar-link">静态内部类实现单例</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/design-patterns/singleton.html#枚举实现单例模式" class="sidebar-link">枚举实现单例模式</a></li></ul></li><li><a href="/bxs-blog/design-patterns/singleton.html#python-单例模式" class="sidebar-link">Python 单例模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/bxs-blog/design-patterns/singleton.html#重写-new-方法" class="sidebar-link">重写__new()__方法</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/design-patterns/singleton.html#使用模块实现天然单例" class="sidebar-link">使用模块实现天然单例</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/design-patterns/singleton.html#使用装饰器" class="sidebar-link">使用装饰器</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/design-patterns/singleton.html#基于metaclass方式实现" class="sidebar-link">基于metaclass方式实现</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 align="center">单例模式</h1> <p>为了节省内存资源、保证数据内容的一致性，对某些类要求只能创建一个实例，这就是所谓的单例模式。</p> <h2 id="java-单例模式"><a href="#java-单例模式" class="header-anchor">#</a> Java 单例模式</h2> <p>推荐看看这个<a href="https://www.bilibili.com/video/BV1K54y197iS" target="_blank" rel="noopener noreferrer">视频教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p> <p>核心是造器私有，别人就不能在外部创建对象了。</p> <h3 id="饿汉式"><a href="#饿汉式" class="header-anchor">#</a> 饿汉式</h3> <p>程序一开始就创建了这个对象，所以叫饿汉式。</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">/**
+ * 单例模式-饿汉式
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Hungry</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">Hungry</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">static</span> <span class="token class-name">Hungry</span> INSTANCE <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Hungry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Hungry</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> INSTANCE<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="懒汉式"><a href="#懒汉式" class="header-anchor">#</a> 懒汉式</h3> <p>饿汉式可能会浪费内存空间，于是出现了懒汉式，在第一次需要用到的时候再创建对象。</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">/**
+ * 单例模式-懒汉式
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Lazy</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">Lazy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 必须要加volatile，使new的时候是个原子操作，避免在new还没结束的时候，别的线程访问了该地址返回了一个虚空的对象(发生未知异常)</span>
+    <span class="token keyword">private</span> <span class="token keyword">volatile</span> <span class="token keyword">static</span> <span class="token class-name">Lazy</span> INSTANCE<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Lazy</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>INSTANCE <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 双重检测锁模式的懒汉模式(DCL)：为了确保多线程安全，这里加锁</span>
+            <span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token class-name">Lazy</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>INSTANCE <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    INSTANCE <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Lazy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> INSTANCE<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h3 id="静态内部类实现单例"><a href="#静态内部类实现单例" class="header-anchor">#</a> 静态内部类实现单例</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">/**
+ * 静态内部类实现单例模式
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InnerStatic</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">InnerStatic</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">InnerStatic</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">InnerClass</span><span class="token punctuation">.</span>INSTANCE<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">InnerClass</span><span class="token punctuation">{</span>
+        <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">InnerStatic</span> INSTANCE <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InnerStatic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h3 id="枚举实现单例模式"><a href="#枚举实现单例模式" class="header-anchor">#</a> 枚举实现单例模式</h3> <p>这是实现单例模式的最佳方法，多线程安全。前面几种方式其实都能被反射破坏安全性，而使用枚举的方式不会被反射破坏。</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">/**
+ * 枚举实现单例模式，最安全，反射也不能破坏！
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">EnumSingle</span> <span class="token punctuation">{</span>
+    INSTANCE<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">EnumSingle</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> INSTANCE<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>为什么反射不能创建枚举的实例呢？在 java.lang.reflect.Constructor#newInstance 中有这么一段：</p> <p><img src="https://buxianshan.oss-cn-beijing.aliyuncs.com/Typora_images/image-20220506100432365.png" alt="image-20220506100432365"></p> <p>可以看到如果是枚举类型直接抛出异常了，JDK反射机制内部完全禁止了用反射创建枚举实例的可能性。</p> <h2 id="python-单例模式"><a href="#python-单例模式" class="header-anchor">#</a> Python 单例模式</h2> <p>参考：<a href="https://www.cnblogs.com/huchong/p/8244279.html" target="_blank" rel="noopener noreferrer">Python中的单例模式的几种实现方式的及优化<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="重写-new-方法"><a href="#重写-new-方法" class="header-anchor">#</a> 重写<code>__new()__</code>方法</h3> <p>在Python中当我们实例化一个对象时，是先执行了类的<code>__new__</code>方法（我们没写时，默认调用<code>object.__new__</code>）实例化对象。然后再执行类的<code>__init__</code>方法，对这个对象进行初始化。所以我们可以基于这个，实现单例模式，并且支持多线程：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> threading
+
+
+<span class="token keyword">class</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    _instance_lock <span class="token operator">=</span> threading<span class="token punctuation">.</span>Lock<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+    <span class="token keyword">def</span> <span class="token function">__new__</span><span class="token punctuation">(</span>cls<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token builtin">hasattr</span><span class="token punctuation">(</span>Singleton<span class="token punctuation">,</span> <span class="token string">&quot;_instance&quot;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">with</span> Singleton<span class="token punctuation">.</span>_instance_lock<span class="token punctuation">:</span>
+                <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token builtin">hasattr</span><span class="token punctuation">(</span>Singleton<span class="token punctuation">,</span> <span class="token string">&quot;_instance&quot;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    Singleton<span class="token punctuation">.</span>_instance <span class="token operator">=</span> <span class="token builtin">object</span><span class="token punctuation">.</span>__new__<span class="token punctuation">(</span>cls<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> Singleton<span class="token punctuation">.</span>_instance
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment"># test</span>
+    obj1 <span class="token operator">=</span> Singleton<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    obj2 <span class="token operator">=</span> Singleton<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>obj1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">id</span><span class="token punctuation">(</span>obj2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># test multithreading</span>
+    <span class="token keyword">def</span> <span class="token function">task</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        obj <span class="token operator">=</span> Singleton<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        t <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>task<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">[</span>i<span class="token punctuation">,</span> <span class="token punctuation">]</span><span class="token punctuation">)</span>
+        t<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><p>注意和 Java 中的单例不同，Java 构造器私有禁止在外部new对象，而python无法做到构造器私有，创建单例仍然使用普通的声明对象格式<code>singleton = Singleton()</code>，只是在实例化时返回的是同一个对象。</p> <h3 id="使用模块实现天然单例"><a href="#使用模块实现天然单例" class="header-anchor">#</a> 使用模块实现天然单例</h3> <p>由于模块的import机制，在程序运行期间，同一个模块只会加载一次，所以从模块中导入的对象只有一个，无论import多少次，得到的都是同一个对象。Python的模块不仅是单例模式，还是线程安全的单例模式，即使多线程并发导入同一个模块，也不会重复装载模块。</p> <p>mysingleton.py</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+
+
+singleton <span class="token operator">=</span> Singleton<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>使用：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">from</span> mysingleton <span class="token keyword">import</span> singleton
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>singleton<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="使用装饰器"><a href="#使用装饰器" class="header-anchor">#</a> 使用装饰器</h3> <p>……</p> <h3 id="基于metaclass方式实现"><a href="#基于metaclass方式实现" class="header-anchor">#</a> 基于metaclass方式实现</h3> <p>……</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/buxianshan/bxs-blog/edit/master/docs/design-patterns/singleton.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2022-05-06 14:05:16</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/bxs-blog/assets/js/app.3b8f5e41.js" defer></script><script src="/bxs-blog/assets/js/2.e20f0717.js" defer></script><script src="/bxs-blog/assets/js/22.8c21f5d6.js" defer></script>
+  </body>
+</html>
