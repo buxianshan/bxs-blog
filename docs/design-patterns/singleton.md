@@ -189,7 +189,38 @@ if __name__ == '__main__':
 
 ### 使用装饰器
 
-待补充……
+```python
+def singletonDecorator(cls, *args, **kwargs):
+    """
+    定义一个单例装饰器
+    """
+    instance = {}
+
+    def wrapperSingleton(*args, **kwargs):
+        if cls not in instance:
+            instance[cls] = cls(*args, **kwargs)
+        return instance[cls]
+
+    return wrapperSingleton
+
+
+@singletonDecorator
+class Singleton:
+    """
+    使用单例装饰器修饰一个类
+    """
+
+    def __init__(self):
+        pass
+
+
+if __name__ == '__main__':
+    a = Singleton()
+    b = Singleton()
+    print(id(a))
+    print(id(b))
+
+```
 
 ### 基于metaclass方式实现
 
