@@ -52,6 +52,7 @@ module.exports = {
                 items: [
                     {text: '简介', link: '/design-patterns/introduction'},
                     {text: '单例模式', link: '/design-patterns/singleton'},
+                    {text: '访问者模式', link: '/design-patterns/visitor'},
                 ]
             },
             {text: 'Linux', link: '/linux/commands-log'},
