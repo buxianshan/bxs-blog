@@ -193,4 +193,32 @@ if __name__ == '__main__':
 
 ### 基于metaclass方式实现
 
-待补充……
+参考：[使用元类控制实例的创建](https://python3-cookbook.readthedocs.io/zh_CN/latest/c09/p13_using_mataclass_to_control_instance_creation.html)
+
+```python
+# 所有使用Singleton作为元类的类都将是单例模式
+class Singleton(type):
+    def __init__(self, *args, **kwargs):
+        self.__instance = None
+        super().__init__(*args, **kwargs)
+
+    def __call__(cls, *args, **kwargs):
+        if cls.__instance is None:
+            cls.__instance = super().__call__(*args, **kwargs)
+            return cls.__instance
+        else:
+            return cls.__instance
+
+
+class CustomClass(metaclass=Singleton):
+    def __init__(self):
+        print('Creating Spam')
+
+
+if __name__ == '__main__':
+    a = CustomClass()
+    b = CustomClass()
+    print(id(a))
+    print(id(b))
+```
+
