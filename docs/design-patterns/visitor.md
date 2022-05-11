@@ -182,3 +182,147 @@ class KidVisitor implements Visitor {
 ```
 
 ## Python 访问者模式
+
+注意和java实现的区别：
+
+- 因为 Python 不支持方法的重载，不能像java那样定义一个`visit`方法通过不同参数重载，所以定义了多个`visit_xxx`方法
+- Python中没有接口类，这里是通过引入`ABCMeta`和`abstractmethod`来定义抽象类和抽象方法
+
+```python
+from abc import ABCMeta, abstractmethod
+
+
+class Zoo:
+    """
+    动物园
+    """
+
+    def __init__(self):
+        self.__animal_house_list = []
+
+    def add(self, animal_house):
+        self.__animal_house_list.append(animal_house)
+
+    def accept(self, visitor):
+        """
+        接受游客参观
+        """
+        for animal_house in self.__animal_house_list:
+            animal_house.accept(visitor)
+
+
+class AnimalHouse(metaclass=ABCMeta):
+    """
+    抽象类：动物场馆
+    """
+
+    @abstractmethod
+    def accept(self, visitor):
+        """
+        接受游客参观
+        """
+        pass
+
+    @abstractmethod
+    def get_ticket_rate(self):
+        """
+        获取票价（不同的游客会有不同的票价）
+        :return: 票价
+        """
+        pass
+
+
+class PandaHouse(AnimalHouse):
+    """
+    具体场馆：熊猫管
+    """
+
+    def accept(self, visitor):
+        visitor.visit_panda(self)
+
+    def get_ticket_rate(self):
+        return 20
+
+
+class TigerHouse(AnimalHouse):
+    """
+    具体场馆：老虎园
+    """
+
+    def accept(self, visitor):
+        visitor.visit_tiger(self)
+
+    def get_ticket_rate(self):
+        return 10
+
+
+class Visitor(metaclass=ABCMeta):
+    """
+    抽象类：游客
+    """
+    # 因为Python不支持方法的重载，所以这里visit_xxx方法名不同。而Java中可以只写一个visit方法通过不同的参数重载。
+    @abstractmethod
+    def visit_panda(self, animal_house):
+        """
+        看熊猫
+        """
+        pass
+
+    @abstractmethod
+    def visit_tiger(self, animal_house):
+        """
+        看老虎
+        """
+        pass
+
+
+class CommonVisitor(Visitor):
+    """
+    具体的访问者：普通游客
+    """
+
+    def visit_panda(self, animal_house):
+        print(f"普通游客参观了熊猫馆，票价：{animal_house.get_ticket_rate()}")
+
+    def visit_tiger(self, animal_house):
+        print(f"普通游客参观了老虎园，票价：{animal_house.get_ticket_rate()}")
+
+
+class StudentVisitor(Visitor):
+    """
+    具体的访问者：学生游客
+    """
+
+    def visit_panda(self, animal_house):
+        print(f"学生游客参观了熊猫馆，票价：{animal_house.get_ticket_rate() * 0.5}")
+
+    def visit_tiger(self, animal_house):
+        print(f"学生游客参观了老虎园，票价：{animal_house.get_ticket_rate() * 0.5}")
+
+
+class KidVisitor(Visitor):
+    """
+    具体的访问者：儿童游客
+    """
+
+    def visit_panda(self, animal_house):
+        print("儿童游客参观了熊猫馆，票价：0")
+
+    def visit_tiger(self, animal_house):
+        print("儿童游客参观了熊猫馆，票价：0")
+
+
+if __name__ == '__main__':
+    # 动物园
+    zoo = Zoo()
+    zoo.add(PandaHouse())
+    zoo.add(TigerHouse())
+
+    # 普通游客参观
+    zoo.accept(CommonVisitor())
+    # 学生游客参观
+    zoo.accept(StudentVisitor())
+    # 儿童游客参观
+    zoo.accept(KidVisitor())
+```
+
