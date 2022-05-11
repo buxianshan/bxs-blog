@@ -58,7 +58,7 @@ class Zoo {
     // 场馆列表
     private List<AnimalHouse> animalHouseList = new ArrayList<>();
 
-    //接待游客
+    // 接待游客
     public void accept(Visitor visitor) {
         for (AnimalHouse animalHouse : animalHouseList) {
             animalHouse.accept(visitor);
