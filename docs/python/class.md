@@ -64,3 +64,39 @@ if __name__ == '__main__':
 ![image-20220505114706436](https://buxianshan.oss-cn-beijing.aliyuncs.com/Typora_images/image-20220505114706436.png)
 
 参考：[Python官方文档](https://docs.python.org/zh-cn/3.9/tutorial/classes.html?highlight=private#private-variables)
+
+## 元类和抽象方法
+
+关于Python抽象基类请查看文档：[abc --- 抽象基类](https://docs.python.org/zh-cn/3/library/abc.html)
+
+因为Python没有接口的概念，如果想写一个抽象类，需要用到元类`ABCMeta`和装饰器`abstractmethod`。
+
+特别注意：
+
+- 有`abstractmethod`的抽象类不能直接实例化（报错），必须子类实现了抽象方法后才能实例化。
+- 装饰器`abstractmethod`所在的类的元类必须是`ABCMeta`或其子类，否则定义的抽象方法没有实际效果，就是这个类即使有抽象方法也能直接实例化，没有报错。
+
+```python
+from abc import ABCMeta, abstractmethod
+
+
+class AbstractService(metaclass=ABCMeta):
+    """定义抽象类"""
+    @abstractmethod
+    def run(self):
+        pass
+
+
+class ServiceImplement(AbstractService):
+    """抽象类具体实现"""
+    def run(self):
+        print("do something")
+
+
+if __name__ == '__main__':
+    # 抽象类(有抽象方法)不能直接实例化，会报错：TypeError: Can't instantiate abstract class AbstractService with abstract methods run
+    # service = AbstractService()
+
+    service = ServiceImplement()
+    service.run()
+```
