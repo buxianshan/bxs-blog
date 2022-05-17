@@ -107,11 +107,12 @@ if __name__ == '__main__':
 # 获取锁
 lock.acquire()
 
-# 一些操作
-count += 1
-print(f"process: {count}/{total}")
-
-# 释放锁
-lock.release()
+try:
+    # do something...
+    count += 1
+    print(f"process: {count}/{total}")
+finally:
+    # 释放锁
+    lock.release()
 ```
 
