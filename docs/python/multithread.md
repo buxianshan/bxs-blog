@@ -12,6 +12,7 @@ title: Python 多线程
 - [queue — 线程安全的 FIFO 队列](https://learnku.com/docs/pymotw/queue-thread-safe-fifo-queue/3370)
 - [threading — 管理单个进程里的并行操作](https://learnku.com/docs/pymotw/threading-manage-concurrent-operations-within-a-process/3421)
 - [列表与队列—谈谈线程安全](https://juejin.cn/post/6844903615824396295)
+- [为什么Python多线程无法利用多核](https://blog.51cto.com/u_6315133/3122185)
 
 ## threading 模块
 
