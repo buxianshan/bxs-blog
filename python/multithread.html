@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Python 多线程 | bxs.ink</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="https://buxianshan.oss-cn-beijing.aliyuncs.com/favicon.ico?versionId=CAEQMhiBgID7jPeK_BciIGUwMGYzZWJmMzM3NTQ4NDI5N2FhZDk3NDRiZjYzNjFl">
+    <script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?40291c62c61f1ce49b021bc0f36df71e";
+            if (window.location.hostname !== "localhost") {
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            }
+        })();</script>
+    <meta name="description" content="一些个人理解、笔记和分享">
+    
+    <link rel="preload" href="/bxs-blog/assets/css/0.styles.a2c13d1a.css" as="style"><link rel="preload" href="/bxs-blog/assets/js/app.962a9f5b.js" as="script"><link rel="preload" href="/bxs-blog/assets/js/2.e20f0717.js" as="script"><link rel="preload" href="/bxs-blog/assets/js/37.cb738625.js" as="script"><link rel="prefetch" href="/bxs-blog/assets/js/10.7d8fee8d.js"><link rel="prefetch" href="/bxs-blog/assets/js/11.a655d377.js"><link rel="prefetch" href="/bxs-blog/assets/js/12.4836946d.js"><link rel="prefetch" href="/bxs-blog/assets/js/13.315882db.js"><link rel="prefetch" href="/bxs-blog/assets/js/14.a631edd1.js"><link rel="prefetch" href="/bxs-blog/assets/js/15.3ccc3074.js"><link rel="prefetch" href="/bxs-blog/assets/js/16.3a0e5dcf.js"><link rel="prefetch" href="/bxs-blog/assets/js/17.6ab0507f.js"><link rel="prefetch" href="/bxs-blog/assets/js/18.f81b8706.js"><link rel="prefetch" href="/bxs-blog/assets/js/19.b7345b4d.js"><link rel="prefetch" href="/bxs-blog/assets/js/20.3bee7d2e.js"><link rel="prefetch" href="/bxs-blog/assets/js/21.f5759851.js"><link rel="prefetch" href="/bxs-blog/assets/js/22.37774dd8.js"><link rel="prefetch" href="/bxs-blog/assets/js/23.e9b13bfd.js"><link rel="prefetch" href="/bxs-blog/assets/js/24.c95554eb.js"><link rel="prefetch" href="/bxs-blog/assets/js/25.df6ecb5c.js"><link rel="prefetch" href="/bxs-blog/assets/js/26.dc500cce.js"><link rel="prefetch" href="/bxs-blog/assets/js/27.d298038e.js"><link rel="prefetch" href="/bxs-blog/assets/js/28.95c3b7e1.js"><link rel="prefetch" href="/bxs-blog/assets/js/29.680717f1.js"><link rel="prefetch" href="/bxs-blog/assets/js/3.70bb5a13.js"><link rel="prefetch" href="/bxs-blog/assets/js/30.5e3a9398.js"><link rel="prefetch" href="/bxs-blog/assets/js/31.7114fe42.js"><link rel="prefetch" href="/bxs-blog/assets/js/32.36704413.js"><link rel="prefetch" href="/bxs-blog/assets/js/33.8b8ef020.js"><link rel="prefetch" href="/bxs-blog/assets/js/34.bfe1e5e8.js"><link rel="prefetch" href="/bxs-blog/assets/js/35.8056453c.js"><link rel="prefetch" href="/bxs-blog/assets/js/36.e676ea3e.js"><link rel="prefetch" href="/bxs-blog/assets/js/38.0d4dfba9.js"><link rel="prefetch" href="/bxs-blog/assets/js/39.ec069c19.js"><link rel="prefetch" href="/bxs-blog/assets/js/4.c59397de.js"><link rel="prefetch" href="/bxs-blog/assets/js/40.7ec80b94.js"><link rel="prefetch" href="/bxs-blog/assets/js/41.7d6eaf3a.js"><link rel="prefetch" href="/bxs-blog/assets/js/42.70003db2.js"><link rel="prefetch" href="/bxs-blog/assets/js/5.1416dedd.js"><link rel="prefetch" href="/bxs-blog/assets/js/6.da068902.js"><link rel="prefetch" href="/bxs-blog/assets/js/7.451e510b.js"><link rel="prefetch" href="/bxs-blog/assets/js/8.58f554d1.js"><link rel="prefetch" href="/bxs-blog/assets/js/9.b70ebacf.js">
+    <link rel="stylesheet" href="/bxs-blog/assets/css/0.styles.a2c13d1a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/bxs-blog/" class="home-link router-link-active"><!----> <span class="site-name">bxs.ink</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/bxs-blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python Menu" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python Menu" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/python/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/snippets.html" class="nav-link">
+  常用代码片段
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/class.html" class="nav-link">
+  Python 面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/multithread.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Python 多线程
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/build-package.html" class="nav-link">
+  打包项目到PyPI
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/pyc.html" class="nav-link">
+  pyc文件
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/name-style.html" class="nav-link">
+  命名风格建议
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/zen.html" class="nav-link">
+  The Zen of Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java Menu" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java Menu" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/java/basic.html" class="nav-link">
+  Java基础
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/java/jvm.html" class="nav-link">
+  JVM
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Design Patterns Menu" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Design Patterns Menu" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/singleton.html" class="nav-link">
+  单例模式
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/visitor.html" class="nav-link">
+  访问者模式
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/linux/commands-log.html" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-end Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-end Menu" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/nodejs.html" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docker" class="dropdown-title"><span class="title">Docker</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docker" class="mobile-dropdown-title"><span class="title">Docker</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/notes.html" class="nav-link">
+  基础笔记
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/experience.html" class="nav-link">
+  问题记录
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools Menu" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tools Menu" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/tools/git.html" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="/bxs-blog/collections/" class="nav-link">
+  收藏
+</a></div><div class="nav-item"><a href="/bxs-blog/about/" class="nav-link">
+  关于
+</a></div> <a href="https://github.com/buxianshan/bxs-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/bxs-blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python Menu" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python Menu" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/python/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/snippets.html" class="nav-link">
+  常用代码片段
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/class.html" class="nav-link">
+  Python 面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/multithread.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Python 多线程
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/build-package.html" class="nav-link">
+  打包项目到PyPI
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/pyc.html" class="nav-link">
+  pyc文件
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/name-style.html" class="nav-link">
+  命名风格建议
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/zen.html" class="nav-link">
+  The Zen of Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java Menu" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java Menu" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/java/basic.html" class="nav-link">
+  Java基础
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/java/jvm.html" class="nav-link">
+  JVM
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Design Patterns Menu" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Design Patterns Menu" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/singleton.html" class="nav-link">
+  单例模式
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/visitor.html" class="nav-link">
+  访问者模式
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/linux/commands-log.html" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-end Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-end Menu" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/nodejs.html" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docker" class="dropdown-title"><span class="title">Docker</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docker" class="mobile-dropdown-title"><span class="title">Docker</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/notes.html" class="nav-link">
+  基础笔记
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/experience.html" class="nav-link">
+  问题记录
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools Menu" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tools Menu" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/tools/git.html" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="/bxs-blog/collections/" class="nav-link">
+  收藏
+</a></div><div class="nav-item"><a href="/bxs-blog/about/" class="nav-link">
+  关于
+</a></div> <a href="https://github.com/buxianshan/bxs-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Python 多线程</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/bxs-blog/python/multithread.html#threading-模块" class="sidebar-link">threading 模块</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/bxs-blog/python/multithread.html#多线程同步" class="sidebar-link">多线程同步</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 align="center">Python 多线程</h1> <p>参考：</p> <ul><li><a href="https://docs.python.org/zh-cn/3/glossary.html#term-global-interpreter-lock" target="_blank" rel="noopener noreferrer">Global Interpreter Lock<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>：全局解释器锁</li> <li><a href="https://docs.python.org/zh-cn/3.9/library/threading.html#module-threading" target="_blank" rel="noopener noreferrer">threading<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>：Python 内置多线程模块</li> <li><a href="https://docs.python.org/zh-cn/3.9/library/queue.html#module-queue" target="_blank" rel="noopener noreferrer">queue<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>：A multi-producer, multi-consumer queue</li> <li><a href="https://learnku.com/docs/pymotw/queue-thread-safe-fifo-queue/3370" target="_blank" rel="noopener noreferrer">queue — 线程安全的 FIFO 队列<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://learnku.com/docs/pymotw/threading-manage-concurrent-operations-within-a-process/3421" target="_blank" rel="noopener noreferrer">threading — 管理单个进程里的并行操作<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://juejin.cn/post/6844903615824396295" target="_blank" rel="noopener noreferrer">列表与队列—谈谈线程安全<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.51cto.com/u_6315133/3122185" target="_blank" rel="noopener noreferrer">为什么Python多线程无法利用多核<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h2 id="threading-模块"><a href="#threading-模块" class="header-anchor">#</a> threading 模块</h2> <p>使用线程的两种方式：</p> <ul><li>创建<code>threading.Thread</code>的对象执行某个函数</li> <li>创建<code>threading.Thread</code>的子类，重写run方法</li></ul> <p>例子：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> threading
+
+
+<span class="token keyword">def</span> <span class="token function">task</span><span class="token punctuation">(</span>task_id<span class="token punctuation">,</span> task_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;
+    多线程要执行的任务
+    :param task_id:
+    :param task_name:
+    :return:
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;task(id: </span><span class="token interpolation"><span class="token punctuation">{</span>task_id<span class="token punctuation">}</span></span><span class="token string">, name: </span><span class="token interpolation"><span class="token punctuation">{</span>task_name<span class="token punctuation">}</span></span><span class="token string">) done!&quot;</span></span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 以args元组的形式传参</span>
+        t <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>task<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f&quot;t</span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token comment"># 以kwargs字典的形式传参</span>
+        <span class="token comment"># t = threading.Thread(target=task, kwargs={&quot;task_id&quot;: i, &quot;task_name&quot;: f&quot;t{i}&quot;})</span>
+        t<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>这里顺便记录一下我自己之前一直不理解的地方，创建线程的时候如何给要执行的函数传参呢（多个参数）？</p> <p>其实看一下Thread源码就很清楚了，如图：</p> <p><img src="https://buxianshan.oss-cn-beijing.aliyuncs.com/Typora_images/image-20220516201800404.png" alt="image-20220516201800404"></p> <p><code>Thread</code>的init方法提供了两种形式的参数，args默认值是一个空元组，kwargs默认值是None但是希望传的是字典。</p> <p>再看一下<code>run()</code>方法是如何把参数传给我们要执行的target方法的：</p> <p><img src="https://buxianshan.oss-cn-beijing.aliyuncs.com/Typora_images/image-20220516202123632.png" alt="image-20220516202123632"></p> <p>这就很清楚了，一个星号解包元组（或列表等），两个星号解包字典，所以不管是以元组的形式写到args里的参数，还是以字典形式写到kwargs里的参数，都会被解包后传到target方法。</p> <h2 id="多线程同步"><a href="#多线程同步" class="header-anchor">#</a> 多线程同步</h2> <p>不可避免的要考虑线程同步，这是一个例子：使用count进行全局任务计数，修改count值时需要保证线程同步，避免冲突。</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">import</span> threading
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> random
+
+
+total <span class="token operator">=</span> <span class="token number">100</span>
+count <span class="token operator">=</span> <span class="token number">0</span>
+lock <span class="token operator">=</span> threading<span class="token punctuation">.</span>Lock<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">task</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;
+    执行一次任务，给count计数加1
+    :return:
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">global</span> total
+    <span class="token keyword">global</span> count
+    <span class="token comment"># 随机 sleep 0到1秒，模拟不同任务耗时不同</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># 这里线程同步锁</span>
+    <span class="token keyword">with</span> lock<span class="token punctuation">:</span>
+        count <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;process: </span><span class="token interpolation"><span class="token punctuation">{</span>count<span class="token punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token punctuation">{</span>total<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    thread_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        t <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>task<span class="token punctuation">)</span>
+        thread_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> t <span class="token keyword">in</span> thread_list<span class="token punctuation">:</span>
+        t<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><p>你可以尝试把同步锁的代码注释掉，看看会发生什么。</p> <p>加锁的地方也可以用下面这种写法：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token comment"># 获取锁</span>
+lock<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token comment"># do something...</span>
+    count <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;process: </span><span class="token interpolation"><span class="token punctuation">{</span>count<span class="token punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token punctuation">{</span>total<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+<span class="token keyword">finally</span><span class="token punctuation">:</span>
+    <span class="token comment"># 释放锁</span>
+    lock<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/buxianshan/bxs-blog/edit/master/docs/python/multithread.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2022-05-17 09:30:32</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/bxs-blog/assets/js/app.962a9f5b.js" defer></script><script src="/bxs-blog/assets/js/2.e20f0717.js" defer></script><script src="/bxs-blog/assets/js/37.cb738625.js" defer></script>
+  </body>
+</html>
