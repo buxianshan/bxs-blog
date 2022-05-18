@@ -138,3 +138,14 @@ MAILTO=root
 command > file_name 2>&1
 ```
 
+## 生成当前时间戳字符串
+
+常用于给log、文件等命名时增加时间戳。
+
+```bash
+time=$(date "+%Y%m%d-%H%M%S")
+echo ${time}
+# 20220518-114230
+touch ${time}.log
+```
+
