@@ -341,3 +341,9 @@ print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
 # 2022-03-25 15:48:51
 ```
 
+## 生成requirements.txt
+
+```bash
+python -m pip freeze > requirements.txt
+```
+
