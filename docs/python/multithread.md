@@ -14,6 +14,8 @@ title: Python 多线程
 - [列表与队列—谈谈线程安全](https://juejin.cn/post/6844903615824396295)
 - [为什么Python多线程无法利用多核](https://blog.51cto.com/u_6315133/3122185)
 - [Python 线程池原理及实现](https://juejin.cn/post/6844904058533183495)
+- [Python 线程池及其原理和使用](http://c.biancheng.net/view/2627.html)
+- [ThreadPoolExecutor 判断所有任务已结束](https://cloud.tencent.com/developer/article/1597890)
 
 ## threading 模块
 
@@ -223,3 +225,65 @@ thread-Thread-1: execute task 6
 ![image-20220517195718011](https://buxianshan.oss-cn-beijing.aliyuncs.com/Typora_images/image-20220517195718011.png)
 
 - python3中的print方法到底是不是线程安全的我也不清楚，实测来看，没有加锁时，多线程print有概率格式错乱（该换行的没换行），加了锁之后完全正常了，所以例子中的print还是加了锁。
+
+## 使用ThreadPoolExecutor
+
+线程池的基类是 concurrent.futures 模块中的 Executor，Executor 提供了两个子类，即 ThreadPoolExecutor 和 ProcessPoolExecutor，其中 ThreadPoolExecutor 用于创建线程池，而 ProcessPoolExecutor 用于创建进程池。
+
+程序将 task 函数提交（submit）给线程池后，submit 方法会返回一个 Future 对象，Future 类主要用于获取线程任务函数的返回值。由于线程任务会在新线程中以异步方式执行，因此，线程执行的函数相当于一个“将来完成”的任务，所以 Python 使用 Future 来代表。
+
+看这个例子：
+
+```python
+from concurrent.futures import ThreadPoolExecutor, wait, ALL_COMPLETED
+import threading
+import time
+
+
+def task(task_id):
+    msg = f"{threading.current_thread().getName()} executed (task id: {task_id})"
+    time.sleep(1)
+    return msg
+
+
+if __name__ == '__main__':
+    # 创建一个包含3个线程的线程池
+    pool = ThreadPoolExecutor(max_workers=3)
+    # Future对象列表
+    future_list = []
+    # 向线程池提交10个任务
+    for i in range(10):
+        future = pool.submit(task, i)
+        future_list.append(future)
+
+    # 等待所有任务结束(timeout 10秒)
+    wait(future_list, 10, ALL_COMPLETED)
+
+    # 获取所有任务返回值
+    for future in future_list:
+        print(future.result())
+
+    # 关闭线程池
+    pool.shutdown()
+```
+
+输出：
+
+```
+ThreadPoolExecutor-0_0 executed (task id: 0)
+ThreadPoolExecutor-0_1 executed (task id: 1)
+ThreadPoolExecutor-0_2 executed (task id: 2)
+ThreadPoolExecutor-0_2 executed (task id: 3)
+ThreadPoolExecutor-0_0 executed (task id: 4)
+ThreadPoolExecutor-0_1 executed (task id: 5)
+ThreadPoolExecutor-0_2 executed (task id: 6)
+ThreadPoolExecutor-0_1 executed (task id: 7)
+ThreadPoolExecutor-0_0 executed (task id: 8)
+ThreadPoolExecutor-0_2 executed (task id: 9)
+```
+
+与上面”使用`queue`和`threading.Thread`实现线程池“相比，ThreadPoolExecutor的优点：
+
+- 可以获取任务的返回值
+- 可以给提交不同的任务给线程池执行
+- 不需要自己创建和维护任务队列，只需`submit`后有空闲线程就立即执行
