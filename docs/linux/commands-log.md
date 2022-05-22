@@ -149,3 +149,38 @@ echo ${time}
 touch ${time}.log
 ```
 
+## 软链接和硬链接
+
+参考：[Linux 硬链接与软链接](https://www.runoob.com/note/29134)、[ln 命令](https://www.runoob.com/linux/linux-comm-ln.html)
+
+- 软链接（Symbolic Link）：类似于Windows操作系统中的快捷方式，是一个指向源文件路径的特殊文件。
+- 硬链接（Hard Link）：通过索引节点（Inode Index）来进行连接，即多个文件名指向同一索引节点，删除其中任何一个都不会影响另外一个的访问。只删除一个连接并不影响索引节点本身和其它的连接，只有当最后一个连接被删除后，文件的数据块及目录的连接才会被释放。不允许给目录创建硬链接。
+
+```bash
+# 创建1.txt
+touch 1.txt
+
+# 创建1.txt的硬链接:2.txt
+ln 1.txt 2.txt
+
+# 创建1.txt的软链接:3.txt
+ln -s 1.txt 3.txt
+
+# 查看文件信息
+ls -li
+```
+
+输出：
+
+```
+[root@localhost link_test]# ls -li
+总用量 0
+570451165 -rw-r--r--. 2 root root 0 5月  22 10:46 1.txt
+570451165 -rw-r--r--. 2 root root 0 5月  22 10:46 2.txt
+570451166 lrwxrwxrwx. 1 root root 5 5月  22 10:47 3.txt -> 1.txt
+```
+
+可以看出：
+
+- 硬链接2.txt和1.txt的Inode索引是相同的
+- 软链接是指向源文件`3.txt -> 1.txt`
