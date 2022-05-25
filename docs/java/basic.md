@@ -513,3 +513,45 @@ public class SerializeDemo {
 
 ### 序列化为json字符串
 
+常用的Json类库有fastjson、jackson。
+
+#### fastjson
+
+maven引入依赖：
+
+```xml
+<dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>fastjson</artifactId>
+    <version>1.2.76</version>
+</dependency>
+```
+
+demo：
+
+```java
+package com.bxs.serialize;
+
+import com.alibaba.fastjson.JSON;
+
+public class FastjsonDemo {
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.setId(1);
+        student.setName("Tom");
+        student.setAge(18);
+
+        // 对象序列化为json字符串
+        String jsonString = JSON.toJSONString(student);
+        System.out.println(jsonString);
+
+        // 把json字符串反序列化为对象
+        String json = "{\"age\":18,\"id\":1,\"name\":\"Tom\"}";
+        Student newStudent = JSON.parseObject(json, Student.class);
+        System.out.println(newStudent.toString());
+    }
+}
+```
+
+
+
