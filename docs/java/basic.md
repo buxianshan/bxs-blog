@@ -395,7 +395,7 @@ public class GenericTest {
 - [Java 序列化](https://www.runoob.com/java/java-serialization.html)
 - [java序列化不同方案对比](https://juejin.cn/post/6844904007173931016)
 
-### java对象序列化为字节序列
+### java原生序列化（字节序列）
 
 要实现一个特殊的`java.io.Serializable`接口。
 
@@ -497,3 +497,8 @@ class Student implements Serializable {
 ```
 
 :::
+
+缺点：
+
+- 不支持跨语言操作，由于 Java 序列化技术是 java原生序列化的内部协议，导致其他语言无法对接和识别
+- 性能差
