@@ -386,3 +386,109 @@ public class GenericTest {
 }
 ```
 
+## 序列化
+
+参考：
+
+- [Java 序列化](https://www.runoob.com/java/java-serialization.html)
+- [java序列化不同方案对比](https://juejin.cn/post/6844904007173931016)
+
+### java对象序列化为字节序列
+
+要实现一个特殊的`java.io.Serializable`接口。
+
+```java
+package com.bxs.serialize;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+public class SerializeDemo {
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.setId(1);
+        student.setName("Tom");
+        student.setAge(18);
+
+        // 序列化对象为字节序列到文件
+        try {
+            FileOutputStream fileOut =
+                    new FileOutputStream("student.ser");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(student);
+            out.close();
+            fileOut.close();
+            System.out.println("Serialized data is saved in student.ser");
+        } catch (IOException i) {
+            i.printStackTrace();
+        }
+
+        // 反序列化为对象
+        Student newStudent = null;
+        try {
+            FileInputStream fileIn = new FileInputStream("student.ser");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            newStudent = (Student) in.readObject();
+            System.out.println(newStudent.toString());
+            in.close();
+            fileIn.close();
+        } catch (IOException i) {
+            i.printStackTrace();
+        } catch (ClassNotFoundException c) {
+            System.out.println("Student class not found");
+            c.printStackTrace();
+        }
+    }
+}
+
+class Student implements Serializable {
+    public int id;
+    public String name;
+    public int age;
+
+    public Student() {
+    }
+
+    public void study(String course) {
+        System.out.println("study" + course);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+}
+```
+
