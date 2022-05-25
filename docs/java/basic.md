@@ -527,7 +527,7 @@ maven引入依赖：
 </dependency>
 ```
 
-demo：
+序列化和反序列化：
 
 ```java
 package com.bxs.serialize;
@@ -553,5 +553,53 @@ public class FastjsonDemo {
 }
 ```
 
+#### jackson
 
+maven引入依赖：
+
+```xml
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+    <version>2.9.9</version>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.9.9</version>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-annotations</artifactId>
+    <version>2.9.9</version>
+</dependency>
+```
+
+序列化和反序列化：
+
+```java
+package com.bxs.serialize;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+
+public class jacksonDemo {
+    public static void main(String[] args) throws IOException {
+        Student student = new Student();
+        student.setId(1);
+        student.setName("Tom");
+        student.setAge(18);
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        // 对象序列化为json字符串
+        String jsonString = objectMapper.writeValueAsString(student);
+        System.out.println(jsonString);
+
+        // 把json字符串反序列化为对象
+        String json = "{\"age\":18,\"id\":1,\"name\":\"Tom\"}";
+        Student newStudent = objectMapper.readValue(json, Student.class);
+        System.out.println(newStudent.toString());
+    }
+}
+```
 
