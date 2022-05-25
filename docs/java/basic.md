@@ -395,6 +395,60 @@ public class GenericTest {
 - [Java 序列化](https://www.runoob.com/java/java-serialization.html)
 - [java序列化不同方案对比](https://juejin.cn/post/6844904007173931016)
 
+Student类：
+
+::: code-details
+
+```java
+class Student implements Serializable {
+    public int id;
+    public String name;
+    public int age;
+
+    public Student() {
+    }
+
+    public void study(String course) {
+        System.out.println("study" + course);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+}
+```
+
+:::
+
 ### java原生序列化（字节序列）
 
 要实现一个特殊的`java.io.Serializable`接口。
@@ -448,52 +502,6 @@ public class SerializeDemo {
         }
     }
 }
-
-class Student implements Serializable {
-    public int id;
-    public String name;
-    public int age;
-
-    public Student() {
-    }
-
-    public void study(String course) {
-        System.out.println("study" + course);
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
-}
 ```
 
 :::
@@ -502,3 +510,6 @@ class Student implements Serializable {
 
 - 不支持跨语言操作，由于 Java 序列化技术是 java原生序列化的内部协议，导致其他语言无法对接和识别
 - 性能差
+
+### 序列化为json字符串
+
