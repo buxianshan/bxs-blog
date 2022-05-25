@@ -388,6 +388,8 @@ public class GenericTest {
 
 ## 序列化
 
+序列化通常是指将对象写入字符串（例如：xml / json）或原始二进制文件（byte[]等）。
+
 参考：
 
 - [Java 序列化](https://www.runoob.com/java/java-serialization.html)
@@ -396,6 +398,8 @@ public class GenericTest {
 ### java对象序列化为字节序列
 
 要实现一个特殊的`java.io.Serializable`接口。
+
+::: code-details
 
 ```java
 package com.bxs.serialize;
@@ -492,3 +496,4 @@ class Student implements Serializable {
 }
 ```
 
+:::
