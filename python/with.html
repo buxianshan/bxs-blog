@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>with 语句 | bxs.ink</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="https://buxianshan.oss-cn-beijing.aliyuncs.com/favicon.ico?versionId=CAEQMhiBgID7jPeK_BciIGUwMGYzZWJmMzM3NTQ4NDI5N2FhZDk3NDRiZjYzNjFl">
+    <script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?40291c62c61f1ce49b021bc0f36df71e";
+            if (window.location.hostname !== "localhost") {
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            }
+        })();</script>
+    <meta name="description" content="一些个人理解、笔记和分享">
+    
+    <link rel="preload" href="/bxs-blog/assets/css/0.styles.a2c13d1a.css" as="style"><link rel="preload" href="/bxs-blog/assets/js/app.59148cf4.js" as="script"><link rel="preload" href="/bxs-blog/assets/js/2.e20f0717.js" as="script"><link rel="preload" href="/bxs-blog/assets/js/41.6f644bc5.js" as="script"><link rel="prefetch" href="/bxs-blog/assets/js/10.7d8fee8d.js"><link rel="prefetch" href="/bxs-blog/assets/js/11.a655d377.js"><link rel="prefetch" href="/bxs-blog/assets/js/12.4836946d.js"><link rel="prefetch" href="/bxs-blog/assets/js/13.315882db.js"><link rel="prefetch" href="/bxs-blog/assets/js/14.a631edd1.js"><link rel="prefetch" href="/bxs-blog/assets/js/15.3ccc3074.js"><link rel="prefetch" href="/bxs-blog/assets/js/16.3a0e5dcf.js"><link rel="prefetch" href="/bxs-blog/assets/js/17.6ab0507f.js"><link rel="prefetch" href="/bxs-blog/assets/js/18.f81b8706.js"><link rel="prefetch" href="/bxs-blog/assets/js/19.b7345b4d.js"><link rel="prefetch" href="/bxs-blog/assets/js/20.3bee7d2e.js"><link rel="prefetch" href="/bxs-blog/assets/js/21.f5759851.js"><link rel="prefetch" href="/bxs-blog/assets/js/22.37774dd8.js"><link rel="prefetch" href="/bxs-blog/assets/js/23.e9b13bfd.js"><link rel="prefetch" href="/bxs-blog/assets/js/24.c95554eb.js"><link rel="prefetch" href="/bxs-blog/assets/js/25.df6ecb5c.js"><link rel="prefetch" href="/bxs-blog/assets/js/26.dc500cce.js"><link rel="prefetch" href="/bxs-blog/assets/js/27.d298038e.js"><link rel="prefetch" href="/bxs-blog/assets/js/28.f77df000.js"><link rel="prefetch" href="/bxs-blog/assets/js/29.680717f1.js"><link rel="prefetch" href="/bxs-blog/assets/js/3.c4e70e63.js"><link rel="prefetch" href="/bxs-blog/assets/js/30.5e3a9398.js"><link rel="prefetch" href="/bxs-blog/assets/js/31.015ac383.js"><link rel="prefetch" href="/bxs-blog/assets/js/32.36704413.js"><link rel="prefetch" href="/bxs-blog/assets/js/33.8b8ef020.js"><link rel="prefetch" href="/bxs-blog/assets/js/34.bfe1e5e8.js"><link rel="prefetch" href="/bxs-blog/assets/js/35.8056453c.js"><link rel="prefetch" href="/bxs-blog/assets/js/36.e676ea3e.js"><link rel="prefetch" href="/bxs-blog/assets/js/37.368055b8.js"><link rel="prefetch" href="/bxs-blog/assets/js/38.0d4dfba9.js"><link rel="prefetch" href="/bxs-blog/assets/js/39.ec069c19.js"><link rel="prefetch" href="/bxs-blog/assets/js/4.c59397de.js"><link rel="prefetch" href="/bxs-blog/assets/js/40.59ee0d7e.js"><link rel="prefetch" href="/bxs-blog/assets/js/42.eb5414c6.js"><link rel="prefetch" href="/bxs-blog/assets/js/43.ef01c4eb.js"><link rel="prefetch" href="/bxs-blog/assets/js/5.1416dedd.js"><link rel="prefetch" href="/bxs-blog/assets/js/6.da068902.js"><link rel="prefetch" href="/bxs-blog/assets/js/7.451e510b.js"><link rel="prefetch" href="/bxs-blog/assets/js/8.58f554d1.js"><link rel="prefetch" href="/bxs-blog/assets/js/9.b70ebacf.js">
+    <link rel="stylesheet" href="/bxs-blog/assets/css/0.styles.a2c13d1a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/bxs-blog/" class="home-link router-link-active"><!----> <span class="site-name">bxs.ink</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/bxs-blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python Menu" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python Menu" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/python/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/snippets.html" class="nav-link">
+  常用代码片段
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/class.html" class="nav-link">
+  Python 面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/multithread.html" class="nav-link">
+  Python 多线程
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/with.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  with 语句
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/build-package.html" class="nav-link">
+  打包项目到PyPI
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/pyc.html" class="nav-link">
+  pyc文件
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/name-style.html" class="nav-link">
+  命名风格建议
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/zen.html" class="nav-link">
+  The Zen of Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java Menu" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java Menu" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/java/basic.html" class="nav-link">
+  Java基础
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/java/jvm.html" class="nav-link">
+  JVM
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Design Patterns Menu" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Design Patterns Menu" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/singleton.html" class="nav-link">
+  单例模式
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/visitor.html" class="nav-link">
+  访问者模式
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/linux/commands-log.html" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-end Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-end Menu" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/nodejs.html" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docker" class="dropdown-title"><span class="title">Docker</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docker" class="mobile-dropdown-title"><span class="title">Docker</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/notes.html" class="nav-link">
+  基础笔记
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/experience.html" class="nav-link">
+  问题记录
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools Menu" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tools Menu" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/tools/git.html" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="/bxs-blog/collections/" class="nav-link">
+  收藏
+</a></div><div class="nav-item"><a href="/bxs-blog/about/" class="nav-link">
+  关于
+</a></div> <a href="https://github.com/buxianshan/bxs-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/bxs-blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python Menu" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python Menu" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/python/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/snippets.html" class="nav-link">
+  常用代码片段
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/class.html" class="nav-link">
+  Python 面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/multithread.html" class="nav-link">
+  Python 多线程
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/with.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  with 语句
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/build-package.html" class="nav-link">
+  打包项目到PyPI
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/pyc.html" class="nav-link">
+  pyc文件
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/name-style.html" class="nav-link">
+  命名风格建议
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/zen.html" class="nav-link">
+  The Zen of Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java Menu" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java Menu" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/java/basic.html" class="nav-link">
+  Java基础
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/java/jvm.html" class="nav-link">
+  JVM
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Design Patterns Menu" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Design Patterns Menu" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/singleton.html" class="nav-link">
+  单例模式
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/visitor.html" class="nav-link">
+  访问者模式
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/linux/commands-log.html" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-end Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-end Menu" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/nodejs.html" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docker" class="dropdown-title"><span class="title">Docker</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docker" class="mobile-dropdown-title"><span class="title">Docker</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/notes.html" class="nav-link">
+  基础笔记
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/experience.html" class="nav-link">
+  问题记录
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools Menu" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tools Menu" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/tools/git.html" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="/bxs-blog/collections/" class="nav-link">
+  收藏
+</a></div><div class="nav-item"><a href="/bxs-blog/about/" class="nav-link">
+  关于
+</a></div> <a href="https://github.com/buxianshan/bxs-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>with 语句</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/bxs-blog/python/with.html#什么是with语句" class="sidebar-link">什么是with语句</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/bxs-blog/python/with.html#自定义上下文管理器" class="sidebar-link">自定义上下文管理器</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 align="center">with 语句</h1> <p>参考：</p> <ul><li><a href="https://docs.python.org/zh-cn/3.9/reference/compound_stmts.html#the-with-statement" target="_blank" rel="noopener noreferrer">with 语句<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://docs.python.org/zh-cn/3.9/reference/datamodel.html#with-statement-context-managers" target="_blank" rel="noopener noreferrer">with 语句上下文管理器<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h2 id="什么是with语句"><a href="#什么是with语句" class="header-anchor">#</a> 什么是with语句</h2> <p>官方文档的描述：</p> <blockquote><p><a href="https://docs.python.org/zh-cn/3.9/reference/compound_stmts.html#with" target="_blank" rel="noopener noreferrer"><code>with</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 语句用于包装带有使用上下文管理器 (参见 <a href="https://docs.python.org/zh-cn/3.9/reference/datamodel.html#context-managers" target="_blank" rel="noopener noreferrer">with 语句上下文管理器<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 一节) 定义的方法的代码块的执行。 这允许对普通的 <a href="https://docs.python.org/zh-cn/3.9/reference/compound_stmts.html#try" target="_blank" rel="noopener noreferrer"><code>try</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>...<a href="https://docs.python.org/zh-cn/3.9/reference/compound_stmts.html#except" target="_blank" rel="noopener noreferrer"><code>except</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>...<a href="https://docs.python.org/zh-cn/3.9/reference/compound_stmts.html#finally" target="_blank" rel="noopener noreferrer"><code>finally</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 使用模式进行封装以方便地重用。</p> <p>上下文管理器处理进入和退出所需运行时上下文以执行代码块。</p></blockquote> <p>简单理解：进入和退出某个代码块时执行一些操作。最常用的场景就是处理异常兜底，其实就是对<code>try...except...finally</code>的封装。</p> <p>例如文件流的操作<code>f = open(&quot;demo.txt&quot;)</code>，我们要考虑异常情况，保证最后要关闭文件流<code>f.close()</code>。而使用了with语句<code>with open(&quot;demo.txt&quot;) as f</code>，代码块结束（或异常）后会自动化关闭文件流。</p> <h2 id="自定义上下文管理器"><a href="#自定义上下文管理器" class="header-anchor">#</a> 自定义上下文管理器</h2> <p>上下文管理器就是一个对象，with语句其实就是执行对象的两个方法：</p> <ul><li><code>__enter__()</code>方法：进入上下文时执行（如果这一步没有异常，则不管后面是否有异常，with语句保证会执行<code>__exit__()</code>方法）</li> <li><code>__exit__()</code>方法：退出关联到此对象的上下文时执行。</li></ul> <p>所以很好理解<code>with open(&quot;demo.txt&quot;) as f</code>为什么不需要手动<code>f.close()</code>了吧，其实就是<code>self.close()</code>已经写到<code>__exit__()</code>里了。</p> <p>下面是一个自定义上下文管理器的例子：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">MyContextManager</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__enter__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;进入上下文...&quot;</span><span class="token punctuation">)</span>
+        <span class="token comment"># 一般返回其自身，以允许在with代码块中使用</span>
+        <span class="token keyword">return</span> self
+
+    <span class="token keyword">def</span> <span class="token function">__exit__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>exc_info<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># exc_info：如果上下文中有异常，会有参数传进来</span>
+        <span class="token keyword">del</span> exc_info
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;退出上下文...&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">hi</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;I'm a context manager&quot;</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> MyContextManager<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> m<span class="token punctuation">:</span>
+        m<span class="token punctuation">.</span>hi<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;代码块...&quot;</span><span class="token punctuation">)</span>
+        <span class="token comment"># 验证即使这里有异常也会执行__exit__方法</span>
+        a <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">0</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;with语句外部&quot;</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>输出：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Traceback (most recent call last):
+  File &quot;demo.py&quot;, line 22, in &lt;module&gt;
+    a = 1/0
+ZeroDivisionError: division by zero
+进入上下文...
+I'm a context manager
+代码块...
+退出上下文...
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>总结：</p> <ul><li>只要看到类中有<code>__enter__()</code>和<code>__exit__()</code>方法，就能使用with语句</li> <li>不管代码块中是否有异常，with语句都保证会执行<code>__exit__()</code>方法。但是并不代表我们不需要处理异常了，如果有异常，程序也会中断。</li> <li>虽然with语句并不能真正处理异常，但是对于文件流、数据库连接、类似这些场景，<code>__exit__()</code>方法里帮我们执行了<code>close()</code>确实方便了不少（避免自己忘了关😂）。</li></ul> <p>顺便记录一下关键字<code>as</code>的用法，目前只遇到两种使用场景：</p> <ul><li>导入模块时可以用as起个别名</li> <li>with语句也可以使用as给上下文管理器起个别名</li></ul></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/buxianshan/bxs-blog/edit/master/docs/python/with.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2022-05-27 15:22:07</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/bxs-blog/assets/js/app.59148cf4.js" defer></script><script src="/bxs-blog/assets/js/2.e20f0717.js" defer></script><script src="/bxs-blog/assets/js/41.6f644bc5.js" defer></script>
+  </body>
+</html>
