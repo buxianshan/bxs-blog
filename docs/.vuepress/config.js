@@ -4,7 +4,7 @@ module.exports = {
     head: [
         ['link', {
             rel: 'icon',
-            href: 'https://buxianshan.oss-cn-beijing.aliyuncs.com/favicon.ico?versionId=CAEQMhiBgID7jPeK_BciIGUwMGYzZWJmMzM3NTQ4NDI5N2FhZDk3NDRiZjYzNjFl'
+            href: 'https://buxianshan.oss-cn-beijing.aliyuncs.com/favicon.ico'
         }],
         ['script', {}, `var _hmt = _hmt || [];
         (function () {
