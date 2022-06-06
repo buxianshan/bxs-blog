@@ -1,3 +1,5 @@
+const debugPage = require('./custom/debugPage')
+
 module.exports = {
     head: [
         ['link', {
@@ -72,6 +74,10 @@ module.exports = {
                     {text: '基础笔记', link: '/docker/notes'},
                     {text: '问题记录', link: '/docker/experience'},
                 ]
+            },
+            {
+                text: 'Debug',
+                items: debugPage.nav
             },
             {
                 text: '工具',
