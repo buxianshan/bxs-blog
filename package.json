@@ -13,7 +13,7 @@
     "@vuepress/plugin-back-to-top": "^1.9.7",
     "@vuepress/plugin-medium-zoom": "^1.9.7",
     "cheerio": "^1.0.0-rc.10",
-    "dayjs": "^1.11.0",
+    "dayjs": "^1.11.3",
     "got": "^11.8.3",
     "js-yaml": "^4.1.0",
     "vuepress": "^1.9.7",
