@@ -6,6 +6,8 @@ sidebar: false
 
 ## 2022
 
+### [2022-06-10 编译型/解释型、强类型/弱类型、动态类型/静态类型语言](/blog/program-language-type.html)
+
 ### [2022-03-13 你好 2022](/blog/hello-2022.html)
 
 ## 2021
