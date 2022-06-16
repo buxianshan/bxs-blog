@@ -6,7 +6,7 @@ sidebar: auto
 <h1 align='center'>
     HTML笔记
 </h1>
-
+超文本标记语言（HyperText Markup Language）是一种用于创建网页的标准标记语言。
 
 ## 标签
 
