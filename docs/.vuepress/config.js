@@ -65,6 +65,7 @@ module.exports = {
                 text: '前端',
                 ariaLabel: 'Front-end Menu',
                 items: [
+                    {text: 'HTML', link: '/front-end/html'},
                     {text: 'Node.js', link: '/front-end/nodejs'},
                 ]
             },
