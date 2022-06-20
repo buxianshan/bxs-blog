@@ -67,6 +67,7 @@ module.exports = {
                 items: [
                     {text: 'HTML', link: '/front-end/html'},
                     {text: 'CSS', link: '/front-end/css'},
+                    {text: 'JavaScript', link: '/front-end/js'},
                     {text: 'Node.js', link: '/front-end/nodejs'},
                 ]
             },
