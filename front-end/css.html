@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CSS笔记 | bxs.ink</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="https://buxianshan.oss-cn-beijing.aliyuncs.com/favicon.ico">
+    <script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?40291c62c61f1ce49b021bc0f36df71e";
+            if (window.location.hostname !== "localhost") {
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            }
+        })();</script>
+    <meta name="description" content="一些个人理解、笔记和分享">
+    
+    <link rel="preload" href="/bxs-blog/assets/css/0.styles.a2c13d1a.css" as="style"><link rel="preload" href="/bxs-blog/assets/js/app.26e229a2.js" as="script"><link rel="preload" href="/bxs-blog/assets/js/2.e20f0717.js" as="script"><link rel="preload" href="/bxs-blog/assets/js/28.6adba462.js" as="script"><link rel="prefetch" href="/bxs-blog/assets/js/10.7d8fee8d.js"><link rel="prefetch" href="/bxs-blog/assets/js/11.a655d377.js"><link rel="prefetch" href="/bxs-blog/assets/js/12.4836946d.js"><link rel="prefetch" href="/bxs-blog/assets/js/13.315882db.js"><link rel="prefetch" href="/bxs-blog/assets/js/14.a631edd1.js"><link rel="prefetch" href="/bxs-blog/assets/js/15.3ccc3074.js"><link rel="prefetch" href="/bxs-blog/assets/js/16.60833537.js"><link rel="prefetch" href="/bxs-blog/assets/js/17.397873dc.js"><link rel="prefetch" href="/bxs-blog/assets/js/18.04f23e40.js"><link rel="prefetch" href="/bxs-blog/assets/js/19.8ed8d24c.js"><link rel="prefetch" href="/bxs-blog/assets/js/20.4b2d1641.js"><link rel="prefetch" href="/bxs-blog/assets/js/21.cf44199f.js"><link rel="prefetch" href="/bxs-blog/assets/js/22.0dfcb24f.js"><link rel="prefetch" href="/bxs-blog/assets/js/23.18601599.js"><link rel="prefetch" href="/bxs-blog/assets/js/24.393d0180.js"><link rel="prefetch" href="/bxs-blog/assets/js/25.d4502c58.js"><link rel="prefetch" href="/bxs-blog/assets/js/26.6451c631.js"><link rel="prefetch" href="/bxs-blog/assets/js/27.efaa4e81.js"><link rel="prefetch" href="/bxs-blog/assets/js/29.084b5971.js"><link rel="prefetch" href="/bxs-blog/assets/js/3.08cf08b4.js"><link rel="prefetch" href="/bxs-blog/assets/js/30.ad218558.js"><link rel="prefetch" href="/bxs-blog/assets/js/31.f8d473a2.js"><link rel="prefetch" href="/bxs-blog/assets/js/32.9dd13ba2.js"><link rel="prefetch" href="/bxs-blog/assets/js/33.d1017c28.js"><link rel="prefetch" href="/bxs-blog/assets/js/34.820fb020.js"><link rel="prefetch" href="/bxs-blog/assets/js/35.bf02edec.js"><link rel="prefetch" href="/bxs-blog/assets/js/36.76fc35b6.js"><link rel="prefetch" href="/bxs-blog/assets/js/37.df185ed3.js"><link rel="prefetch" href="/bxs-blog/assets/js/38.70e46c42.js"><link rel="prefetch" href="/bxs-blog/assets/js/39.bd9aa298.js"><link rel="prefetch" href="/bxs-blog/assets/js/4.c59397de.js"><link rel="prefetch" href="/bxs-blog/assets/js/40.eed0cb7b.js"><link rel="prefetch" href="/bxs-blog/assets/js/41.0dfc0cf7.js"><link rel="prefetch" href="/bxs-blog/assets/js/42.f833313f.js"><link rel="prefetch" href="/bxs-blog/assets/js/43.9be55e62.js"><link rel="prefetch" href="/bxs-blog/assets/js/44.365c1a30.js"><link rel="prefetch" href="/bxs-blog/assets/js/45.9c6d19e7.js"><link rel="prefetch" href="/bxs-blog/assets/js/46.e56a3629.js"><link rel="prefetch" href="/bxs-blog/assets/js/47.6728c041.js"><link rel="prefetch" href="/bxs-blog/assets/js/48.81c26fc7.js"><link rel="prefetch" href="/bxs-blog/assets/js/49.05e4f99d.js"><link rel="prefetch" href="/bxs-blog/assets/js/5.1416dedd.js"><link rel="prefetch" href="/bxs-blog/assets/js/6.da068902.js"><link rel="prefetch" href="/bxs-blog/assets/js/7.451e510b.js"><link rel="prefetch" href="/bxs-blog/assets/js/8.58f554d1.js"><link rel="prefetch" href="/bxs-blog/assets/js/9.26cdf604.js">
+    <link rel="stylesheet" href="/bxs-blog/assets/css/0.styles.a2c13d1a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/bxs-blog/" class="home-link router-link-active"><!----> <span class="site-name">bxs.ink</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/bxs-blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python Menu" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python Menu" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/python/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/snippets.html" class="nav-link">
+  常用代码片段
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/class.html" class="nav-link">
+  Python 面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/multithread.html" class="nav-link">
+  Python 多线程
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/with.html" class="nav-link">
+  with 语句
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/build-package.html" class="nav-link">
+  打包项目到PyPI
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/pyc.html" class="nav-link">
+  pyc文件
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/name-style.html" class="nav-link">
+  命名风格建议
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/zen.html" class="nav-link">
+  The Zen of Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java Menu" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java Menu" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/java/basic.html" class="nav-link">
+  Java基础
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/java/jvm.html" class="nav-link">
+  JVM
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Design Patterns Menu" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Design Patterns Menu" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/singleton.html" class="nav-link">
+  单例模式
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/visitor.html" class="nav-link">
+  访问者模式
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/linux/commands-log.html" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-end Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-end Menu" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/html.html" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/css.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/js.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/nodejs.html" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docker" class="dropdown-title"><span class="title">Docker</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docker" class="mobile-dropdown-title"><span class="title">Docker</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/notes.html" class="nav-link">
+  基础笔记
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/experience.html" class="nav-link">
+  问题记录
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Debug" class="dropdown-title"><span class="title">Debug</span> <span class="arrow down"></span></button> <button type="button" aria-label="Debug" class="mobile-dropdown-title"><span class="title">Debug</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/debug/dll-load-failed-while-importing-cv2.html" class="nav-link">
+  DLL load failed while importing cv2
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools Menu" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tools Menu" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/tools/git.html" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="/bxs-blog/collections/" class="nav-link">
+  收藏
+</a></div><div class="nav-item"><a href="/bxs-blog/about/" class="nav-link">
+  关于
+</a></div> <a href="https://github.com/buxianshan/bxs-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/bxs-blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python Menu" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python Menu" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/python/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/snippets.html" class="nav-link">
+  常用代码片段
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/class.html" class="nav-link">
+  Python 面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/multithread.html" class="nav-link">
+  Python 多线程
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/with.html" class="nav-link">
+  with 语句
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/build-package.html" class="nav-link">
+  打包项目到PyPI
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/pyc.html" class="nav-link">
+  pyc文件
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/name-style.html" class="nav-link">
+  命名风格建议
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/zen.html" class="nav-link">
+  The Zen of Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java Menu" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java Menu" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/java/basic.html" class="nav-link">
+  Java基础
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/java/jvm.html" class="nav-link">
+  JVM
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Design Patterns Menu" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Design Patterns Menu" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/singleton.html" class="nav-link">
+  单例模式
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/visitor.html" class="nav-link">
+  访问者模式
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/linux/commands-log.html" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-end Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-end Menu" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/html.html" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/css.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/js.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/nodejs.html" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docker" class="dropdown-title"><span class="title">Docker</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docker" class="mobile-dropdown-title"><span class="title">Docker</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/notes.html" class="nav-link">
+  基础笔记
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/experience.html" class="nav-link">
+  问题记录
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Debug" class="dropdown-title"><span class="title">Debug</span> <span class="arrow down"></span></button> <button type="button" aria-label="Debug" class="mobile-dropdown-title"><span class="title">Debug</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/debug/dll-load-failed-while-importing-cv2.html" class="nav-link">
+  DLL load failed while importing cv2
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools Menu" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tools Menu" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/tools/git.html" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="/bxs-blog/collections/" class="nav-link">
+  收藏
+</a></div><div class="nav-item"><a href="/bxs-blog/about/" class="nav-link">
+  关于
+</a></div> <a href="https://github.com/buxianshan/bxs-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>CSS笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/bxs-blog/front-end/css.html#语法" class="sidebar-link">语法</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/bxs-blog/front-end/css.html#css导入方式" class="sidebar-link">CSS导入方式</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/bxs-blog/front-end/css.html#选择器" class="sidebar-link">选择器</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#基本选择器" class="sidebar-link">基本选择器</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#层次选择器" class="sidebar-link">层次选择器</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#结构伪类选择器" class="sidebar-link">结构伪类选择器</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#属性选择器-重要" class="sidebar-link">属性选择器（重要）</a></li></ul></li><li><a href="/bxs-blog/front-end/css.html#样式和属性" class="sidebar-link">样式和属性</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#字体样式" class="sidebar-link">字体样式</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#文本样式" class="sidebar-link">文本样式</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#超链接伪类" class="sidebar-link">超链接伪类</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#阴影" class="sidebar-link">阴影</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#列表样式" class="sidebar-link">列表样式</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#背景" class="sidebar-link">背景</a></li></ul></li><li><a href="/bxs-blog/front-end/css.html#盒子模型" class="sidebar-link">盒子模型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#边框" class="sidebar-link">边框</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#外边距" class="sidebar-link">外边距</a></li></ul></li><li><a href="/bxs-blog/front-end/css.html#圆角边框" class="sidebar-link">圆角边框</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/bxs-blog/front-end/css.html#阴影-2" class="sidebar-link">阴影</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/bxs-blog/front-end/css.html#浮动" class="sidebar-link">浮动</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/bxs-blog/front-end/css.html#父级边框塌陷的问题" class="sidebar-link">父级边框塌陷的问题</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/bxs-blog/front-end/css.html#定位" class="sidebar-link">定位</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#相对定位" class="sidebar-link">相对定位</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#绝对定位" class="sidebar-link">绝对定位</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#固定定位" class="sidebar-link">固定定位</a></li><li class="sidebar-sub-header"><a href="/bxs-blog/front-end/css.html#z-index" class="sidebar-link">Z-index</a></li></ul></li><li><a href="/bxs-blog/front-end/css.html#透明度" class="sidebar-link">透明度</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/bxs-blog/front-end/css.html#动画" class="sidebar-link">动画</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 align="center">
+    CSS笔记
+</h1> <p>层叠样式表 (Cascading Style Sheets)</p> <h2 id="语法"><a href="#语法" class="header-anchor">#</a> 语法</h2> <p>每个声明分号结尾</p> <div class="language-CSS line-numbers-mode"><pre class="language-css"><code><span class="token selector">选择器</span> <span class="token punctuation">{</span>
+    声明1<span class="token punctuation">;</span>
+    声明2<span class="token punctuation">;</span>
+    ……
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="css导入方式"><a href="#css导入方式" class="header-anchor">#</a> CSS导入方式</h2> <p>建议从外部引入css</p> <ul><li><p>内部样式：style标签内写css的代码</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">h1</span><span class="token punctuation">{</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li> <li><p>外部样式</p> <ul><li><p>链接式（常用）</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>css/style.css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>导入式（CSS2.1特有的，现在不常用，了解就行，不建议使用）</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token atrule"><span class="token rule">@import</span> <span class="token string">&quot;css/style.css&quot;</span><span class="token punctuation">;</span></span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li></ul></li> <li><p>行内样式 标签的style属性</p></li></ul> <p>优先级：就近原则，行内最近，其它的看位置</p> <h2 id="选择器"><a href="#选择器" class="header-anchor">#</a> 选择器</h2> <p>选中页面中的某个或某类元素</p> <h3 id="基本选择器"><a href="#基本选择器" class="header-anchor">#</a> 基本选择器</h3> <p>优先级是id选择器 &gt; 类选择器 &gt; 标签选择器</p> <ul><li><p>标签选择器：直接用标签名就可选到所有这种标签</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">h1</span> <span class="token punctuation">{</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li> <li><p>类选择器 calss：点加类名</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">.class_name</span> <span class="token punctuation">{</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li> <li><p>id 选择器：井号加id（id必须唯一）</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">#id_name</span> <span class="token punctuation">{</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></li></ul> <p>总结一下：点加类名，#加id</p> <h3 id="层次选择器"><a href="#层次选择器" class="header-anchor">#</a> 层次选择器</h3> <ul><li><p>后代选择器：某个元素的所有子孙节点，例如body中的所有p标签</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">body p</span> <span class="token punctuation">{</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li> <li><p>子选择器：某个元素的直接子节点</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">body &gt; p</span> <span class="token punctuation">{</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li> <li><p>兄弟选择器：某个元素相邻的元素，例如class1下面相邻的p元素</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">.class1 + p</span> <span class="token punctuation">{</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li> <li><p>通用选择器：某元素相邻的下面的所有元素</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">.class1 ~ p</span> <span class="token punctuation">{</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></li></ul> <h3 id="结构伪类选择器"><a href="#结构伪类选择器" class="header-anchor">#</a> 结构伪类选择器</h3> <p>冒号后加条件</p> <p>ul标签下的第一个li标签</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">ul li:first-child</span> <span class="token punctuation">{</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>选择当前元素的父元素的第一个子元素，并且是当前元素才生效</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">p:nth-child(1)</span> <span class="token punctuation">{</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="属性选择器-重要"><a href="#属性选择器-重要" class="header-anchor">#</a> 属性选择器（重要）</h3> <p>相当于id和calss结合了</p> <p>带有class属性的a标签</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">a[class]</span> <span class="token punctuation">{</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>可以指定属性名和属性值，而且属性值支持正则表达式</p> <ul><li>=是绝对等于</li> <li>*=是包含</li> <li>^=开头是</li> <li>$=结尾是</li></ul> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">a[class*=&quot;links&quot;]</span> <span class="token punctuation">{</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="样式和属性"><a href="#样式和属性" class="header-anchor">#</a> 样式和属性</h2> <p>重点要突出的文字使用span标签包起来</p> <h3 id="字体样式"><a href="#字体样式" class="header-anchor">#</a> 字体样式</h3> <ul><li>可以直接用一个font属性写，font: 风格 粗细 大小 字体</li> <li>font-family 字体</li> <li>font-size 字体大小</li> <li>font-weight 字体粗细</li> <li>color 字体颜色</li></ul> <h3 id="文本样式"><a href="#文本样式" class="header-anchor">#</a> 文本样式</h3> <ul><li>颜色 color</li> <li>对齐方式 text-align center</li> <li>首行缩进 text-indent：2em</li> <li>行高 line-height</li> <li>下划线 text-decoration: underline、中划线 text-decoration: through、上划线 text-decoration: overline</li></ul> <h3 id="超链接伪类"><a href="#超链接伪类" class="header-anchor">#</a> 超链接伪类</h3> <p>例如hover：鼠标悬浮在a标签改变颜色</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code>a:hover{
+    color: red;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="阴影"><a href="#阴影" class="header-anchor">#</a> 阴影</h3> <p>text- shadow：阴影颜色 水平偏移 垂直偏移 阴影半径</p> <h3 id="列表样式"><a href="#列表样式" class="header-anchor">#</a> 列表样式</h3> <ul><li>list-style：none 去掉列表前的圆点</li></ul> <h3 id="背景"><a href="#背景" class="header-anchor">#</a> 背景</h3> <ul><li><p>颜色 background-color</p></li> <li><p>图片 background-img</p></li> <li><p>边框 border</p></li> <li><p>渐变色，建议使用这个网站：https://www.grabient.com/</p></li></ul> <p>一个背景渐变和文字居中的demo:</p> <ul><li>注意要让背景铺满屏幕background-attachment: fixed;不然加了文字就变成一条一条的背景了。</li> <li>要让div处于屏幕中央，使用绝对布局，position: absolute;</li></ul> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">body</span> <span class="token punctuation">{</span>
+            <span class="token property">background-color</span><span class="token punctuation">:</span> #0093E9<span class="token punctuation">;</span>
+            <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>160deg<span class="token punctuation">,</span> #0093E9 0%<span class="token punctuation">,</span> #80D0C7 100%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token property">background-attachment</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token selector">div</span> <span class="token punctuation">{</span>
+            <span class="token property">font-family</span><span class="token punctuation">:</span> Courier<span class="token punctuation">;</span>
+            <span class="token property">font-size</span><span class="token punctuation">:</span> x-large<span class="token punctuation">;</span>
+            <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+            <span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+            <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+            <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span> -50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+        Hello, This is BXS.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><h2 id="盒子模型"><a href="#盒子模型" class="header-anchor">#</a> 盒子模型</h2> <ul><li>margin 外边距</li> <li>border 边框</li> <li>padding 内边距</li></ul> <p>都是分上下左右的</p> <h3 id="边框"><a href="#边框" class="header-anchor">#</a> 边框</h3> <p>border: red solid 10px;</p> <ul><li>颜色 红色</li> <li>样式 solid实线 dashed 虚线</li> <li>粗细 10个像素</li></ul> <h3 id="外边距"><a href="#外边距" class="header-anchor">#</a> 外边距</h3> <p>body总有一个margin默认是是8px，不是0</p> <p>常用外边距来使元素水平居中，margin: auto;</p> <h2 id="圆角边框"><a href="#圆角边框" class="header-anchor">#</a> 圆角边框</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>border-radius: 50px;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>正方形当圆角边框和边长相等时就是圆</p> <h2 id="阴影-2"><a href="#阴影-2" class="header-anchor">#</a> 阴影</h2> <p>可以做边框发光的效果</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>box-shadow: 10px 10px 1px yellow;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="浮动"><a href="#浮动" class="header-anchor">#</a> 浮动</h2> <p>标准文档流：块级元素从上到下顺序排列</p> <p>display属性</p> <ul><li>none 不显示</li> <li>block 块级显示</li> <li>inline 行内显示</li> <li>inline-block 既是行内也是块元素：是块元素，但是可以显示在一行</li></ul> <p>float属性</p> <ul><li>left 往左浮动</li> <li>right</li></ul> <p>clear：例如如果向右浮动，右边已经有了别的元素，则它会清理一下，自己往移动一点，还是保证自己贴着右边</p> <h2 id="父级边框塌陷的问题"><a href="#父级边框塌陷的问题" class="header-anchor">#</a> 父级边框塌陷的问题</h2> <p>块元素float浮动之后，父元素高度变了</p> <ul><li><p>解决方式1：直接设置父元素的高度为**px</p></li> <li><p>解决方式2：增加一个空的div标签，清除浮动clear：both</p></li> <li><p>解决方式3：overflow：hidden</p></li> <li><p>解决方式4（推荐）：在父元素添加伪类,添加一个空内容的block，清除浮动</p> <div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token selector">#father:after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">clear</span><span class="token punctuation">:</span>both<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li></ul> <p>overflow属性</p> <ul><li>hidden 超过宽高的部分隐藏</li> <li>scroll 超过的时候会出现滚动条</li></ul> <h2 id="定位"><a href="#定位" class="header-anchor">#</a> 定位</h2> <h3 id="相对定位"><a href="#相对定位" class="header-anchor">#</a> 相对定位</h3> <p>position：relative</p> <p>相对于自己原来的位置进行偏移</p> <p>使用了相对定位的元素仍然处于标准文档流中，原来的位置会被保留</p> <h3 id="绝对定位"><a href="#绝对定位" class="header-anchor">#</a> 绝对定位</h3> <p>position：absolute</p> <p>没有父元素时，根据浏览器边框定位</p> <h3 id="固定定位"><a href="#固定定位" class="header-anchor">#</a> 固定定位</h3> <p>position：fixed</p> <p>固定在屏幕的某个位置</p> <h3 id="z-index"><a href="#z-index" class="header-anchor">#</a> Z-index</h3> <p>图层</p> <p>zindex：0 表示放到第0层,默认是0，最高不限</p> <h2 id="透明度"><a href="#透明度" class="header-anchor">#</a> 透明度</h2> <p>opacity:0.5</p> <h2 id="动画"><a href="#动画" class="header-anchor">#</a> 动画</h2> <p>了解一下就行：<a href="https://www.runoob.com/css3/css3-animations.html" target="_blank" rel="noopener noreferrer">CSS3 动画<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/buxianshan/bxs-blog/edit/master/docs/front-end/css.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2022-06-20 10:53:02</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/bxs-blog/assets/js/app.26e229a2.js" defer></script><script src="/bxs-blog/assets/js/2.e20f0717.js" defer></script><script src="/bxs-blog/assets/js/28.6adba462.js" defer></script>
+  </body>
+</html>
