@@ -69,6 +69,7 @@ module.exports = {
                     {text: 'CSS', link: '/front-end/css'},
                     {text: 'JavaScript', link: '/front-end/js'},
                     {text: 'Node.js', link: '/front-end/nodejs'},
+                    {text: 'AJAX', link: '/front-end/ajax'},
                 ]
             },
             {
