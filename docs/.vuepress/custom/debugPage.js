@@ -5,5 +5,9 @@ module.exports = {
             text: 'DLL load failed while importing cv2',
             link: '/debug/dll-load-failed-while-importing-cv2'
         },
+        {
+            text: 'linux服务器java环境变量问题',
+            link: '/debug/linux-java-environment-variables'
+        },
     ]
 }
