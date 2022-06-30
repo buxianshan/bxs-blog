@@ -94,3 +94,25 @@ git config --local --unset https.proxy
 ```
 
 如果使用了git的GUI工具，例如Sourcetree，修改了代理还是遇到报错，可以尝试重启Sourcetree😂。
+
+
+
+## 丢弃本地修改，强制拉取最新
+
+丢弃本地修改，强制拉取远程仓库最新代码。
+
+如果本地只修改了文件，但没有commit，可以使用下面这个命令：
+
+```bash
+git checkout .
+```
+
+如果本地仓库也有提交（没有推送到远程仓库），使用下面的命令：
+
+```bash
+# 获取远程仓库代码（不是合并）
+git fetch --all
+# 把HEAD强制指向某分支，例如master分支
+git reset --hard origin/master
+```
+
