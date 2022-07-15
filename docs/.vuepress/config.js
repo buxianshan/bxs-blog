@@ -39,6 +39,7 @@ module.exports = {
                     {text: '打包项目到PyPI', link: '/python/build-package'},
                     {text: 'pyc文件', link: '/python/pyc'},
                     {text: '命名风格建议', link: '/python/name-style'},
+                    {text: 'Pycharm 生成文档字符串', link: '/python/pycharm-generate-doc-string'},
                     {text: 'The Zen of Python', link: '/python/zen'},
                 ]
             },
