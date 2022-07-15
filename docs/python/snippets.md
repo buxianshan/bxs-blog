@@ -262,7 +262,7 @@ class FineLogger(Logger):
     def __init__(self, name, level=NOTSET):
         Logger.__init__(self, name=name, level=level)
 
-    def set_log_file(self, log_path="debug.log"):
+    def init_log_file(self, log_path="debug.log"):
         """
         如果要同时把日志记录到文件中，需要通过此方法设置路径
         :param log_path: 日志文件路径
@@ -293,7 +293,7 @@ from fine_logger import fine_logger
 
 
 # 如果要同时把日志记录到文件中，需要先设置日志路径，默认是./debug.log
-fine_logger.set_log_file()
+fine_logger.init_log_file()
 fine_logger.info("Hello")
 ```
 
