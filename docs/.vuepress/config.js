@@ -65,6 +65,7 @@ module.exports = {
                 ariaLabel: 'Linux Menu',
                 items: [
                     {text: '常用命令记录', link: '/linux/commands-log'},
+                    {text: '重写/自定义命令', link: '/linux/custom-commands'},
                     {text: '关于shell', link: '/linux/shell'},
                 ]
             },
@@ -107,6 +108,7 @@ module.exports = {
             '/python/': 'auto',
             '/linux/': [
                 ['commands-log', '常用命令记录'],
+                ['custom-commands', '重写/自定义命令'],
                 ['shell', '关于shell'],
             ],
             '/java/': 'auto',
