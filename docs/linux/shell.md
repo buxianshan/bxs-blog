@@ -1,8 +1,8 @@
-<h1 align='center'>关于shell</h1>
+<h1 align='center'>Shell类型</h1>
 
-## 查看shell的类型
+## 查看Shell的类型
 
-centos通常用的是/bin/bash，而有些shell看起来很炫，例如zsh，怎么查看当前shell到底是什么类型呢？
+centos通常用的是/bin/bash，而有些Shell看起来很炫，例如zsh，怎么查看当前Shell到底是什么类型呢？
 
 执行：`echo $0`
 
@@ -17,7 +17,7 @@ $ echo $0
 -zsh
 ```
 
-## 查看当前系统有哪些shell
+## 查看当前系统有哪些Shell
 
 ```bash
 # 终端1
@@ -40,7 +40,7 @@ $ cat /etc/shells
 /usr/bin/zsh
 ```
 
-## 查看用户(默认)使用的shell
+## 查看用户(默认)使用的Shell
 
 ```bash
 # 终端1
@@ -53,7 +53,7 @@ $ echo $SHELL
 /usr/bin/zsh
 ```
 
-## 查看当前shell所有环境变量：env
+## 查看当前Shell所有环境变量：env
 
 终端1：
 
@@ -117,7 +117,7 @@ LSCOLORS=Gxfxcxdxbxegedabagacad
 _=/usr/bin/env
 ```
 
-## 切换shell
+## 切换Shell
 
 **Oh My Zsh** 是一款社区驱动的命令行工具，正如它的主页上说的，**Oh My Zsh** 是一种生活方式。它基于 **zsh** 命令行，提供了主题配置，插件机制，已经内置的便捷操作。给我们一种全新的方式使用命令行。
 

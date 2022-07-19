@@ -66,7 +66,7 @@ module.exports = {
                 items: [
                     {text: '常用命令记录', link: '/linux/commands-log'},
                     {text: '重写/自定义命令', link: '/linux/custom-commands'},
-                    {text: '关于shell', link: '/linux/shell'},
+                    {text: 'Shell类型', link: '/linux/shell'},
                 ]
             },
             // {text: 'Docker', link: '/docker/'},
@@ -109,7 +109,7 @@ module.exports = {
             '/linux/': [
                 ['commands-log', '常用命令记录'],
                 ['custom-commands', '重写/自定义命令'],
-                ['shell', '关于shell'],
+                ['shell', 'Shell类型'],
             ],
             '/java/': 'auto',
             '/design-patterns/': 'auto',
