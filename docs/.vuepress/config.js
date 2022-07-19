@@ -60,7 +60,14 @@ module.exports = {
                     {text: '访问者模式', link: '/design-patterns/visitor'},
                 ]
             },
-            {text: 'Linux', link: '/linux/commands-log'},
+            {
+                text: 'Linux',
+                ariaLabel: 'Linux Menu',
+                items: [
+                    {text: '常用命令记录', link: '/linux/commands-log'},
+                    {text: '关于shell', link: '/linux/shell'},
+                ]
+            },
             // {text: 'Docker', link: '/docker/'},
             {
                 text: '前端',
