@@ -96,6 +96,7 @@ module.exports = {
                 text: '工具',
                 ariaLabel: 'Tools Menu',
                 items: [
+                    {text: '常用工具', link: '/tools/tools-i-use'},
                     {text: 'Git', link: '/tools/git'},
                 ]
             },
