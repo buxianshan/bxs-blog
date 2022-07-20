@@ -37,3 +37,7 @@ sidebar: auto
 ## Git图形界面工具
 
 Sourcetree：（windows版）最好用的地方是可以很方便的切换不同仓库的Tab，可惜mac版的还是得一个个点击打开仓库。
+
+## Markdown 编辑器
+
+Typora
