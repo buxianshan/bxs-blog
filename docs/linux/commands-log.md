@@ -67,7 +67,7 @@ firewall-cmd --zone=public --remove-port=3306/tcp --permanent
 
 ```bash
 # 使用netstat查看所有正在被监听的端口
-netstat netstat -tlnp
+netstat -tlnp
 
 # 3306是否被监听
 netstat -anlp | grep 3306
