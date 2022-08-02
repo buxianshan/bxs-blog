@@ -36,7 +36,7 @@ Java Lambda表达式的格式：
 ```java
 (parameters) -> expression
 // or
-(parameters) ->{ statements; }
+(parameters) -> { statements; }
 ```
 
 什么时候可以写Lambda表达式？
