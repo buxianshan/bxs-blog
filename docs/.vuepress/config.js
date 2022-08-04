@@ -98,6 +98,7 @@ module.exports = {
                 items: [
                     {text: '常用工具', link: '/tools/tools-i-use'},
                     {text: 'Git', link: '/tools/git'},
+                    {text: '微软RDP优化', link: '/tools/microsoft-rdp'},
                 ]
             },
             {text: 'Blog', link: '/blog/'},
