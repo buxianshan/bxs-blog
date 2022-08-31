@@ -40,7 +40,7 @@ docker update --restart=always container_name
 
 ```bash
 # 查看某个容器的ip
-docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 容器名
+docker inspect --format '{{.NetworkSettings.IPAddress}}' 容器名
 
 # 查看所有正在运行的容器
 docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -q)
