@@ -35,3 +35,17 @@ docker exec -it --user root  container_name /bin/bash
 ```bash
 docker update --restart=always container_name
 ```
+
+## 查看容器的ip
+
+```bash
+# 查看某个容器的ip
+docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 容器名
+
+# 查看所有正在运行的容器
+docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -q)
+
+# 所有容器(包括已停止的)
+docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+```
+
