@@ -49,3 +49,34 @@ docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAdd
 docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
 ```
 
+## docker ps 格式化
+
+有时`docker ps`显示的内容过多或者过少，可以自己设置输出哪些字段。
+
+参考文档：https://docs.docker.com/engine/reference/commandline/ps/#formatting
+
+```bash
+# 显示容器名和状态（使用制表符\t隔开）
+docker ps --format "{{.Names}}\t{{.Status}}"
+
+# 显示容器名、启动命令、状态、镜像名
+docker ps --format "{{.Names}}\t{{.Command}}\t{{.Status}}\t{{.Image}}"
+```
+
+| Placeholder   | Description                                                  |
+| :------------ | :----------------------------------------------------------- |
+| `.ID`         | Container ID                                                 |
+| `.Image`      | Image ID                                                     |
+| `.Command`    | Quoted command                                               |
+| `.CreatedAt`  | Time when the container was created.                         |
+| `.RunningFor` | Elapsed time since the container was started.                |
+| `.Ports`      | Exposed ports.                                               |
+| `.State`      | Container status (for example; “created”, “running”, “exited”). |
+| `.Status`     | Container status with details about duration and health-status. |
+| `.Size`       | Container disk size.                                         |
+| `.Names`      | Container names.                                             |
+| `.Labels`     | All labels assigned to the container.                        |
+| `.Label`      | Value of a specific label for this container. For example `'{{.Label "com.docker.swarm.cpu"}}'` |
+| `.Mounts`     | Names of the volumes mounted in this container.              |
+| `.Networks`   | Names of the networks attached to this container.            |
+
