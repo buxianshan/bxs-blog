@@ -86,6 +86,7 @@ module.exports = {
                 items: [
                     {text: '基础笔记', link: '/docker/notes'},
                     {text: '问题记录', link: '/docker/experience'},
+                    {text: 'docker-compose', link: '/docker/docker-compose'},
                 ]
             },
             {
@@ -117,7 +118,8 @@ module.exports = {
             '/design-patterns/': 'auto',
             '/docker/': [
                 ['notes', '基础笔记'],
-                ['experience', '问题记录']
+                ['experience', '问题记录'],
+                ['docker-compose', 'docker-compose']
             ],
             // fallback
             '/': ['']
