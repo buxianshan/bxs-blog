@@ -64,3 +64,12 @@ docker ps --format "{{.Names}}\t{{.Command}}\t{{.Status}}\t{{.Image}}"
 ```
 
 ![image-20220907150702553](https://buxianshan.oss-cn-beijing.aliyuncs.com/Typora_images/image-20220907150702553.png)
+
+## docker build 构建时容器访问不到外网
+
+加个参数`--network host`，使用宿主机的网络：
+
+```bash
+docker build -t buxianshan/flask:0.0.1 . --network host
+```
+
