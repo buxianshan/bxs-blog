@@ -87,7 +87,7 @@ if __name__ == '__main__':
 `--help`输出帮助信息：
 
 ```bash
-(base) D:\code\python\analysis-temp\python-console-arguments>python click_demo.py --help
+# python click_demo.py --help
 Usage: click_demo.py [OPTIONS]
 
 Options:
