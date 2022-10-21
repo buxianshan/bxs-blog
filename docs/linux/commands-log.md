@@ -188,3 +188,22 @@ ls -li
 
 - 硬链接2.txt和1.txt的Inode索引是相同的
 - 软链接是指向源文件`3.txt -> 1.txt`
+
+## rpm安装卸载软件
+
+```bash
+# 例如已有安装包 BxsTest.rpm
+# 安装命令，参数i 安装、v 可视化、h显示进度
+rpm -ivh BxsTest.rpm
+
+# 查找已安装的包
+rpm -qa | grep BxsTest
+# output：BxsTest.amd64
+
+# 查看安装路径
+rpm -ql BxsTest.amd64
+
+# 卸载已安装的包
+rpm -e BxsTest.amd64
+```
+
