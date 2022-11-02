@@ -207,3 +207,20 @@ rpm -ql BxsTest.amd64
 rpm -e BxsTest.amd64
 ```
 
+## deb包安装和卸载
+
+```bash
+# 例如已有安装包 BxsTest.deb
+# 安装
+dpkg -i BxsTest.deb
+
+# 查看已安装的
+dpkg -l | grep Test
+
+# 查看安装路径
+dpkg -L 包名
+
+# 卸载
+dpkg -r 包名
+```
+
