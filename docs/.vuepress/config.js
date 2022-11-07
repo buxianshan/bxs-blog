@@ -68,6 +68,7 @@ module.exports = {
                     {text: '常用命令记录', link: '/linux/commands-log'},
                     {text: '重写/自定义命令', link: '/linux/custom-commands'},
                     {text: 'Shell类型', link: '/linux/shell'},
+                    {text: 'ESXi', link: '/linux/esxi'},
                 ]
             },
             // {text: 'Docker', link: '/docker/'},
