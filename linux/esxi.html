@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ESXi 笔记 | bxs.ink</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="https://buxianshan.oss-cn-beijing.aliyuncs.com/favicon.ico">
+    <script>var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?40291c62c61f1ce49b021bc0f36df71e";
+            if (window.location.hostname !== "localhost") {
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            }
+        })();</script>
+    <meta name="description" content="一些个人理解、笔记和分享">
+    
+    <link rel="preload" href="/bxs-blog/assets/css/0.styles.a2c13d1a.css" as="style"><link rel="preload" href="/bxs-blog/assets/js/app.3457f416.js" as="script"><link rel="preload" href="/bxs-blog/assets/js/2.e20f0717.js" as="script"><link rel="preload" href="/bxs-blog/assets/js/41.510cc4f6.js" as="script"><link rel="prefetch" href="/bxs-blog/assets/js/10.7d8fee8d.js"><link rel="prefetch" href="/bxs-blog/assets/js/11.a655d377.js"><link rel="prefetch" href="/bxs-blog/assets/js/12.4836946d.js"><link rel="prefetch" href="/bxs-blog/assets/js/13.315882db.js"><link rel="prefetch" href="/bxs-blog/assets/js/14.a631edd1.js"><link rel="prefetch" href="/bxs-blog/assets/js/15.3ccc3074.js"><link rel="prefetch" href="/bxs-blog/assets/js/16.60833537.js"><link rel="prefetch" href="/bxs-blog/assets/js/17.397873dc.js"><link rel="prefetch" href="/bxs-blog/assets/js/18.04f23e40.js"><link rel="prefetch" href="/bxs-blog/assets/js/19.8ed8d24c.js"><link rel="prefetch" href="/bxs-blog/assets/js/20.4b2d1641.js"><link rel="prefetch" href="/bxs-blog/assets/js/21.cf44199f.js"><link rel="prefetch" href="/bxs-blog/assets/js/22.0dfcb24f.js"><link rel="prefetch" href="/bxs-blog/assets/js/23.132a296b.js"><link rel="prefetch" href="/bxs-blog/assets/js/24.ab7dc7cc.js"><link rel="prefetch" href="/bxs-blog/assets/js/25.058d782f.js"><link rel="prefetch" href="/bxs-blog/assets/js/26.f354e7e3.js"><link rel="prefetch" href="/bxs-blog/assets/js/27.0bcca761.js"><link rel="prefetch" href="/bxs-blog/assets/js/28.23837d99.js"><link rel="prefetch" href="/bxs-blog/assets/js/29.796fd84e.js"><link rel="prefetch" href="/bxs-blog/assets/js/3.250428b4.js"><link rel="prefetch" href="/bxs-blog/assets/js/30.fb2134ec.js"><link rel="prefetch" href="/bxs-blog/assets/js/31.134b6287.js"><link rel="prefetch" href="/bxs-blog/assets/js/32.efd3d8a3.js"><link rel="prefetch" href="/bxs-blog/assets/js/33.665eed02.js"><link rel="prefetch" href="/bxs-blog/assets/js/34.23cc61a8.js"><link rel="prefetch" href="/bxs-blog/assets/js/35.bca999e1.js"><link rel="prefetch" href="/bxs-blog/assets/js/36.0ed49955.js"><link rel="prefetch" href="/bxs-blog/assets/js/37.480ec110.js"><link rel="prefetch" href="/bxs-blog/assets/js/38.1fd9a450.js"><link rel="prefetch" href="/bxs-blog/assets/js/39.294fbaa6.js"><link rel="prefetch" href="/bxs-blog/assets/js/4.c59397de.js"><link rel="prefetch" href="/bxs-blog/assets/js/40.2bf5ea2b.js"><link rel="prefetch" href="/bxs-blog/assets/js/42.2131a2c2.js"><link rel="prefetch" href="/bxs-blog/assets/js/43.c56d712e.js"><link rel="prefetch" href="/bxs-blog/assets/js/44.7415be34.js"><link rel="prefetch" href="/bxs-blog/assets/js/45.2ba91f96.js"><link rel="prefetch" href="/bxs-blog/assets/js/46.15c4fc21.js"><link rel="prefetch" href="/bxs-blog/assets/js/47.16cc6281.js"><link rel="prefetch" href="/bxs-blog/assets/js/48.cf13335e.js"><link rel="prefetch" href="/bxs-blog/assets/js/49.d1ba047c.js"><link rel="prefetch" href="/bxs-blog/assets/js/5.1416dedd.js"><link rel="prefetch" href="/bxs-blog/assets/js/50.ed715998.js"><link rel="prefetch" href="/bxs-blog/assets/js/51.480e787d.js"><link rel="prefetch" href="/bxs-blog/assets/js/52.0ff74337.js"><link rel="prefetch" href="/bxs-blog/assets/js/53.71cf7f5a.js"><link rel="prefetch" href="/bxs-blog/assets/js/54.52e30b4b.js"><link rel="prefetch" href="/bxs-blog/assets/js/55.2f37a339.js"><link rel="prefetch" href="/bxs-blog/assets/js/56.dd0b655f.js"><link rel="prefetch" href="/bxs-blog/assets/js/57.2979766b.js"><link rel="prefetch" href="/bxs-blog/assets/js/58.effcb1ad.js"><link rel="prefetch" href="/bxs-blog/assets/js/6.da068902.js"><link rel="prefetch" href="/bxs-blog/assets/js/7.451e510b.js"><link rel="prefetch" href="/bxs-blog/assets/js/8.58f554d1.js"><link rel="prefetch" href="/bxs-blog/assets/js/9.26cdf604.js">
+    <link rel="stylesheet" href="/bxs-blog/assets/css/0.styles.a2c13d1a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/bxs-blog/" class="home-link router-link-active"><!----> <span class="site-name">bxs.ink</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/bxs-blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python Menu" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python Menu" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/python/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/snippets.html" class="nav-link">
+  常用代码片段
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/class.html" class="nav-link">
+  Python 面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/multithread.html" class="nav-link">
+  Python 多线程
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/console-arguments.html" class="nav-link">
+  Python 命令行传参
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/with.html" class="nav-link">
+  with 语句
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/build-package.html" class="nav-link">
+  打包项目到PyPI
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/pyc.html" class="nav-link">
+  pyc文件
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/name-style.html" class="nav-link">
+  命名风格建议
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/pycharm-generate-doc-string.html" class="nav-link">
+  Pycharm 生成文档字符串
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/zen.html" class="nav-link">
+  The Zen of Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java Menu" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java Menu" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/java/basic.html" class="nav-link">
+  Java基础
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/java/jvm.html" class="nav-link">
+  JVM
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Design Patterns Menu" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Design Patterns Menu" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/singleton.html" class="nav-link">
+  单例模式
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/visitor.html" class="nav-link">
+  访问者模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux Menu" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux Menu" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/linux/commands-log.html" class="nav-link">
+  常用命令记录
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/linux/custom-commands.html" class="nav-link">
+  重写/自定义命令
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/linux/shell.html" class="nav-link">
+  Shell类型
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/linux/esxi.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  ESXi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-end Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-end Menu" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/html.html" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/css.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/js.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/nodejs.html" class="nav-link">
+  Node.js
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/ajax.html" class="nav-link">
+  AJAX
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docker" class="dropdown-title"><span class="title">Docker</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docker" class="mobile-dropdown-title"><span class="title">Docker</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/notes.html" class="nav-link">
+  基础笔记
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/experience.html" class="nav-link">
+  问题记录
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/docker-compose.html" class="nav-link">
+  docker-compose
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Debug" class="dropdown-title"><span class="title">Debug</span> <span class="arrow down"></span></button> <button type="button" aria-label="Debug" class="mobile-dropdown-title"><span class="title">Debug</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/debug/dll-load-failed-while-importing-cv2.html" class="nav-link">
+  DLL load failed while importing cv2
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/debug/linux-java-environment-variables.html" class="nav-link">
+  linux服务器java环境变量问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools Menu" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tools Menu" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/tools/tools-i-use.html" class="nav-link">
+  常用工具
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/tools/git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/tools/microsoft-rdp.html" class="nav-link">
+  微软RDP优化
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="/bxs-blog/collections/" class="nav-link">
+  收藏
+</a></div><div class="nav-item"><a href="/bxs-blog/about/" class="nav-link">
+  关于
+</a></div> <a href="https://github.com/buxianshan/bxs-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/bxs-blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Python Menu" class="dropdown-title"><span class="title">Python</span> <span class="arrow down"></span></button> <button type="button" aria-label="Python Menu" class="mobile-dropdown-title"><span class="title">Python</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/python/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/snippets.html" class="nav-link">
+  常用代码片段
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/class.html" class="nav-link">
+  Python 面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/multithread.html" class="nav-link">
+  Python 多线程
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/console-arguments.html" class="nav-link">
+  Python 命令行传参
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/with.html" class="nav-link">
+  with 语句
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/build-package.html" class="nav-link">
+  打包项目到PyPI
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/pyc.html" class="nav-link">
+  pyc文件
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/name-style.html" class="nav-link">
+  命名风格建议
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/pycharm-generate-doc-string.html" class="nav-link">
+  Pycharm 生成文档字符串
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/python/zen.html" class="nav-link">
+  The Zen of Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java Menu" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java Menu" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/java/basic.html" class="nav-link">
+  Java基础
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/java/jvm.html" class="nav-link">
+  JVM
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Design Patterns Menu" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="Design Patterns Menu" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/introduction.html" class="nav-link">
+  简介
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/singleton.html" class="nav-link">
+  单例模式
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/design-patterns/visitor.html" class="nav-link">
+  访问者模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Linux Menu" class="dropdown-title"><span class="title">Linux</span> <span class="arrow down"></span></button> <button type="button" aria-label="Linux Menu" class="mobile-dropdown-title"><span class="title">Linux</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/linux/commands-log.html" class="nav-link">
+  常用命令记录
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/linux/custom-commands.html" class="nav-link">
+  重写/自定义命令
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/linux/shell.html" class="nav-link">
+  Shell类型
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/linux/esxi.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  ESXi
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-end Menu" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-end Menu" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/html.html" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/css.html" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/js.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/nodejs.html" class="nav-link">
+  Node.js
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/front-end/ajax.html" class="nav-link">
+  AJAX
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docker" class="dropdown-title"><span class="title">Docker</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docker" class="mobile-dropdown-title"><span class="title">Docker</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/notes.html" class="nav-link">
+  基础笔记
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/experience.html" class="nav-link">
+  问题记录
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/docker/docker-compose.html" class="nav-link">
+  docker-compose
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Debug" class="dropdown-title"><span class="title">Debug</span> <span class="arrow down"></span></button> <button type="button" aria-label="Debug" class="mobile-dropdown-title"><span class="title">Debug</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/debug/dll-load-failed-while-importing-cv2.html" class="nav-link">
+  DLL load failed while importing cv2
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/debug/linux-java-environment-variables.html" class="nav-link">
+  linux服务器java环境变量问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tools Menu" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="Tools Menu" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bxs-blog/tools/tools-i-use.html" class="nav-link">
+  常用工具
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/tools/git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/bxs-blog/tools/microsoft-rdp.html" class="nav-link">
+  微软RDP优化
+</a></li></ul></div></div><div class="nav-item"><a href="/bxs-blog/blog/" class="nav-link">
+  Blog
+</a></div><div class="nav-item"><a href="/bxs-blog/collections/" class="nav-link">
+  收藏
+</a></div><div class="nav-item"><a href="/bxs-blog/about/" class="nav-link">
+  关于
+</a></div> <a href="https://github.com/buxianshan/bxs-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>ESXi 笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/bxs-blog/linux/esxi.html#安装esxi-8-0" class="sidebar-link">安装ESXi 8.0</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/bxs-blog/linux/esxi.html#开启ssh密码登录" class="sidebar-link">开启SSH密码登录</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/bxs-blog/linux/esxi.html#ssh显示dcui" class="sidebar-link">SSH显示DCUI</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/bxs-blog/linux/esxi.html#配置ssl证书" class="sidebar-link">配置SSL证书</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/bxs-blog/linux/esxi.html#修改主机名" class="sidebar-link">修改主机名</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/bxs-blog/linux/esxi.html#查看版本号" class="sidebar-link">查看版本号</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 align="center">
+    ESXi 笔记
+</h1> <h2 id="安装esxi-8-0"><a href="#安装esxi-8-0" class="header-anchor">#</a> 安装ESXi 8.0</h2> <ol><li>下载iso镜像：https://pan.baidu.com/s/1091fZq-TgOxAqw-gpGkr1w?pwd=dud1</li> <li>写入U盘：使用<a href="https://rufus.ie/zh/" target="_blank" rel="noopener noreferrer">rufus<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>很方便</li> <li>U盘插入主机，进bois设置从U盘启动，根据提示安装即可</li></ol> <p>esxi 8.0 激活码：MV4YN-0L38Q-2ZK60-XUA7K-AAZ18</p> <h2 id="开启ssh密码登录"><a href="#开启ssh密码登录" class="header-anchor">#</a> 开启SSH密码登录</h2> <p>首先开启SSH服务：</p> <p><img src="https://buxianshan.oss-cn-beijing.aliyuncs.com/Typora_images/image-20221107113409330.png" alt="image-20221107113409330"></p> <p>设置允许密码登录：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 把 PasswordAuthentication no 改为 yes，保存退出</span>
+<span class="token function">vi</span> /etc/ssh/sshd_config
+
+<span class="token comment"># 重启ssh服务</span>
+/etc/init.d/SSH restart
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="ssh显示dcui"><a href="#ssh显示dcui" class="header-anchor">#</a> SSH显示DCUI</h2> <p>Direct Console User Interface（直连用户界面）：直接控制台用户界面(DCUI)允许您使用基于文本的菜单与主机进行本地交互。</p> <p>当没有直连显示器时，使用DCUI可以很方便的界面控制服务器。</p> <p>SSH连接后，只需要输入<code>dcui</code>回车即可，<code>ctrl + c</code>退出。</p> <p><img src="https://buxianshan.oss-cn-beijing.aliyuncs.com/Typora_images/image-20221107135251949.png" alt="image-20221107135251949"></p> <h2 id="配置ssl证书"><a href="#配置ssl证书" class="header-anchor">#</a> 配置SSL证书</h2> <p>例如使用阿里云可以免费申请SSL证书（有效期一年）。</p> <p>下载Nginx服务器类型的证书，把<code>*.key</code>改名为<code>rui.key</code>，把<code>*.pem</code>改名为<code>rui.crt</code>。</p> <p>（最好先备份一下）把这两个文件上传覆盖到/etc/vmware/ssl/</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 重启hostd服务</span>
+/etc/init.d/hostd restart
+<span class="token comment"># 重启vpxa服务</span>
+/etc/init.d/vpxa restart
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="修改主机名"><a href="#修改主机名" class="header-anchor">#</a> 修改主机名</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>esxcli system <span class="token function">hostname</span> <span class="token builtin class-name">set</span> --host<span class="token operator">=</span>new_hostname
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="查看版本号"><a href="#查看版本号" class="header-anchor">#</a> 查看版本号</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># vmware -vl</span>
+VMware ESXi <span class="token number">8.0</span> GA
+VMware ESXi <span class="token number">8.0</span>.0 build-20513097
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/buxianshan/bxs-blog/edit/master/docs/linux/esxi.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2022-11-07 14:03:44</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/bxs-blog/assets/js/app.3457f416.js" defer></script><script src="/bxs-blog/assets/js/2.e20f0717.js" defer></script><script src="/bxs-blog/assets/js/41.510cc4f6.js" defer></script>
+  </body>
+</html>
