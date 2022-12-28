@@ -9,5 +9,9 @@ module.exports = {
             text: 'linux服务器java环境变量问题',
             link: '/debug/linux-java-environment-variables'
         },
+        {
+            text: '端口被占用',
+            link: '/debug/port-already-in-use'
+        },
     ]
 }
