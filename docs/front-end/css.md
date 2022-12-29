@@ -402,3 +402,109 @@ opacity:0.5
 
 了解一下就行：[CSS3 动画](https://www.runoob.com/css3/css3-animations.html)
 
+## 弹性布局
+
+参考：
+
+- [弹性布局（display:flex;）属性详解](https://www.cnblogs.com/hellocd/p/10443237.html)
+- CSS官方文档：[Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+
+采用 Flex 布局的元素，称为 Flex 容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称"项目"。
+
+简单列举弹性布局的几个用处：
+
+- 将内容块在其父级中垂直居中
+- 使容器的所有子容器占用相等的可用宽度/高度，而不管有多少可用宽度/高度
+- 使多列布局中的所有列采用相同的高度，即使它们包含的内容量不同
+
+这是参考 [Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) 做的一个例子：
+
+::: code-details
+
+```html
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Flexbox 0 — starting code</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        header {
+            background: purple;
+            height: 100px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            line-height: 100px;
+            margin: 0;
+        }
+
+        article {
+            padding: 10px;
+            margin: 10px;
+            background: aqua;
+        }
+
+        /* Add your flexbox CSS below here */
+        section {
+            /*需要弹性布局的是article，需要把其父元素设为弹性盒子*/
+            display: flex;
+            /*弹性布局方向：行(左->右)， 也是默认值*/
+            flex-direction: row;
+            /*是否换行(默认不换行)，wrap开启换行，子元素需要配合使用flex: 200px，宽度小于200px则换行*/
+            flex-wrap: wrap;
+            /*子元素居中*/
+            justify-content: center;
+        }
+
+        article {
+            /*宽度小于200px则换行*/
+            flex: 200px;
+            max-width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>Sample flexbox example</h1>
+</header>
+
+<section>
+    <article>
+        <h2>First article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+    </article>
+
+    <article>
+        <h2>Second article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+    </article>
+
+    <article>
+        <h2>Third article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+
+        <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
+    </article>
+</section>
+</body>
+</html>
+```
+
+:::
+
+![image-20221229160824668](https://buxianshan.oss-cn-beijing.aliyuncs.com/Typora_images/image-20221229160824668.png)
