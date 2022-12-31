@@ -104,6 +104,7 @@ module.exports = {
                     {text: 'Git', link: '/tools/git'},
                     {text: '微软RDP优化', link: '/tools/microsoft-rdp'},
                     {text: 'Get Website Icon', link: 'https://icon.bxs.ink/'},
+                    {text: '时间', link: '/tools/time'},
                 ]
             },
             {text: 'Blog', link: '/blog/'},
