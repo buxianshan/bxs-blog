@@ -1,10 +1,15 @@
 <template>
-  <div id="time"></div>
+  <div id="time">{{time}}</div>
 </template>
 
 <script>
 export default {
   name: "Time",
+  data() {
+    return {
+      time: "",
+    }
+  },
   methods: {
     refreshTime() {
       let date = new Date();
@@ -12,9 +17,9 @@ export default {
       month = month > 9 ? month : `0${month}`;
       let day = date.getDay() + 1;
       day = day > 9 ? day : `0${day}`;
-      let time = date.getFullYear() + "-" + month + "-" + day + " " + date.toLocaleTimeString();
-      let element = document.getElementById("time");
-      element.innerHTML = time;
+      this.time = date.getFullYear() + "-" + month + "-" + day + " " + date.toLocaleTimeString();
+      // let element = document.getElementById("time");
+      // element.innerHTML = time;
     }
   },
   mounted() {
