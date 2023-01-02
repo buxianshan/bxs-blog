@@ -23,6 +23,7 @@ export default {
     }
   },
   mounted() {
+    this.refreshTime();
     setInterval(this.refreshTime, 1000);
   }
 }
