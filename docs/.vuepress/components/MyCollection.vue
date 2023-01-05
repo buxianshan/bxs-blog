@@ -48,7 +48,6 @@ export default {
     }
   },
   mounted() {
-    console.log("1111")
     // 修改页面内容宽度
     let page = document.getElementsByClassName("theme-default-content")[0]
     page.setAttribute("style", "max-width: 80%; margin: 0 auto; padding: 2em 2.5em;")
@@ -60,7 +59,6 @@ export default {
 <style lang="stylus" scoped>
 .card-container
   margin-top 1em
-  border #0e0f12 1px solid
   display flex
   flex-flow row wrap
 
@@ -69,7 +67,8 @@ export default {
     color inherit
 
   .card
-    width calc(100% / 3 - 1rem)
+    //width calc(100% / 3 - 1rem)
+    max-width 15em
     height 100px
     //background-color #c7c4c4
     border 1px solid rgba(0, 0, 0, .1)
@@ -78,7 +77,7 @@ export default {
     margin 0.5rem
     transition all 0.3s
     display flex
-    flex 0 0 30%
+    flex 0 0 15em
 
     &:hover
       box-shadow 0 0.5rem 2rem #ccc
