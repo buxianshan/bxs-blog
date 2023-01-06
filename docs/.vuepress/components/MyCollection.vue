@@ -93,6 +93,7 @@ export default {
     .card-content
       width 100%
       padding 0.5rem
+      flex-direction: column;
 
       .title
         //font-size 1.2rem
@@ -103,25 +104,10 @@ export default {
         font-size 0.8rem
         color #757575
         margin 0 0 0.2rem 0.2rem
-
-@media screen and (max-width: 1090px)
-  // 屏幕宽度小于1090px不显示info
-  .card-container
-    .card
-      .info
-        display none
-      .card-content
-        // 子元素垂直居中
-        display -webkit-flex
-        align-items center
-
-@media screen and (max-width: 450px)
-  // 屏幕宽度小于450px不显示title
-  .card-container
-    .card
-      .card-content
-        display none
-      img
-        margin auto
+        //text-overflow ellipsis
+        overflow: hidden
+        display -webkit-box
+        -webkit-line-clamp 2
+        -webkit-box-orient vertical
 
 </style>
