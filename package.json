@@ -16,7 +16,7 @@
     "dayjs": "^1.11.0",
     "got": "^11.8.3",
     "js-yaml": "^4.1.0",
-    "vuepress": "^1.9.7",
+    "vuepress": "^1.9.8",
     "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-one-click-copy": "^1.0.6",
     "vuepress-plugin-reading-progress": "^1.0.10",
