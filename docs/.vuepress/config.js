@@ -102,6 +102,7 @@ module.exports = {
                 items: [
                     {text: '常用工具', link: '/tools/tools-i-use'},
                     {text: 'Git', link: '/tools/git'},
+                    {text: 'Typora', link: '/tools/typora'},
                     {text: '微软RDP优化', link: '/tools/microsoft-rdp'},
                     {text: 'Get Website Icon', link: 'https://icon.bxs.ink/'},
                     {text: '时间', link: '/tools/time'},
