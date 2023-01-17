@@ -5,6 +5,8 @@ sidebar: auto
 
 <h1 align='center'>JVM笔记</h1>
 
+<ContentMaxWidth max-width="80%" />
+
 :::tip 注意
 本文大部分内容摘抄自[《JVM核心技术32讲》](https://gitbook.cn/gitchat/column/5de76cc38d374b7721a15cec)，感谢作者。
 :::
