@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: https://img-blog.csdnimg.cn/712a3a93f5a045d9abf0f6f09a92d1dd.png
+heroImage: wufan.png
 heroText: 
 tagline: 一些个人理解、笔记和分享
 #actionText: GitHub
