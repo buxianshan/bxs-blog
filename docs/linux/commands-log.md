@@ -260,3 +260,10 @@ dpkg -L 包名
 dpkg -r 包名
 ```
 
+## 查找包含指定class的jar包
+
+```bash
+# MyClass.class换成要查找的类名或路径
+find . -name "*.jar" -exec sh -c 'jar -tf {} | grep -H --label {} MyClass.class' \;
+```
+
