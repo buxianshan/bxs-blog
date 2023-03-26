@@ -106,6 +106,7 @@ module.exports = {
                     {text: 'Typora', link: '/tools/typora'},
                     {text: '微软RDP优化', link: '/tools/microsoft-rdp'},
                     {text: 'Get Website Icon', link: 'https://icon.bxs.ink/'},
+                    {text: 'Chrome插件-Vimium', link: '/tools/vimium'},
                     {text: '时间', link: '/tools/time'},
                 ]
             },
