@@ -347,3 +347,36 @@ print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
 python -m pip freeze > requirements.txt
 ```
 
+## subprocess模块
+
+subprocess是Python标准库中的一个模块，用于在Python程序中创建子进程并与其交互。
+
+subprocess模块提供了多个函数和类，可以方便地执行外部命令，获取命令的输出和错误信息，以及向命令传递输入。其中比较常用的函数包括：
+
+- subprocess.run(): 执行外部命令并等待其完成，返回一个CompletedProcess对象，包括命令的退出状态码、标准输出、标准错误等信息。
+- subprocess.call(): 执行外部命令并等待其完成，返回命令的退出状态码。
+- subprocess.check_call(): 执行外部命令并等待其完成，如果命令的退出状态码不为0则抛出异常。
+- subprocess.check_output(): 执行外部命令并等待其完成，返回命令的标准输出。
+- subprocess.Popen(): 执行外部命令，返回一个Popen对象，可以通过该对象的方法和属性与子进程交互，例如向其输入数据、发送信号等。
+
+subprocess模块的使用可以避免在Python程序中使用os.system()和os.popen()等函数执行外部命令，能够更加方便地获取命令的输出和错误信息，并且具有更好的跨平台性。
+
+```python
+import subprocess
+
+
+def execute_command(command):
+    """
+    执行一条shell命令
+    """
+    print(f"Execute Command: {command}")
+    result = subprocess.run(args=command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print(f"stdout:\n{result.stdout.decode('utf-8')}")
+    if result.returncode != 0:
+        raise Exception(f"stderr:\n{result.stderr.decode('utf-8')}")
+```
+
+注意：
+
+- `shell=True`：意为通过 shell 来执行命令，此时可以把命令和参数写在一个字符串中，如果使用默认值false，则命令和参数必须分开写。
+
