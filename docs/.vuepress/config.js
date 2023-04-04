@@ -14,7 +14,12 @@ module.exports = {
                 var s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(hm, s);
             }
-        })();`]
+        })();`],
+        ['script', {src: "https://www.googletagmanager.com/gtag/js?id=G-F12EYNDHWH", async: true}],
+        ['script', {}, `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-F12EYNDHWH');`],
     ],
     title: 'bxs.ink',
     description: '一些个人理解、笔记和分享',
@@ -176,12 +181,6 @@ module.exports = {
                     return dayjs(timestamp).format('YYYY-MM-DD HH:mm:ss')
                 },
             },
-        ],
-        [
-            '@vuepress/google-analytics',
-            {
-                'ga': 'G-F12EYNDHWH'
-            }
         ],
         // 自定义的插件
         require("./plugins"),
