@@ -11,6 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.9.7",
+    "@vuepress/plugin-google-analytics": "^1.9.9",
     "@vuepress/plugin-medium-zoom": "^1.9.7",
     "cheerio": "^1.0.0-rc.10",
     "dayjs": "^1.11.0",

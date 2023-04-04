@@ -177,6 +177,12 @@ module.exports = {
                 },
             },
         ],
+        [
+            '@vuepress/google-analytics',
+            {
+                'ga': 'G-F12EYNDHWH'
+            }
+        ],
         // 自定义的插件
         require("./plugins"),
     ],
