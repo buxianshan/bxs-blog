@@ -10,7 +10,12 @@ sidebar: false
 ## 默认快捷键
 
 - 回到文档顶部：`Ctrl + Home`
+
+  Mac: `Command + ↑`
+
 - 回到文档底部：`Ctrl + End`
+
+  Mac: `Command + ↓`
 
 ## 自定义快捷键
 
