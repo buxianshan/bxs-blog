@@ -19,7 +19,7 @@ npm install
 在本地启动服务器
 
 ```bash
-npm docs:dev
+npm run docs:dev
 ```
 
 VuePress 会在 http://localhost:8080 启动一个热重载的开发服务器。
@@ -27,7 +27,7 @@ VuePress 会在 http://localhost:8080 启动一个热重载的开发服务器。
 ### 构建静态文件
 
 ```bash
-npm docs:build
+npm run docs:build
 ```
 
 会在当前路径下的dist文件夹中生成静态文件，可以把它部署到任何web服务器中。
