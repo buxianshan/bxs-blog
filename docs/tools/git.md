@@ -116,7 +116,12 @@ git fetch --all
 git reset --hard origin/master
 ```
 
+## 删除所有未跟踪的文件和目录
 
+```bash
+# 删除工作区中所有未跟踪的文件和目录（不会删除已add的文件）
+git clean -f -d
+```
 
 ## 代码仓库太大，git clone 拉不下来
 
