@@ -1,6 +1,5 @@
 ---
 home: true
-heroImage: wufan.png
 heroText: 
 tagline: 一些个人理解、笔记和分享
 #actionText: GitHub
