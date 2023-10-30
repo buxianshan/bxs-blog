@@ -37,23 +37,14 @@ jobs:
     - run: npm install
     - run: npm run docs:build
     
-    - name: Deploy to Server
-      uses: buxianshan/fine-sftp-deployer@v0.1.5
-      with:
-        # username
-        username: ${{secrets.SERVER_USERNAME}}
-        # your server ip or domain
-        server: ${{secrets.SERVER_DOMAIN}}
-        # your server ssh port, the default is 22
-        port: ${{secrets.SERVER_PORT}}
-        # ssh private key
-        ssh_private_key: ${{secrets.SERVER_KEY_PEM}}
-        # local dist file path
-        local_path: ./dist/*
-        # dist file path on your server
-        remote_path: ${{secrets.SERVER_WORKSPACE}}
-        # delete all files in remote_path(default is false)
-        clear_remote_path: true
+    # build docker image
+    - uses: actions/checkout@v3
+    - name: Login to Docker Hub
+      run: docker login --username=${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/icon-server:latest
+    - name: Push Image to Docker Hub
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/bxs-blog:latest
         
     # 把base修改为/bxs-blog/，然后再build
     - run: sed -i 's#base:\ "/"#base:\ "/bxs-blog/"#g' ./docs/.vuepress/config.js
