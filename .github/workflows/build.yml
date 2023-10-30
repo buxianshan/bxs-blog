@@ -38,7 +38,6 @@ jobs:
     - run: npm run docs:build
     
     # build docker image
-    - uses: actions/checkout@v3
     - name: Login to Docker Hub
       run: docker login --username=${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
     - name: Build the Docker image
