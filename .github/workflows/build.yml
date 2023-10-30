@@ -42,7 +42,7 @@ jobs:
     - name: Login to Docker Hub
       run: docker login --username=${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/icon-server:latest
+      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/bxs-blog:latest
     - name: Push Image to Docker Hub
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/bxs-blog:latest
         
