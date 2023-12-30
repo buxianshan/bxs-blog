@@ -2,6 +2,7 @@
 home: true
 heroText: 
 tagline: 一些个人理解、笔记和分享
+heroImage: hero.svg
 #actionText: GitHub
 #actionLink: https://github.com/buxianshan/bxs-blog
 ---
