@@ -41,6 +41,7 @@ module.exports = {
                     {text: 'Python 面向对象', link: '/python/class'},
                     {text: 'Python 多线程', link: '/python/multithread'},
                     {text: 'Python 命令行传参', link: '/python/console-arguments'},
+                    {text: 'Python 装饰器', link: '/python/decorator'},
                     {text: 'with 语句', link: '/python/with'},
                     {text: '打包项目到PyPI', link: '/python/build-package'},
                     {text: 'pyc文件', link: '/python/pyc'},
