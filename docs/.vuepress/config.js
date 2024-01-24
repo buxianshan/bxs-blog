@@ -87,6 +87,7 @@ module.exports = {
                     {text: 'JavaScript', link: '/front-end/js'},
                     {text: 'Node.js', link: '/front-end/nodejs'},
                     {text: 'AJAX', link: '/front-end/ajax'},
+                    {text: 'Vue', link: '/front-end/vue'},
                     {text: '问题记录', link: '/front-end/experience'},
                 ]
             },
