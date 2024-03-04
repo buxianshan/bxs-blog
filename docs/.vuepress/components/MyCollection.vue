@@ -37,6 +37,12 @@ let data = {
       "info": "[博客] 宝藏网站：java、mysql、k8s等各种专栏",
       "icon": "https://learn.lianglianglee.com/static/favicon.png",
     },
+    {
+      "title": "开源项目风格指南",
+      "url": "https://zh-google-styleguide.readthedocs.io/en/latest/",
+      "info": "[文档] Google 开源项目风格指南——中文版",
+      "icon": "https://zh-google-styleguide.readthedocs.io/favicon.ico",
+    },
   ],
 
 }
