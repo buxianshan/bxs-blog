@@ -108,7 +108,10 @@ netstat -ntpl | grep LISTEN | awk '{print $4}' | awk -F ":" '{print $NF}' | sort
 清理磁盘空间
 
 1. 用`df -h`看看哪些挂载点磁盘空间已用率高
-2. 进入某个挂载点路径，使用`du -h --max-depth=1`查看哪个文件夹占用空间大（--max-depth指深度，只看当前层级就可以了）
+2. 进入某个挂载点路径，使用如下命令查看哪个文件夹占用空间大（--max-depth指深度，只看当前层级就可以了）
+   ```bash
+   du -h --max-depth=1
+   ```
 3. 进入占用空间大的文件夹，重复步骤2，直到找到某些可以删除的大文件（一定要确认文件是没用的）
 
 ## 查看文件或文件夹大小
@@ -262,8 +265,9 @@ dpkg -r 包名
 
 ## 查找包含指定class的jar包
 
+MyClass.class换成要查找的类名或路径
+
 ```bash
-# MyClass.class换成要查找的类名或路径
 find . -name "*.jar" -exec sh -c 'jar -tf {} | grep -H --label {} MyClass.class' \;
 ```
 
