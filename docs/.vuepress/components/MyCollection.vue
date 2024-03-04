@@ -56,7 +56,7 @@ export default {
   mounted() {
     // 修改页面内容宽度
     let page = document.getElementsByClassName("theme-default-content")[0]
-    page.setAttribute("style", "max-width: 80%; margin: 0 auto; padding: 2em 2.5em;")
+    page.setAttribute("style", "max-width: 80%; margin: 2em auto; padding: 2em 2.5em;")
     page.classList.add("custom")
   },
 }
