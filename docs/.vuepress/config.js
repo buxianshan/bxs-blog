@@ -73,6 +73,7 @@ module.exports = {
                 items: [
                     {text: '常用命令记录', link: '/linux/commands-log'},
                     {text: '防火墙', link: '/linux/firewall'},
+                    {text: '无密码执行sudo', link: '/linux/sudo-without-password'},
                     {text: '重写/自定义命令', link: '/linux/custom-commands'},
                     {text: 'Shell类型', link: '/linux/shell'},
                     {text: 'ESXi', link: '/linux/esxi'},
@@ -129,6 +130,7 @@ module.exports = {
             '/linux/': [
                 ['commands-log', '常用命令记录'],
                 ['firewall', '防火墙'],
+                ['sudo-without-password', '无密码执行sudo'],
                 ['custom-commands', '重写/自定义命令'],
                 ['shell', 'Shell类型'],
             ],
