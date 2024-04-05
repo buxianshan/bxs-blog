@@ -100,6 +100,7 @@ module.exports = {
                     {text: '问题记录', link: '/docker/experience'},
                     {text: '修改存储路径', link: '/docker/change-storage-path'},
                     {text: 'docker-compose', link: '/docker/docker-compose'},
+                    {text: 'k8s', link: '/docker/k8s'},
                 ]
             },
             {
@@ -140,7 +141,8 @@ module.exports = {
                 ['notes', '基础笔记'],
                 ['experience', '问题记录'],
                 ['change-storage-path', '修改存储路径'],
-                ['docker-compose', 'docker-compose']
+                ['docker-compose', 'docker-compose'],
+                ['k8s', 'k8s'],
             ],
             // fallback
             '/': ['']
